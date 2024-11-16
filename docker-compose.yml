@@ -1,0 +1,9 @@
+services:
+  frontend:
+    env_file: .env
+    container_name: remix-app
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000

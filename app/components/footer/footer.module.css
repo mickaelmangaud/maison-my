@@ -1,0 +1,5 @@
+.footer {
+  background-color: papayawhip;
+  height: var(--footer-height);
+  padding: 32px;
+}
