@@ -1,7 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Borel&display=swap');
+
+:root {
+  --nav-height: 80px;
+  --footer-height: 160px;
+  --bg-color: #fff;
+  --fg-color: #383838;
+  --font-color: #222;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: var(--fg-color);
 }
 
 .body {
@@ -13,9 +24,4 @@
     flex: 1;
     padding: 32px;
   }
-}
-
-:root {
-  --nav-height: 80px;
-  --footer-height: 160px;
 }
