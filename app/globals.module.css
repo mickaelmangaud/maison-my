@@ -21,8 +21,25 @@
   min-height: 100vh;
 
   & .outletWrapper {
+    display: flex;
     flex: 1;
-    padding: 32px;
-    min-height: calc(100vh - var(--nav-height));
+    /* padding: 32px; */
+    min-height: 100vh;
+  }
+}
+
+@keyframes bounce2 {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
   }
 }

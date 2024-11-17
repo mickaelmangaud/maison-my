@@ -7,21 +7,23 @@ export function Navigation() {
     <nav className={styles.nav}>
       <ul className={styles.linksLeft}>
         <li className={styles.link}>
-          <Link to="/">Home</Link>
+          <Link to="/">La Maison My</Link>
         </li>
         <li className={styles.link}>
-          <Link to="/contact">Contact</Link>
+          <Link to="/contact">Le menu</Link>
         </li>
       </ul>
-      <div className={styles.logo}>
-        <img className={styles.img} src="/images/my_logo.png" />
-      </div>
+      <Link to="/">
+        <div className={styles.logo}>
+          <img className={styles.img} src="/images/my_logo.png" />
+        </div>
+      </Link>
       <ul className={styles.links}>
         <li className={styles.link}>
-          <Link to="/">Home</Link>
+          <Link to="/">Un peu d'histoire</Link>
         </li>
         <li className={styles.link}>
-          <Link to="/contact">Contact</Link>
+          <Link to="/contact">Nous contacter</Link>
         </li>
       </ul>
     </nav>

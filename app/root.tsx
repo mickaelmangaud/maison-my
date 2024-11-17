@@ -1,5 +1,5 @@
 import { LoaderFunctionArgs } from '@remix-run/node';
-import { json, Links, Meta, Outlet, Scripts, useLoaderData } from '@remix-run/react';
+import { json, Links, Meta, Outlet, Scripts, useLoaderData, useMatches } from '@remix-run/react';
 import { useTranslation } from 'react-i18next';
 import { useChangeLanguage } from 'remix-i18next/react';
 import i18next from '~/lib/i18next.server';
@@ -19,6 +19,9 @@ export default function App() {
   const { i18n } = useTranslation();
   useChangeLanguage(locale);
 
+  const matches = useMatches();
+  const isNotHomePage = matches[1].id !== 'routes/_index';
+
   return (
     <html lang={locale} dir={i18n.dir()}>
       <head>
@@ -27,7 +30,8 @@ export default function App() {
         <Links />
       </head>
       <body className={styles.body}>
-        <Navigation />
+        {/* TODO: improve this */}
+        {isNotHomePage && <Navigation />}
         <div className={styles.outletWrapper}>
           <Outlet />
         </div>

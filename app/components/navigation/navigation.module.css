@@ -3,7 +3,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 12px;
-  background-color: var(--bg-color);
+  width: 100%;
+  /* background-color: var(--bg-color); */
   /* border-bottom: 1px solid var(--fg-color); */
 
   .logo {
@@ -17,7 +18,7 @@
   .linksLeft {
     display: flex;
     justify-content: start;
-    gap: 24px;
+    gap: 32px;
     list-style: none;
     flex: 1;
 
