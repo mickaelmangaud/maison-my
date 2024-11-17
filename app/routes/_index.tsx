@@ -23,7 +23,7 @@ export default function Component() {
         width: '100%',
       }}
     >
-      <div className={styles.hero} style={{ position: 'relative' }}>
+      <div className={styles.hero}>
         <video
           loop
           muted
@@ -37,8 +37,8 @@ export default function Component() {
             left: '0',
             right: '0',
             opacity: '0.5',
-            height: '100vh',
-            width: '100vw',
+            height: '100%',
+            width: '100%',
             objectFit: 'cover',
             zIndex: '-1',
           }}
