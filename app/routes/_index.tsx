@@ -24,37 +24,11 @@ export default function Component() {
       }}
     >
       <div className={styles.hero}>
-        <video
-          loop
-          muted
-          autoPlay
-          playsInline
-          controls
-          style={{
-            position: 'absolute',
-            top: '0',
-            bottom: '0',
-            left: '0',
-            right: '0',
-            opacity: '0.5',
-            height: '100%',
-            width: '100%',
-            objectFit: 'cover',
-            zIndex: '-1',
-          }}
-        >
+        <video loop muted autoPlay playsInline className={styles.video}>
           <source src="video.mp4" type="video/mp4" />
         </video>
         <Navigation />
-        <FaAngleDown
-          style={{
-            position: 'absolute',
-            bottom: '32px',
-            fontSize: '38px',
-            animation: 'bounce2 2s ease infinite',
-          }}
-          onClick={scrollDown}
-        />
+        <FaAngleDown className={styles.angleDown} onClick={scrollDown} />
       </div>
     </div>
   );

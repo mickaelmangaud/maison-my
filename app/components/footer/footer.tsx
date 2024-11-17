@@ -1,5 +1,21 @@
 import styles from './footer.module.css';
 
 export function Footer() {
-  return <footer className={styles.footer}>Maison My</footer>;
+  return (
+    <footer>
+      <div className={styles.footer}>Maison My</div>
+      <div className={styles.footer}>Maison My</div>
+      <div className={styles.footer}>Maison My</div>
+      <div className={styles.footer}>Maison My</div>
+      <div className={styles.footer}>Maison My</div>
+      <div className={styles.footer}>Maison My</div>
+      <div className={styles.footer}>Maison My</div>
+      <div className={styles.footer}>Maison My</div>
+
+      <div className={styles.footer}>Maison My</div>
+      <div className={styles.footer}>Maison My</div>
+      <div className={styles.footer}>Maison My</div>
+      <div className={styles.footer}>Maison My</div>
+    </footer>
+  );
 }
