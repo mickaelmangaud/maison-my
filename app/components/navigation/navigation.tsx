@@ -20,7 +20,7 @@ export function Navigation() {
       </Link>
       <ul className={styles.links}>
         <li className={styles.link}>
-          <Link to="/histoire">Un peu d'histoire</Link>
+          <Link to="/histoire">L'histoire</Link>
         </li>
         <li className={styles.link}>
           <Link to="/contact">Nous contacter</Link>
