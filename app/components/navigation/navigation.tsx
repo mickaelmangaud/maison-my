@@ -5,19 +5,22 @@ import styles from './navigation.module.css';
 export function Navigation() {
   return (
     <nav className={styles.nav}>
+      {/* Left Links */}
       <ul className={styles.linksLeft}>
         <li className={styles.link}>
-          <Link to="/">La Maison My</Link>
+          <Link to="/maisonmy">La Maison My</Link>
         </li>
         <li className={styles.link}>
-          <Link to="/contact">Le menu</Link>
+          <Link to="/menu">Le menu</Link>
         </li>
       </ul>
+      {/* Logo */}
       <Link to="/">
         <div className={styles.logo}>
           <img className={styles.img} src="/images/my_logo.png" />
         </div>
       </Link>
+      {/* Right links */}
       <ul className={styles.links}>
         <li className={styles.link}>
           <Link to="/histoire">L'histoire</Link>
