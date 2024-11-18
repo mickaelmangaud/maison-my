@@ -1,12 +1,8 @@
 .footer {
   background-color: var(--bg-color);
   padding: 48px;
-  border-top: 1px solid var(--fg-color);
   display: flex;
   justify-content: space-between;
-
-  .address {
-  }
 
   .pages {
     ul {

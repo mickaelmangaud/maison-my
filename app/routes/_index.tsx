@@ -20,11 +20,14 @@ export default function Component() {
         <video loop muted autoPlay playsInline className={styles.video}>
           <source src="video.mp4" type="video/mp4" />
         </video>
-        <Navigation />
-        <FaAngleDown className={styles.angleDown} onClick={scrollDown} />
-      </div>
-      <div>
-        <h1>TEst</h1>
+        <div className={styles.header}>
+          <Navigation />
+          <h1 className={styles.welcome}>Maison My, la référence du Banh mi à Paris</h1>
+        </div>
+        <div className={styles.faim} onClick={scrollDown}>
+          <button className={styles.btn}>J'ai faim !</button>
+          <FaAngleDown className={styles.angleDown} />
+        </div>
       </div>
     </div>
   );
