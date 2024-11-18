@@ -2,7 +2,8 @@
   background-color: var(--bg-color);
   padding: 48px;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  gap: 38px;
 
   .pages {
     ul {

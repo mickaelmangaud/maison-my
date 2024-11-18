@@ -7,7 +7,7 @@ export function Footer() {
         <h1>Maison My</h1>
         <p>68 Rue du Chemin Vert,</p>
         <p> 75011 Paris</p>
-        <p>0652582745</p>
+        <p>06 52 58 27 45</p>
         <a href="https://www.instagram.com/maisonmy_banhmi/" target="_blank">
           Instagram
         </a>
