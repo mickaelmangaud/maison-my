@@ -30,10 +30,10 @@ export default function Component() {
         </div>
       </div>
       <div className={styles.message}>
-        <h1>Banh mi, Bobuns, Riz et nouilles. Venez déguster nos petits plats savoureux !</h1>
+        <h1>Banh mi, Bobuns, Riz, nouilles... Venez déguster nos petits plats savoureux !</h1>
         <p>
-          Chaque bouchée de notre sandwich vietnamien, avec son pain croustillant, son porc mariné, ses légumes
-          croquants, et sa touche de coriandre, vous transporte instantanément....
+          Chaque bouchée de notre Banh mi, avec son pain croustillant, son porc mariné, ses légumes croquants, et sa
+          touche de coriandre, vous transporte instantanément....
         </p>
       </div>
       <div className={styles.mansonry}>
