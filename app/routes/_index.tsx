@@ -37,30 +37,11 @@ export default function Component() {
         </p>
       </div>
       <div className={styles.mansonry}>
-        <div className={styles.image}>
-          <img src="/images/food/3.png" />
-        </div>
-        <div className={styles.image}>
-          <img src="/images/food/2.png" />
-        </div>
-        <div className={styles.image}>
-          <img src="/images/food/1.png" />
-        </div>
-        <div className={styles.image}>
-          <img src="/images/food/4.png" />
-        </div>
-        <div className={styles.image}>
-          <img src="/images/food/5.png" />
-        </div>
-        <div className={styles.image}>
-          <img src="/images/food/6.png" />
-        </div>
-        <div className={styles.image}>
-          <img src="/images/food/7.png" />
-        </div>
-        <div className={styles.image}>
-          <img src="/images/food/8.png" />
-        </div>
+        {[...Array(10)].map((x, i) => (
+          <div className={styles.image}>
+            <img src={`/images/food/${i + 1}.png`} />
+          </div>
+        ))}
       </div>
     </div>
   );

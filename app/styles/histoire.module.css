@@ -1,9 +1,17 @@
+@import '../globals.module.css';
+
 .histoire {
   display: flex;
   justify-content: center;
   width: 100%;
   margin-top: 48px;
   margin: 48px;
+  /* fadin */
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 0.3s;
 
   .content {
     max-width: 780px;
