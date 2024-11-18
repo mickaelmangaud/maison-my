@@ -1,6 +1,16 @@
 .footer {
   background-color: var(--bg-color);
-  height: var(--footer-height);
-  padding: 32px;
-  /* border-top: 1px solid var(--fg-color); */
+  padding: 48px;
+  border-top: 1px solid var(--fg-color);
+  display: flex;
+  justify-content: space-between;
+
+  .address {
+  }
+
+  .pages {
+    ul {
+      list-style: none;
+    }
+  }
 }
