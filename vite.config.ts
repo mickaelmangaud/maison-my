@@ -15,4 +15,11 @@ export default defineConfig({
     }),
     tsConfigPaths(),
   ],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'modern-compiler',
+      },
+    },
+  },
 });

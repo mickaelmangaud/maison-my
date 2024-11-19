@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Navigation } from '~/components/navigation';
 import { FaAngleDown } from 'react-icons/fa6';
-import styles from '../styles/index.module.css';
+import styles from '../styles/index.module.scss';
 
 export default function Component() {
   const { t } = useTranslation();
@@ -38,7 +38,7 @@ export default function Component() {
       </div>
       <div className={styles.mansonry}>
         {[...Array(10)].map((x, i) => (
-          <div className={styles.image}>
+          <div className={styles.image} key={i}>
             <img src={`/images/food/${i + 1}.png`} />
           </div>
         ))}

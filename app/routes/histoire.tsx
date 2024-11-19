@@ -1,4 +1,4 @@
-import styles from '../styles/histoire.module.css';
+import styles from '../styles/histoire.module.scss';
 
 export default function Histoire() {
   return (

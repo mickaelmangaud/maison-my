@@ -1,6 +1,6 @@
 import { Link } from '@remix-run/react';
 
-import styles from './navigation.module.css';
+import styles from './navigation.module.scss';
 
 export function Navigation() {
   return (

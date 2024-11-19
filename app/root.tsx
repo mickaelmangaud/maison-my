@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useChangeLanguage } from 'remix-i18next/react';
 import i18next from '~/lib/i18next.server';
 import { Navigation } from './components/navigation';
-import styles from './globals.module.css';
+import styles from './globals.module.scss';
 import { Footer } from './components/footer';
 
 export const handle = { i18n: 'common' };
