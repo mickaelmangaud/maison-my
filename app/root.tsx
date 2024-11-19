@@ -32,6 +32,7 @@ export default function App() {
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         {/* <link rel="manifest" href="/site.webmanifest" /> */}
         <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
       </head>
