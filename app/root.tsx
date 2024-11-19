@@ -1,4 +1,4 @@
-import { LoaderFunctionArgs } from '@remix-run/node';
+import { LinksFunction, LoaderFunctionArgs } from '@remix-run/node';
 import { json, Links, Meta, Outlet, Scripts, useLoaderData, useMatches } from '@remix-run/react';
 import { useTranslation } from 'react-i18next';
 import { useChangeLanguage } from 'remix-i18next/react';
@@ -12,6 +12,16 @@ export const handle = { i18n: 'common' };
 export const loader = async ({ request }: LoaderFunctionArgs) => {
   const locale = await i18next.getLocale(request);
   return json({ locale });
+};
+
+export const links: LinksFunction = () => {
+  return [
+    {
+      rel: 'icon',
+      href: '/favicon.png',
+      type: 'image/png',
+    },
+  ];
 };
 
 export default function App() {
