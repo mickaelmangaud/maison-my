@@ -38,7 +38,7 @@ export default function Component() {
       </div>
       <div className={styles.mansonry}>
         {[...Array(7)].map((x, i) => (
-          <img src={`/images/food/${i + 1}.png`} key={i} />
+          <img src={`/images/food/${i + 1}.webp`} key={i} />
         ))}
       </div>
     </div>

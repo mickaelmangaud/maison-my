@@ -6,5 +6,6 @@ to import scss files in other scss file:
 @use 'my_scss.scss' as *;
 ```
 
-TODO : 
+**TODO :** 
 - resize et convert images to webp
+- créer une mixin sass pour la gestion des media query
