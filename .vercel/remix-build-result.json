@@ -1,0 +1,133 @@
+{
+  "buildManifest": {
+    "serverBundles": {
+      "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0": {
+        "id": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+        "file": "build/server/nodejs-eyJydW50aW1lIjoibm9kZWpzIn0/index.js",
+        "config": {
+          "runtime": "nodejs"
+        }
+      }
+    },
+    "routeIdToServerBundleId": {
+      "routes/histoire": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/maisonmy": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/contact": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/_index": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/menu": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0"
+    },
+    "routes": {
+      "root": {
+        "path": "",
+        "id": "root",
+        "file": "app/root.tsx",
+        "config": {}
+      },
+      "routes/histoire": {
+        "file": "app/routes/histoire.tsx",
+        "id": "routes/histoire",
+        "path": "histoire",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/maisonmy": {
+        "file": "app/routes/maisonmy.tsx",
+        "id": "routes/maisonmy",
+        "path": "maisonmy",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/contact": {
+        "file": "app/routes/contact.tsx",
+        "id": "routes/contact",
+        "path": "contact",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/_index": {
+        "file": "app/routes/_index.tsx",
+        "id": "routes/_index",
+        "index": true,
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/menu": {
+        "file": "app/routes/menu.tsx",
+        "id": "routes/menu",
+        "path": "menu",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      }
+    }
+  },
+  "remixConfig": {
+    "appDirectory": "/home/mickael/code/maison-my/app",
+    "basename": "/",
+    "buildDirectory": "/home/mickael/code/maison-my/build",
+    "future": {
+      "v3_fetcherPersist": true,
+      "v3_relativeSplatPath": true,
+      "v3_throwAbortReason": true,
+      "unstable_singleFetch": false,
+      "unstable_lazyRouteDiscovery": false,
+      "unstable_optimizeDeps": false
+    },
+    "manifest": false,
+    "publicPath": "/",
+    "routes": {
+      "root": {
+        "path": "",
+        "id": "root",
+        "file": "root.tsx"
+      },
+      "routes/histoire": {
+        "file": "routes/histoire.tsx",
+        "id": "routes/histoire",
+        "path": "histoire",
+        "parentId": "root"
+      },
+      "routes/maisonmy": {
+        "file": "routes/maisonmy.tsx",
+        "id": "routes/maisonmy",
+        "path": "maisonmy",
+        "parentId": "root"
+      },
+      "routes/contact": {
+        "file": "routes/contact.tsx",
+        "id": "routes/contact",
+        "path": "contact",
+        "parentId": "root"
+      },
+      "routes/_index": {
+        "file": "routes/_index.tsx",
+        "id": "routes/_index",
+        "index": true,
+        "parentId": "root"
+      },
+      "routes/menu": {
+        "file": "routes/menu.tsx",
+        "id": "routes/menu",
+        "path": "menu",
+        "parentId": "root"
+      }
+    },
+    "serverBuildFile": "index.js",
+    "serverModuleFormat": "esm",
+    "ssr": true
+  },
+  "viteConfig": {
+    "build": {
+      "assetsDir": "assets"
+    }
+  }
+}
