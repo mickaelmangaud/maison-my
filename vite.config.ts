@@ -22,9 +22,12 @@ export default defineConfig({
       },
     },
   },
-  optimizeDeps: {
-    esbuildOptions: {
-      target: 'esnext',
-    },
+  // optimizeDeps: {
+  //   esbuildOptions: {
+  //     target: 'esnext',
+  //   },
+  // },
+  build: {
+    target: 'ES2022',
   },
 });
