@@ -48,6 +48,10 @@
         font-size: 48px;
         max-width: 660px;
         transform: translateY(23vh);
+
+        @include maxWidth(780px) {
+          transform: translateY(16vh);
+        }
       }
     }
 
