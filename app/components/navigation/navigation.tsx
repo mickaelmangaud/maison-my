@@ -40,8 +40,11 @@ export function Navigation() {
         <FaBars size={42} />
       </div>
       <div className={`${styles.mobileMenu} ${isMenuOpen ? styles.open : ''}`}>
-        <FaX size={42} onClick={toggleMenu} />
+        <FaX size={42} onClick={toggleMenu} className={styles.close} />
         <ul>
+          <li onClick={toggleMenu}>
+            <Link to="/">Home</Link>
+          </li>
           <li onClick={toggleMenu}>
             <Link to="/maisonmy">La Maison My</Link>
           </li>
