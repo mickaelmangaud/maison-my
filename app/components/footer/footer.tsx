@@ -1,3 +1,4 @@
+import { Link } from '@remix-run/react';
 import styles from './footer.module.scss';
 import { FaInstagram, FaFacebook } from 'react-icons/fa6';
 
@@ -25,10 +26,18 @@ export function Footer() {
       <div className={styles.pages}>
         <ul>
           <h1>Navigation</h1>
-          <li>La Maison My</li>
-          <li>Le menu</li>
-          <li>Un peu d'histoire</li>
-          <li>Nous contacter</li>
+          <li>
+            <Link to="/maisonmy">La Maison My</Link>
+          </li>
+          <li>
+            <Link to="/menu">Le menu</Link>
+          </li>
+          <li>
+            <Link to="/histoire">Un peu d'histoire</Link>
+          </li>
+          <li>
+            <Link to="/contact">Nous contacter</Link>
+          </li>
         </ul>
       </div>
     </footer>

@@ -1,8 +1,15 @@
 import { Link } from '@remix-run/react';
 import styles from './navigation.module.scss';
-import { FaAlignJustify } from 'react-icons/fa6';
+import { FaBars, FaX } from 'react-icons/fa6';
+import { useState } from 'react';
 
 export function Navigation() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <nav className={styles.nav}>
       {/* Left Links */}
@@ -29,8 +36,25 @@ export function Navigation() {
           <Link to="/contact">Nous contacter</Link>
         </li>
       </ul>
-      <div className={styles.burger}>
-        <FaAlignJustify size={42} />
+      <div className={styles.burger} onClick={toggleMenu}>
+        <FaBars size={42} />
+      </div>
+      <div className={`${styles.mobileMenu} ${isMenuOpen ? styles.open : ''}`}>
+        <FaX size={42} onClick={toggleMenu} />
+        <ul>
+          <li onClick={toggleMenu}>
+            <Link to="/maisonmy">La Maison My</Link>
+          </li>
+          <li onClick={toggleMenu}>
+            <Link to="/menu">Le menu</Link>
+          </li>
+          <li onClick={toggleMenu}>
+            <Link to="/histoire">L'histoire</Link>
+          </li>
+          <li onClick={toggleMenu}>
+            <Link to="/contact">Nous contacter</Link>
+          </li>
+        </ul>
       </div>
     </nav>
   );
