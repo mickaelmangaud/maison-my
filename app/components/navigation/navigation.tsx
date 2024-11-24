@@ -1,6 +1,6 @@
 import { Link } from '@remix-run/react';
-
 import styles from './navigation.module.scss';
+import { FaAlignJustify } from 'react-icons/fa6';
 
 export function Navigation() {
   return (
@@ -29,6 +29,9 @@ export function Navigation() {
           <Link to="/contact">Nous contacter</Link>
         </li>
       </ul>
+      <div className={styles.burger}>
+        <FaAlignJustify size={42} />
+      </div>
     </nav>
   );
 }

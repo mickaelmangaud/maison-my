@@ -1,16 +1,31 @@
+@use '../../styles/mixins.scss' as *;
+
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 12px;
-  width: 100%;
-  /* background-color: var(--bg-color); */
-  /* border-bottom: 1px solid var(--fg-color); */
+  // width: 100%;
+
+  @include maxWidth(780px) {
+    align-items: flex-start;
+    margin: 24px;
+  }
 
   .logo {
+    cursor: pointer;
     margin: 0 32px;
+
     img {
       height: 76px;
+    }
+
+    @include maxWidth(780px) {
+      margin: 0;
+
+      img {
+        height: 64px;
+      }
     }
   }
 
@@ -39,5 +54,20 @@
     display: flex;
     flex: 1;
     justify-content: end;
+  }
+
+  @include maxWidth(780px) {
+    .links,
+    .linksLeft {
+      display: none;
+    }
+  }
+
+  .burger {
+    cursor: pointer;
+
+    @include minWidth(780px) {
+      display: none;
+    }
   }
 }

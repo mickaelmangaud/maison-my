@@ -3,3 +3,9 @@
     @content;
   }
 }
+
+@mixin maxWidth($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}

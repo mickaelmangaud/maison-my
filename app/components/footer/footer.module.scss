@@ -5,6 +5,13 @@
   /* justify-content: space-between; */
   gap: 38px;
 
+  .address {
+    .insta {
+      display: flex;
+      gap: 4px;
+    }
+  }
+
   .pages {
     ul {
       list-style: none;
