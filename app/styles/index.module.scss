@@ -51,6 +51,8 @@
 
         @include maxWidth(780px) {
           transform: translateY(16vh);
+          font-size: 36px;
+          margin: 0 24px;
         }
       }
     }
