@@ -23,7 +23,7 @@ export function Footer() {
           </a>
         </div>
       </div>
-      <div className={styles.pages}>
+      <div className={styles.navigation}>
         <ul>
           <h1>Navigation</h1>
           <li>

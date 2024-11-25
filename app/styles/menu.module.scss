@@ -1,0 +1,9 @@
+@use './mixins.scss' as *;
+
+.menu {
+  @include pageStyles;
+
+  .content {
+    @include contentStyles;
+  }
+}

@@ -37,10 +37,10 @@ export function Navigation() {
         </li>
       </ul>
       <div className={styles.burger} onClick={toggleMenu}>
-        <FaBars size={42} />
+        <FaBars size={32} />
       </div>
       <div className={`${styles.mobileMenu} ${isMenuOpen ? styles.open : ''}`}>
-        <FaX size={42} onClick={toggleMenu} className={styles.close} />
+        <FaX size={32} onClick={toggleMenu} className={styles.close} />
         <ul>
           <li onClick={toggleMenu}>
             <Link to="/">Home</Link>

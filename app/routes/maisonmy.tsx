@@ -1,3 +1,11 @@
+import styles from '../styles/maisonmy.module.scss';
+
 export default function MaisonMy() {
-  return <h1>La Maison MY</h1>;
+  return (
+    <div className={styles.maisonmy}>
+      <div className={styles.content}>
+        <h1>La Maison My</h1>
+      </div>
+    </div>
+  );
 }

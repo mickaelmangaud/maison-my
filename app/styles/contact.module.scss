@@ -1,0 +1,27 @@
+@use './mixins.scss' as *;
+
+.contact {
+  @include pageStyles;
+
+  .content {
+    @include contentStyles;
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+
+      input,
+      textarea {
+        width: 100%;
+      }
+
+      button {
+        @include buttonStyles;
+      }
+    }
+  }
+}

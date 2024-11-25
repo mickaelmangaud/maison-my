@@ -1,0 +1,9 @@
+@use './mixins.scss' as *;
+
+.maisonmy {
+  @include pageStyles;
+
+  .content {
+    @include contentStyles;
+  }
+}
