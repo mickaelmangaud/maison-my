@@ -22,7 +22,7 @@ export function SocialLink({ network }: SocialLinkProps) {
 
   return (
     <div className={styles.socialLink}>
-      <SocialIcon network={network} className={styles.icon} url={url} />
+      <SocialIcon network={network} className={styles.icon} url={url} target="_blank" />
     </div>
   );
 }
