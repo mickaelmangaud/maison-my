@@ -12,8 +12,10 @@ export default function Contact() {
         </p>
         <p>Niah niah niah un peu de texte pour faire genre etc ....</p>
         <Form action="send-email" method="post" className={styles.form}>
-          <input type="email" name="email" id="email" />
-          <textarea name="message" id="message"></textarea>
+          <label htmlFor="email">Email</label>
+          <input type="email" name="email" id="email" placeholder="Votre email" />
+          <label htmlFor="message">Message</label>
+          <textarea name="message" id="message" placeholder="Votre message"></textarea>
           <button type="submit">Envoyer</button>
         </Form>
       </div>
