@@ -1,0 +1,25 @@
+@use '../../../styles/mixins.scss' as *;
+
+.socialLink {
+  right: 12px;
+  height: 54px;
+  width: 54px;
+  display: grid;
+  place-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+
+  @include maxWidth(780px) {
+    height: 42px;
+    width: 42px;
+  }
+
+  .icon {
+    font-size: 54px;
+
+    @include maxWidth(780px) {
+      height: 42px;
+      width: 42px;
+    }
+  }
+}

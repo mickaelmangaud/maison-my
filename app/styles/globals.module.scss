@@ -24,6 +24,7 @@
   min-height: 100dvh;
   max-width: 100dvw;
   background-color: var(--bg-color);
+  position: relative;
 
   & .outletWrapper {
     display: flex;

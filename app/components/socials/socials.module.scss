@@ -1,0 +1,18 @@
+@use '../../styles/mixins.scss' as *;
+
+.socials {
+  position: fixed;
+  top: 50dvh;
+  transform: translateY(-50%);
+  right: 12px;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  @include maxWidth(780px) {
+    gap: 24px;
+    right: 24px;
+    top: 75dvh;
+  }
+}

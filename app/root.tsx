@@ -1,11 +1,12 @@
-import { LinksFunction, LoaderFunctionArgs } from '@remix-run/node';
 import { json, Links, Meta, Outlet, Scripts, useLoaderData, useMatches } from '@remix-run/react';
+import { LoaderFunctionArgs } from '@remix-run/node';
 import { useTranslation } from 'react-i18next';
 import { useChangeLanguage } from 'remix-i18next/react';
 import i18next from '~/lib/i18next.server';
 import { Navigation } from './components/navigation';
 import { Footer } from './components/footer';
 import styles from './styles/globals.module.scss';
+import { Socials } from './components/socials';
 
 export const handle = { i18n: 'common' };
 
@@ -42,6 +43,7 @@ export default function App() {
         <div className={styles.outletWrapper}>
           <Outlet />
         </div>
+        <Socials />
         <Footer />
         <Scripts />
       </body>

@@ -328,6 +328,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.24.8":
+  version: 7.26.0
+  resolution: "@babel/runtime@npm:7.26.0"
+  dependencies:
+    regenerator-runtime: "npm:^0.14.0"
+  checksum: 10c0/12c01357e0345f89f4f7e8c0e81921f2a3e3e101f06e8eaa18a382b517376520cd2fa8c237726eb094dab25532855df28a7baaf1c26342b52782f6936b07c287
+  languageName: node
+  linkType: hard
+
 "@babel/template@npm:^7.25.0":
   version: 7.25.0
   resolution: "@babel/template@npm:7.25.0"
@@ -6206,6 +6215,7 @@ __metadata:
     react-dom: "npm:^18.3.1"
     react-i18next: "npm:^15.0.2"
     react-icons: "npm:^5.3.0"
+    react-social-icons: "npm:^6.18.0"
     remix-development-tools: "npm:^4.6.0"
     remix-i18next: "npm:^6.4.1"
     sass-embedded: "npm:^1.81.0"
@@ -7991,6 +8001,20 @@ __metadata:
   peerDependencies:
     react: ">=16.8"
   checksum: 10c0/0d15a39b419c99fb5ccad76388bfc4ee2b01323b3b1b694595a9f9ea28e1fbeea25486b5398f5d3d93922f5c6a9aa751b6bb27419488d85279f6ca5ff9e0a6bb
+  languageName: node
+  linkType: hard
+
+"react-social-icons@npm:^6.18.0":
+  version: 6.18.0
+  resolution: "react-social-icons@npm:6.18.0"
+  dependencies:
+    "@babel/runtime": "npm:^7.24.8"
+    react: "npm:^18.3.1"
+    react-dom: "npm:^18.3.1"
+  peerDependencies:
+    react: 15.x.x || 16.x.x || 17.x.x || 18.x.x
+    react-dom: 15.x.x || 16.x.x || 17.x.x || 18.x.x
+  checksum: 10c0/4413c937d180911df9686f5d71f4eed0dca2af2d007bee7e3d611376534a5a1bce338a976a2c9ffd63cdefd851e5c1dda5c484e4b646574fb60bf9d11ff29494
   languageName: node
   linkType: hard
 
