@@ -1,6 +1,6 @@
 import { Link } from '@remix-run/react';
 import styles from './footer.module.scss';
-import { FaInstagram, FaFacebook } from 'react-icons/fa6';
+import { SocialIcon } from 'react-social-icons';
 
 export function Footer() {
   return (
@@ -10,14 +10,18 @@ export function Footer() {
         <p>68 Rue du Chemin Vert,</p>
         <p> 75011 Paris</p>
         <p>06 52 58 27 45</p>
-        <div className={styles.insta}>
-          <FaInstagram size={22} />
+        <div className={styles.network}>
+          <div className={styles.icon}>
+            <SocialIcon network="instagram" />
+          </div>
           <a href="https://www.instagram.com/maisonmy_banhmi/" target="_blank">
             Instagram
           </a>
         </div>
-        <div className={styles.insta}>
-          <FaFacebook size={22} />
+        <div className={styles.network}>
+          <div className={styles.icon}>
+            <SocialIcon network="facebook" />
+          </div>
           <a href="https://www.facebook.com/maisonmybanhmi/" target="_blank">
             Facebook
           </a>
