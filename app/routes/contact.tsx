@@ -44,7 +44,7 @@ export default function Contact() {
         </p>
         <p>Niah niah niah un peu de texte pour faire genre etc ....</p>
         {isSendingMessage ? (
-          <p>Envoi en cours</p>
+          <p>Loading ...</p>
         ) : (
           <fetcher.Form method="post" className={styles.form}>
             <label htmlFor="email">Email</label>
