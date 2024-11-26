@@ -44,6 +44,8 @@ export function Footer() {
           </li>
         </ul>
       </div>
+      <div className={styles.hours}>Hours</div>
+      <div className={styles.access}>Access</div>
     </footer>
   );
 }
