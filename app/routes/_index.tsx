@@ -17,16 +17,19 @@ export default function Component() {
   return (
     <div className={styles.index}>
       <div className={styles.hero}>
-        <video preload="none" loop muted autoPlay playsInline className={styles.video}>
+        <video loop muted autoPlay playsInline className={styles.video}>
           <source src="video.mp4" type="video/mp4" />
         </video>
+        <Navigation />
         <div className={styles.header}>
-          <Navigation />
           <h1 className={styles.welcome}>Maison My, la référence du Banh mi à Paris</h1>
-        </div>
-        <div className={styles.faim} onClick={scrollDown}>
-          <button className={styles.btn}>J'ai faim !</button>
-          <FaAngleDown className={styles.angleDown} />
+          <div className={styles.subscribe}>
+            <input type="text" className={styles.input} placeholder="addresse email..." />
+            <div className={styles.faim} onClick={scrollDown}>
+              <button className={styles.btn}>Je reste informé</button>
+              {/* <FaAngleDown className={styles.angleDown} /> */}
+            </div>
+          </div>
         </div>
       </div>
       <div className={styles.message}>

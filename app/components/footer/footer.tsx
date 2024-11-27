@@ -44,8 +44,23 @@ export function Footer() {
           </li>
         </ul>
       </div>
-      <div className={styles.hours}>Hours</div>
-      <div className={styles.access}>Access</div>
+      <div className={styles.hours}>
+        <ul>
+          <h1>Heures d'ouverture</h1>
+          <li>Lundi</li>
+          <li>Mardi</li>
+          <li>Mercredi</li>
+          <li>Jeudi</li>
+          <li>Vendredi</li>
+        </ul>
+      </div>
+      <div className={styles.access}>
+        <ul>
+          <h1>Access</h1>
+          <li>Metro: niah niah niah</li>
+          <li>Bus: niah niah niah</li>
+        </ul>
+      </div>
     </footer>
   );
 }

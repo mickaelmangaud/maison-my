@@ -40,42 +40,61 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
+      gap: 68px;
       width: 100%;
+      height: calc(100dvh - var(--nav-height));
 
       .welcome {
         text-align: center;
         font-size: 48px;
         max-width: 660px;
-        transform: translateY(23vh);
+        color: var(--link-color);
 
         @include maxWidth(780px) {
-          transform: translateY(16vh);
           font-size: 36px;
           margin: 0 24px;
         }
       }
-    }
 
-    .faim {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      cursor: pointer;
-      position: absolute;
-      bottom: 24px;
+      .subscribe {
+        width: 100%;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
 
-      // @include maxWidth(780px) {
-      //   margin-bottom: 48px;
-      // }
+        .input {
+          @include inputStyles;
+          max-width: 440px;
+          margin: 0 auto;
+          height: 42px;
+          line-height: 42px;
+          padding: 24px 24px 12px 24px;
+          margin-bottom: 24px;
 
-      .btn {
-        @include buttonStyles;
-      }
+          @include maxWidth(780px) {
+            width: 75%;
+          }
+        }
 
-      .angleDown {
-        margin-top: 12px;
-        font-size: 48px;
-        cursor: pointer;
+        .faim {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          cursor: pointer;
+          margin-bottom: 24 px;
+
+          .btn {
+            @include buttonStyles;
+          }
+
+          .angleDown {
+            margin-top: 12px;
+            font-size: 48px;
+            cursor: pointer;
+            color: var(--link-color);
+          }
+        }
       }
     }
   }

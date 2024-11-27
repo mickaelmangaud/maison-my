@@ -6,8 +6,18 @@
   justify-content: space-between;
   gap: 38px;
 
-  .address {
+  .address,
+  .navigation,
+  .hours,
+  .access {
     white-space: nowrap;
+
+    h1 {
+      white-space: nowrap;
+    }
+    ul {
+      list-style: none;
+    }
 
     .network {
       display: flex;
@@ -21,16 +31,6 @@
       a {
         text-decoration: none;
       }
-    }
-  }
-
-  .navigation {
-    h1 {
-      white-space: nowrap;
-    }
-
-    ul {
-      list-style: none;
     }
   }
 }

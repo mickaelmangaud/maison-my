@@ -20,16 +20,7 @@
 
       input,
       textarea {
-        width: 100%;
-        margin-bottom: 12px;
-        border: 2px solid var(--fg-color);
-        font-size: 1rem;
-      }
-
-      input {
-        height: 54px;
-        line-height: 54px;
-        padding: 0 24px;
+        @include inputStyles;
       }
 
       textarea {

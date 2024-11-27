@@ -1,8 +1,8 @@
-import { json, useFetcher } from '@remix-run/react';
-import styles from '../styles/contact.module.scss';
+import { json, Link, useFetcher } from '@remix-run/react';
 import { ActionFunctionArgs, TypedResponse } from '@remix-run/node';
 import { CreateEmailResponseSuccess, ErrorResponse, Resend } from 'resend';
 import ContactEmail from '~/emails/contact-email';
+import styles from '../styles/contact.module.scss';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -37,6 +37,30 @@ export default function Contact() {
   const isSendingMessage = fetcher.state !== 'idle';
   const isEmailSent = fetcher.data?.code === 200;
 
+  if (isSendingMessage) {
+    return (
+      <div className={styles.contact}>
+        <div className={styles.content}>
+          <p>Envoi en cours...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (isEmailSent) {
+    return (
+      <div className={styles.contact}>
+        <div className={styles.content}>
+          <p>Message envoyé !</p>
+          <p>Je reviendrai vers vous rapidement !</p>
+          <Link to="/">
+            <button>Retourner sur la page d'accueil</button>
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className={styles.contact}>
       <div className={styles.content}>
@@ -45,8 +69,6 @@ export default function Contact() {
           la boitet en cliquand.
         </p>
         <p>Niah niah niah un peu de texte pour faire genre etc ....</p>
-        {isSendingMessage && <p>Envoi en cours...</p>}
-        {isEmailSent && <p>Message envoyé !</p>}
         {!isEmailSent && !isSendingMessage && (
           <fetcher.Form method="post" className={styles.form}>
             <label htmlFor="email">Email</label>
