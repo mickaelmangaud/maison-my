@@ -17,7 +17,7 @@ export default function Component() {
   return (
     <div className={styles.index}>
       <div className={styles.hero}>
-        <video loop muted autoPlay playsInline className={styles.video}>
+        <video preload="none" loop muted autoPlay playsInline className={styles.video}>
           <source src="video.mp4" type="video/mp4" />
         </video>
         <div className={styles.header}>
