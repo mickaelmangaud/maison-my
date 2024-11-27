@@ -25,11 +25,11 @@ export default function Component() {
           <h1 className={styles.welcome}>Maison My, la référence du Banh mi à Paris</h1>
           <div className={styles.subscribe}>
             <input type="text" className={styles.input} placeholder="addresse email..." />
-            <div className={styles.faim} onClick={scrollDown}>
+            <div className={styles.faim}>
               <button className={styles.btn}>Je reste informé</button>
-              {/* <FaAngleDown className={styles.angleDown} /> */}
             </div>
           </div>
+          <FaAngleDown className={styles.angleDown} onClick={scrollDown} />
         </div>
       </div>
       <div className={styles.message}>
