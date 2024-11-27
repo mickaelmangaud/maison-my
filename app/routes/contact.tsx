@@ -64,6 +64,7 @@ export default function Contact() {
   return (
     <div className={styles.contact}>
       <div className={styles.content}>
+        <h1>Nous contacter</h1>
         <p>
           Que vous soyez, professionnel, particulier, la Maison My pour faire ceci ou celà en mettant votre message dans
           la boitet en cliquand.

@@ -23,6 +23,10 @@
         @include inputStyles;
       }
 
+      input {
+        padding: 24px 24px 12px 24px;
+      }
+
       textarea {
         height: 200px;
         margin-bottom: 24px;

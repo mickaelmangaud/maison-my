@@ -20,8 +20,6 @@ export async function action({ request }: ActionFunctionArgs): Promise<TypedResp
 
   const { data, error } = await resend.contacts.create({
     email,
-    // firstName: 'Steve',
-    // lastName: 'Wozniak',
     unsubscribed: false,
     audienceId: '5a3269f8-aa7c-4335-bcdd-871b68df96a5',
   });
@@ -35,7 +33,7 @@ export async function action({ request }: ActionFunctionArgs): Promise<TypedResp
 
 export default function Component() {
   const { t } = useTranslation();
-  const fectcher = useFetcher();
+  const fectcher = useFetcher<typeof action>();
 
   const scrollDown = () => {
     window.scroll({
@@ -54,11 +52,9 @@ export default function Component() {
         <Navigation />
         <div className={styles.header}>
           <h1 className={styles.welcome}>Maison My, la référence du Banh mi à Paris</h1>
-          <fectcher.Form className={styles.subscribe}>
+          <fectcher.Form method="post" className={styles.subscribe}>
             <input type="text" name="email" className={styles.input} placeholder="addresse email..." />
-            {/* <div className={styles.faim}> */}
             <button className={styles.btn}>Je reste informé</button>
-            {/* </div> */}
           </fectcher.Form>
           <FaAngleDown className={styles.angleDown} onClick={scrollDown} />
         </div>
@@ -71,7 +67,7 @@ export default function Component() {
         </p>
       </div>
       <div className={styles.mansonry}>
-        {[...Array(7)].map((x, i) => (
+        {[...Array(7)].map((_, i) => (
           <div className={styles.item} key={i}>
             <img src={`/images/food/${i + 1}.webp`} />
           </div>
