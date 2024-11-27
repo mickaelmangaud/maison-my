@@ -1,7 +1,8 @@
-import { Form, json, useActionData, useFetcher } from '@remix-run/react';
+import { json, useFetcher } from '@remix-run/react';
 import styles from '../styles/contact.module.scss';
 import { ActionFunctionArgs, TypedResponse } from '@remix-run/node';
 import { CreateEmailResponseSuccess, ErrorResponse, Resend } from 'resend';
+import ContactEmail from '~/emails/contact-email';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -13,14 +14,15 @@ interface ContactActionData {
 
 export async function action({ request }: ActionFunctionArgs): Promise<TypedResponse<ContactActionData>> {
   const formData = await request.formData();
-  const email = formData.get('email');
-  const message = formData.get('message');
+  const email = formData.get('email') as string;
+  const message = formData.get('message') as string;
 
   const { data, error } = await resend.emails.send({
     from: 'onboarding@resend.dev',
     to: 'mickael.mangaud@gmail.com',
     subject: `Nouveau message d'un utilisateur`,
     html: `${message}`,
+    react: <ContactEmail email={email} message={message} />,
   });
 
   if (error) {
@@ -33,7 +35,7 @@ export async function action({ request }: ActionFunctionArgs): Promise<TypedResp
 export default function Contact() {
   const fetcher = useFetcher<typeof action>();
   const isSendingMessage = fetcher.state !== 'idle';
-  const data = fetcher.data;
+  const isEmailSent = fetcher.data?.code === 200;
 
   return (
     <div className={styles.contact}>
@@ -43,9 +45,9 @@ export default function Contact() {
           la boitet en cliquand.
         </p>
         <p>Niah niah niah un peu de texte pour faire genre etc ....</p>
-        {isSendingMessage ? (
-          <p>Loading ...</p>
-        ) : (
+        {isSendingMessage && <p>Envoi en cours...</p>}
+        {isEmailSent && <p>Message envoyé !</p>}
+        {!isEmailSent && !isSendingMessage && (
           <fetcher.Form method="post" className={styles.form}>
             <label htmlFor="email">Email</label>
             <input type="email" name="email" id="email" placeholder="Votre email" />
