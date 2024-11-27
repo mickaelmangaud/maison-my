@@ -40,7 +40,6 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      // justify-content: center;
       gap: 18px;
       width: 100%;
       height: calc(100dvh - var(--nav-height));
@@ -74,20 +73,14 @@
           margin-bottom: 24px;
 
           @include maxWidth(780px) {
-            width: 75%;
+            width: 90%;
           }
         }
 
-        .faim {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          cursor: pointer;
-          margin-bottom: 24 px;
-
-          .btn {
-            @include buttonStyles;
-          }
+        .btn {
+          @include buttonStyles;
+          width: 220px;
+          margin: 0 auto;
         }
       }
 
