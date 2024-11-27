@@ -34,6 +34,8 @@ export async function action({ request }: ActionFunctionArgs): Promise<TypedResp
 export default function Component() {
   const { t } = useTranslation();
   const fectcher = useFetcher<typeof action>();
+  const isSendingMessage = fectcher.state !== 'idle';
+  const hasSuscribed = fectcher.data?.code === 200;
 
   const scrollDown = () => {
     window.scroll({
@@ -52,10 +54,14 @@ export default function Component() {
         <Navigation />
         <div className={styles.header}>
           <h1 className={styles.welcome}>Maison My, la référence du Banh mi à Paris</h1>
-          <fectcher.Form method="post" className={styles.subscribe}>
-            <input type="text" name="email" className={styles.input} placeholder="addresse email..." />
-            <button className={styles.btn}>Je reste informé</button>
-          </fectcher.Form>
+          {isSendingMessage && <p>Souscription en cours</p>}
+          {hasSuscribed && <p>Souscription effectuée !</p>}
+          {!isSendingMessage && !hasSuscribed && (
+            <fectcher.Form method="post" className={styles.subscribe}>
+              <input type="text" name="email" className={styles.input} placeholder="addresse email..." />
+              <button className={styles.btn}>PAR ICI LES REDUCS !</button>
+            </fectcher.Form>
+          )}
           <FaAngleDown className={styles.angleDown} onClick={scrollDown} />
         </div>
       </div>
