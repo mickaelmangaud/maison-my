@@ -48,19 +48,19 @@ export function Footer() {
         <ul>
           <h1>Heures d'ouverture</h1>
           <li>
-            Lundi <span>.......................................</span> <span>9h - 16h</span>
+            Lundi <span>......................................</span> <span>12h - 16h</span>
           </li>
           <li>
-            Mardi <span>........................................</span> <span>9h - 16h</span>
+            Mardi <span>.......................................</span> <span>12h - 16h</span>
           </li>
           <li>
-            Mercredi <span>...................................</span> <span>9h - 16h</span>
+            Mercredi <span>..................................</span> <span>12h - 16h</span>
           </li>
           <li>
-            Jeudi <span>.........................................</span> <span>9h - 16h</span>
+            Jeudi <span>........................................</span> <span>12h - 16h</span>
           </li>
           <li>
-            Vendredi <span>...................................</span> <span>9h - 16h</span>
+            Vendredi <span>..................................</span> <span>12h - 16h</span>
           </li>
         </ul>
       </div>
