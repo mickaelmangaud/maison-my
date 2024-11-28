@@ -41,7 +41,7 @@ export default function Contact() {
     return (
       <div className={styles.contact}>
         <div className={styles.content}>
-          <p>Envoi en cours...</p>
+          <p>Envoi du message en cours...</p>
         </div>
       </div>
     );
@@ -52,9 +52,9 @@ export default function Contact() {
       <div className={styles.contact}>
         <div className={styles.content}>
           <p>Message envoyé !</p>
-          <p>Je reviendrai vers vous rapidement !</p>
+          <p>Nous reviendrons vers vous rapidement !</p>
           <Link to="/">
-            <button>Retourner sur la page d'accueil</button>
+            <button className={styles.back}>Retour à l'accueil</button>
           </Link>
         </div>
       </div>

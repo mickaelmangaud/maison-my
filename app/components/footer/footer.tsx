@@ -34,7 +34,7 @@ export function Footer() {
             <Link to="/maisonmy">La Maison My</Link>
           </li>
           <li>
-            <Link to="/menu">Le menu</Link>
+            <Link to="/carte">La carte</Link>
           </li>
           <li>
             <Link to="/histoire">Un peu d'histoire</Link>
@@ -47,16 +47,26 @@ export function Footer() {
       <div className={styles.hours}>
         <ul>
           <h1>Heures d'ouverture</h1>
-          <li>Lundi</li>
-          <li>Mardi</li>
-          <li>Mercredi</li>
-          <li>Jeudi</li>
-          <li>Vendredi</li>
+          <li>
+            Lundi <span>.......................................</span> <span>9h - 16h</span>
+          </li>
+          <li>
+            Mardi <span>........................................</span> <span>9h - 16h</span>
+          </li>
+          <li>
+            Mercredi <span>...................................</span> <span>9h - 16h</span>
+          </li>
+          <li>
+            Jeudi <span>.........................................</span> <span>9h - 16h</span>
+          </li>
+          <li>
+            Vendredi <span>...................................</span> <span>9h - 16h</span>
+          </li>
         </ul>
       </div>
       <div className={styles.access}>
         <ul>
-          <h1>Access</h1>
+          <h1>Nous trouver</h1>
           <li>Metro: niah niah niah</li>
           <li>Bus: niah niah niah</li>
         </ul>

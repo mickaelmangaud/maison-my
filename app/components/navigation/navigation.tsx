@@ -18,7 +18,7 @@ export function Navigation() {
           <Link to="/maisonmy">La Maison My</Link>
         </li>
         <li className={styles.link}>
-          <Link to="/menu">Le menu</Link>
+          <Link to="/carte">La carte</Link>
         </li>
       </ul>
       {/* Logo */}
