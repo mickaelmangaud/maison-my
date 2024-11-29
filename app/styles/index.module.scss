@@ -50,10 +50,11 @@
         font-size: 48px;
         max-width: 660px;
         color: var(--link-color);
+        margin-bottom: 42px;
 
         @include maxWidth(780px) {
           font-size: 36px;
-          margin: 0 24px;
+          margin: 42px 24px;
         }
       }
 
