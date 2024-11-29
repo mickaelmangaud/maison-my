@@ -7,5 +7,4 @@ to import scss files in other scss file:
 ```
 
 **TODO :** 
-- resize et convert images to webp
-- créer une mixin sass pour la gestion des media query
+- gérer le authstatechange etc
