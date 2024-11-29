@@ -115,4 +115,12 @@
       left: 0;
     }
   }
+
+  .signin {
+    @include buttonStyles;
+    position: absolute;
+    right: 0;
+    transform: none;
+    font-size: 12px;
+  }
 }

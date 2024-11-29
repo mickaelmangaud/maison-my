@@ -1,37 +1,14 @@
 import { useTranslation } from 'react-i18next';
 import { Navigation } from '~/components/navigation';
 import { FaAngleDown } from 'react-icons/fa6';
-import { json, useFetcher } from '@remix-run/react';
-import { ActionFunctionArgs, TypedResponse } from '@remix-run/node';
-import { CreateContactResponseSuccess, ErrorResponse, Resend } from 'resend';
+import { useFetcher } from '@remix-run/react';
 import styles from '../styles/index.module.scss';
+import { IndexAction, indexLoder } from '~/actions';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+export const loader = indexLoder;
+export const action = IndexAction;
 
-interface ContactActionData {
-  error?: ErrorResponse;
-  data?: CreateContactResponseSuccess | null;
-  code: number;
-}
-
-export async function action({ request }: ActionFunctionArgs): Promise<TypedResponse<ContactActionData>> {
-  const formData = await request.formData();
-  const email = formData.get('email') as string;
-
-  const { data, error } = await resend.contacts.create({
-    email,
-    unsubscribed: false,
-    audienceId: '5a3269f8-aa7c-4335-bcdd-871b68df96a5',
-  });
-
-  if (error) {
-    return json({ error, code: 500 });
-  }
-
-  return json({ data, code: 200 });
-}
-
-export default function Component() {
+export default function Home() {
   const { t } = useTranslation();
   const fectcher = useFetcher<typeof action>();
   const isSendingMessage = fectcher.state !== 'idle';
@@ -68,8 +45,8 @@ export default function Component() {
       <div className={styles.message}>
         <h1>Banh mi, Bobuns, Riz, nouilles... Venez déguster nos petits plats savoureux !</h1>
         <p>
-          Chaque bouchée de notre Banh mi, avec son pain croustillant, son porc mariné, ses légumes croquants, et sa
-          touche de coriandre, vous transporte instantanément....
+          Chaque bouchée de notre Banh mi, avec son pain croustillant, son porc mariné, ses légumes croquants, et sa touche de
+          coriandre, vous transporte instantanément....
         </p>
       </div>
       <div className={styles.mansonry}>

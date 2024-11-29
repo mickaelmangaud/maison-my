@@ -1,4 +1,4 @@
-import { json, Links, Meta, Outlet, Scripts, useLoaderData, useMatches } from '@remix-run/react';
+import { json, Links, Meta, Outlet, Scripts, ScrollRestoration, useLoaderData, useMatches } from '@remix-run/react';
 import { LoaderFunctionArgs } from '@remix-run/node';
 import { useTranslation } from 'react-i18next';
 import { useChangeLanguage } from 'remix-i18next/react';
@@ -7,17 +7,35 @@ import { Navigation } from './components/navigation';
 import { Footer } from './components/footer';
 import styles from './styles/globals.module.scss';
 import { Socials } from './components/socials';
+import { createBrowserClient } from '@supabase/ssr';
+import { SupabaseClient, User } from '@supabase/supabase-js';
 
 export const handle = { i18n: 'common' };
 
+export interface OutletContextType {
+  supabase: SupabaseClient;
+  user: User | null;
+}
+
 export const loader = async ({ request }: LoaderFunctionArgs) => {
   const locale = await i18next.getLocale(request);
-  return json({ locale });
+
+  const supabaseEnv = {
+    SUPABASE_URL: process.env.SUPABASE_URL,
+    SUPABASE_ANON_KEY: process.env.SUPABASE_ANON_KEY,
+  };
+
+  return json({ locale, supabaseEnv });
 };
 
 export default function App() {
-  const { locale } = useLoaderData<typeof loader>();
+  const { locale, supabaseEnv } = useLoaderData<typeof loader>();
   const { i18n } = useTranslation();
+
+  const supabase = createBrowserClient(supabaseEnv.SUPABASE_URL!, supabaseEnv.SUPABASE_ANON_KEY!, {
+    isSingleton: true,
+  });
+
   useChangeLanguage(locale);
 
   const matches = useMatches();
@@ -41,11 +59,12 @@ export default function App() {
         {/* TODO: improve this */}
         {isNotHomePage && <Navigation />}
         <div className={styles.outletWrapper}>
-          <Outlet />
+          <Outlet context={{ supabase }} />
         </div>
         <Socials />
         <Footer />
         <Scripts />
+        <ScrollRestoration />
       </body>
     </html>
   );

@@ -1,7 +1,9 @@
-import { Link } from '@remix-run/react';
+import { Link, Links, useOutletContext } from '@remix-run/react';
 import styles from './navigation.module.scss';
 import { FaBars, FaX } from 'react-icons/fa6';
 import { useState } from 'react';
+import { OutletContextType } from '~/root';
+import { User } from '@supabase/supabase-js';
 
 export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -59,6 +61,14 @@ export function Navigation() {
           </li>
         </ul>
       </div>
+
+      {/* {!!user ? (
+        <p>Deconnexion</p>
+      ) : (
+        <Link to="/signin">
+          <button className={styles.signin}>Mon compte My</button>
+        </Link>
+      )} */}
     </nav>
   );
 }
