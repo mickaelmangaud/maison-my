@@ -69,6 +69,7 @@ export function Footer() {
           <h1>Nous trouver</h1>
           <li>Metro: niah niah niah</li>
           <li>Bus: niah niah niah</li>
+          <li>Google Maps: le lien</li>
         </ul>
       </div>
     </footer>
