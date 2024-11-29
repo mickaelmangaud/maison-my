@@ -2,9 +2,13 @@ import { Link, Links, useOutletContext } from '@remix-run/react';
 import styles from './navigation.module.scss';
 import { FaBars, FaX } from 'react-icons/fa6';
 import { useState } from 'react';
+import { OutletContextType } from '~/root';
 
 export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { user } = useOutletContext<OutletContextType>();
+
+  console.log('User in Nav', user);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -60,13 +64,13 @@ export function Navigation() {
         </ul>
       </div>
 
-      {/* {!!user ? (
+      {!!user ? (
         <p>Deconnexion</p>
       ) : (
         <Link to="/signin">
           <button className={styles.signin}>Mon compte My</button>
         </Link>
-      )} */}
+      )}
     </nav>
   );
 }

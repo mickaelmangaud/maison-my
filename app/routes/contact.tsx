@@ -3,6 +3,7 @@ import { ActionFunctionArgs, TypedResponse } from '@remix-run/node';
 import { CreateEmailResponseSuccess, ErrorResponse, Resend } from 'resend';
 import ContactEmail from '~/emails/contact-email';
 import styles from '../styles/contact.module.scss';
+import { Layout } from '~/layout';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -39,47 +40,53 @@ export default function Contact() {
 
   if (isSendingMessage) {
     return (
-      <div className={styles.contact}>
-        <div className={styles.content}>
-          <p>Envoi du message en cours...</p>
+      <Layout>
+        <div className={styles.contact}>
+          <div className={styles.content}>
+            <p>Envoi du message en cours...</p>
+          </div>
         </div>
-      </div>
+      </Layout>
     );
   }
 
   if (isEmailSent) {
     return (
-      <div className={styles.contact}>
-        <div className={styles.content}>
-          <p>Message envoyé !</p>
-          <p>Nous reviendrons vers vous rapidement !</p>
-          <Link to="/">
-            <button className={styles.back}>Retour à l'accueil</button>
-          </Link>
+      <Layout>
+        <div className={styles.contact}>
+          <div className={styles.content}>
+            <p>Message envoyé !</p>
+            <p>Nous reviendrons vers vous rapidement !</p>
+            <Link to="/">
+              <button className={styles.back}>Retour à l'accueil</button>
+            </Link>
+          </div>
         </div>
-      </div>
+      </Layout>
     );
   }
 
   return (
-    <div className={styles.contact}>
-      <div className={styles.content}>
-        <h1>Nous contacter</h1>
-        <p>
-          Que vous soyez, professionnel, particulier, la Maison My pour faire ceci ou celà en mettant votre message dans
-          la boitet en cliquand.
-        </p>
-        <p>Niah niah niah un peu de texte pour faire genre etc ....</p>
-        {!isEmailSent && !isSendingMessage && (
-          <fetcher.Form method="post" className={styles.form}>
-            <label htmlFor="email">Email</label>
-            <input type="email" name="email" id="email" placeholder="Votre email" />
-            <label htmlFor="message">Message</label>
-            <textarea name="message" id="message" placeholder="Votre message"></textarea>
-            <button type="submit">Envoyer</button>
-          </fetcher.Form>
-        )}
+    <Layout>
+      <div className={styles.contact}>
+        <div className={styles.content}>
+          <h1>Nous contacter</h1>
+          <p>
+            Que vous soyez, professionnel, particulier, la Maison My pour faire ceci ou celà en mettant votre message dans la
+            boitet en cliquand.
+          </p>
+          <p>Niah niah niah un peu de texte pour faire genre etc ....</p>
+          {!isEmailSent && !isSendingMessage && (
+            <fetcher.Form method="post" className={styles.form}>
+              <label htmlFor="email">Email</label>
+              <input type="email" name="email" id="email" placeholder="Votre email" />
+              <label htmlFor="message">Message</label>
+              <textarea name="message" id="message" placeholder="Votre message"></textarea>
+              <button type="submit">Envoyer</button>
+            </fetcher.Form>
+          )}
+        </div>
       </div>
-    </div>
+    </Layout>
   );
 }

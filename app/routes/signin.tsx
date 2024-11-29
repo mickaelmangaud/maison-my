@@ -1,5 +1,6 @@
 import { useOutletContext } from '@remix-run/react';
 import { GoogleButton } from '~/components/google-button';
+import { Layout } from '~/layout';
 import { OutletContextType } from '~/root';
 import styles from '~/styles/signin.module.scss';
 
@@ -20,13 +21,15 @@ export default function SignIn() {
   };
 
   return (
-    <div className={styles.signin}>
-      <div className={styles.content}>
-        <GoogleButton onCLick={handleGoogleSignin} />
-        <button type="submit" onClick={handleSignOut}>
-          Sign out
-        </button>
+    <Layout>
+      <div className={styles.signin}>
+        <div className={styles.content}>
+          <GoogleButton onCLick={handleGoogleSignin} />
+          <button type="submit" onClick={handleSignOut}>
+            Sign out
+          </button>
+        </div>
       </div>
-    </div>
+    </Layout>
   );
 }

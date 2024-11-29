@@ -1,14 +1,25 @@
-import { json, Links, Meta, Outlet, Scripts, ScrollRestoration, useLoaderData, useMatches } from '@remix-run/react';
+import {
+  json,
+  Links,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+  useLoaderData,
+  useMatches,
+  useRevalidator,
+} from '@remix-run/react';
 import { LoaderFunctionArgs } from '@remix-run/node';
 import { useTranslation } from 'react-i18next';
 import { useChangeLanguage } from 'remix-i18next/react';
-import i18next from '~/lib/i18next.server';
-import { Navigation } from './components/navigation';
 import { Footer } from './components/footer';
-import styles from './styles/globals.module.scss';
 import { Socials } from './components/socials';
 import { createBrowserClient } from '@supabase/ssr';
 import { SupabaseClient, User } from '@supabase/supabase-js';
+import i18next from '~/lib/i18next.server';
+import styles from './styles/globals.module.scss';
+import { createSupabaseServerClient } from './lib/supabase.server';
+import { useEffect } from 'react';
 
 export const handle = { i18n: 'common' };
 
@@ -20,16 +31,21 @@ export interface OutletContextType {
 export const loader = async ({ request }: LoaderFunctionArgs) => {
   const locale = await i18next.getLocale(request);
 
+  const { supabaseClient: supabase } = createSupabaseServerClient(request);
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
   const supabaseEnv = {
     SUPABASE_URL: process.env.SUPABASE_URL,
     SUPABASE_ANON_KEY: process.env.SUPABASE_ANON_KEY,
   };
 
-  return json({ locale, supabaseEnv });
+  return json({ locale, supabaseEnv, user });
 };
 
 export default function App() {
-  const { locale, supabaseEnv } = useLoaderData<typeof loader>();
+  const { locale, supabaseEnv, user } = useLoaderData<typeof loader>();
   const { i18n } = useTranslation();
 
   const supabase = createBrowserClient(supabaseEnv.SUPABASE_URL!, supabaseEnv.SUPABASE_ANON_KEY!, {
@@ -37,9 +53,13 @@ export default function App() {
   });
 
   useChangeLanguage(locale);
+  const revalidator = useRevalidator();
 
-  const matches = useMatches();
-  const isNotHomePage = matches[1].id !== 'routes/_index';
+  useEffect(() => {
+    supabase.auth.onAuthStateChange(() => {
+      revalidator.revalidate();
+    });
+  }, [supabase, revalidator]);
 
   return (
     <html lang={locale} dir={i18n.dir()}>
@@ -57,10 +77,7 @@ export default function App() {
       </head>
       <body className={styles.body}>
         {/* TODO: improve this */}
-        {isNotHomePage && <Navigation />}
-        <div className={styles.outletWrapper}>
-          <Outlet context={{ supabase }} />
-        </div>
+        <Outlet context={{ user, supabase }} />
         <Socials />
         <Footer />
         <Scripts />
