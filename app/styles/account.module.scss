@@ -5,5 +5,7 @@
 
   .content {
     @include contentStyles;
+    align-items: start;
+    width: 100%;
   }
 }

@@ -21,8 +21,8 @@ export default function Account() {
   return (
     <div className={styles.account}>
       <div className={styles.content}>
-        <h1>Account</h1>
-        <p>Bonjour {user.user_metadata.full_name}</p>
+        <h1>Bonjour {user.user_metadata.full_name}</h1>
+        <p>Bientôt ici, les avantages My</p>
       </div>
     </div>
   );

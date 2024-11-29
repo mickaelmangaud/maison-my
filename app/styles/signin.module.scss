@@ -1,0 +1,8 @@
+@use './mixins.scss' as *;
+
+.signin {
+  @include pageStyles;
+  .content {
+    @include contentStyles;
+  }
+}

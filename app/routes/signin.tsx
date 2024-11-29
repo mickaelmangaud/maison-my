@@ -1,5 +1,7 @@
 import { useOutletContext } from '@remix-run/react';
+import { GoogleButton } from '~/components/google-button';
 import { OutletContextType } from '~/root';
+import styles from '~/styles/signin.module.scss';
 
 export default function SignIn() {
   const { supabase } = useOutletContext<OutletContextType>();
@@ -18,13 +20,13 @@ export default function SignIn() {
   };
 
   return (
-    <div>
-      <button type="submit" onClick={handleGoogleSignin}>
-        Continue with google
-      </button>
-      <button type="submit" onClick={handleSignOut}>
-        Sign out
-      </button>
+    <div className={styles.signin}>
+      <div className={styles.content}>
+        <GoogleButton onCLick={handleGoogleSignin} />
+        <button type="submit" onClick={handleSignOut}>
+          Sign out
+        </button>
+      </div>
     </div>
   );
 }
