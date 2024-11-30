@@ -48,7 +48,7 @@ export function Navigation() {
         <FaX size={32} onClick={toggleMenu} className={styles.close} />
         <ul>
           <li onClick={toggleMenu}>
-            <Link to="/">Home</Link>
+            <Link to="/">Accueil</Link>
           </li>
           <li onClick={toggleMenu}>
             <Link to="/account" className={styles.account}>
