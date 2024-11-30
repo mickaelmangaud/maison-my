@@ -52,7 +52,7 @@ export function Navigation() {
             <Link to="/maisonmy">La Maison My</Link>
           </li>
           <li onClick={toggleMenu}>
-            <Link to="/menu">Le menu</Link>
+            <Link to="/carte">La carte</Link>
           </li>
           <li onClick={toggleMenu}>
             <Link to="/histoire">L'histoire</Link>
