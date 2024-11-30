@@ -10,14 +10,16 @@
 
     .avantages {
       color: var(--accent-blue);
-
-      @include maxWidth(780px) {
-        font-size: 24px;
-      }
+      font-size: 32px;
+      margin-bottom: 24px;
     }
 
-    .username {
-      color: var(--accent-blue);
+    p {
+      font-size: 20px;
+
+      .username {
+        color: var(--accent-blue);
+      }
     }
 
     .logout {
