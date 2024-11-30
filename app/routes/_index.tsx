@@ -4,19 +4,10 @@ import { json, useFetcher } from '@remix-run/react';
 import { Layout } from '~/layout';
 import { ActionFunctionArgs, LoaderFunctionArgs, TypedResponse } from '@remix-run/node';
 import { createSupabaseServerClient } from '~/lib/supabase.server';
-import { AuthError, User } from '@supabase/supabase-js';
 import { resend } from '~/lib/resend';
 import styles from '../styles/index.module.scss';
 
-interface HomeLoaderData {
-  error?: AuthError;
-  data?: {
-    user: User;
-  };
-  code: number;
-}
-
-export async function loader({ request }: ActionFunctionArgs) {
+export async function action({ request }: ActionFunctionArgs) {
   const formData = await request.formData();
   const email = formData.get('email') as string;
 
@@ -33,7 +24,7 @@ export async function loader({ request }: ActionFunctionArgs) {
   return json({ data, code: 200 });
 }
 
-export async function action({ request }: LoaderFunctionArgs): Promise<TypedResponse<HomeLoaderData>> {
+export async function loader({ request }: LoaderFunctionArgs) {
   const { supabaseClient: supabase } = createSupabaseServerClient(request);
   const { data, error } = await supabase.auth.getUser();
 
@@ -45,14 +36,12 @@ export async function action({ request }: LoaderFunctionArgs): Promise<TypedResp
 }
 
 export default function Home() {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
   const fectcher = useFetcher<typeof action>();
   const isSendingMessage = fectcher.state !== 'idle';
   const hasSuscribed = fectcher.data?.code === 200;
 
   const scrollDown = () => {
-    console.log('WINDOW', window.innerHeight);
-
     window.scroll({
       top: window.innerHeight,
       left: 0,
