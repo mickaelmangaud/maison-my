@@ -1,6 +1,6 @@
 import { Link } from '@remix-run/react';
-import styles from './footer.module.scss';
 import { SocialIcon } from 'react-social-icons';
+import styles from './footer.module.scss';
 
 export function Footer() {
   return (

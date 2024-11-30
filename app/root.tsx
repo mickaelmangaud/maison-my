@@ -78,10 +78,9 @@ export default function App() {
       <body className={styles.body}>
         {/* TODO: improve this */}
         <Outlet context={{ user, supabase }} />
-        <Socials />
-        <Footer />
-        <Scripts />
+
         <ScrollRestoration />
+        <Scripts />
       </body>
     </html>
   );

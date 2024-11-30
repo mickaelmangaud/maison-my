@@ -6,11 +6,10 @@ import { Layout } from '~/layout';
 
 export async function loader({ request }: LoaderFunctionArgs) {
   const { supabaseClient, headers } = createSupabaseServerClient(request);
-
   const { data, error } = await supabaseClient.auth.getUser();
 
   if (!data.user) {
-    return redirect('/');
+    return redirect('/signin');
   }
 
   return json(data.user, { headers });

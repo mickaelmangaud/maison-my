@@ -1,5 +1,5 @@
 import { useOutletContext } from '@remix-run/react';
-import { GoogleButton } from '~/components/google-button';
+import { GoogleButton } from '~/components/google-button/';
 import { Layout } from '~/layout';
 import { OutletContextType } from '~/root';
 import styles from '~/styles/signin.module.scss';

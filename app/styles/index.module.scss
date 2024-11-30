@@ -45,7 +45,7 @@
       gap: 18px;
       width: 100%;
       height: calc(100dvh - var(--nav-height));
-      margin-top: 10%;
+      margin-top: 20%;
 
       .welcome {
         text-align: center;
@@ -82,7 +82,6 @@
 
         .btn {
           @include buttonStyles;
-          // width: 220px;
           margin: 0 auto;
         }
       }

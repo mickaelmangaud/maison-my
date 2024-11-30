@@ -8,8 +8,6 @@ export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { user } = useOutletContext<OutletContextType>();
 
-  console.log('User in Nav', user);
-
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -43,6 +41,7 @@ export function Navigation() {
       <div className={styles.burger} onClick={toggleMenu}>
         <FaBars size={32} />
       </div>
+
       <div className={`${styles.mobileMenu} ${isMenuOpen ? styles.open : ''}`}>
         <FaX size={32} onClick={toggleMenu} className={styles.close} />
         <ul>
@@ -65,7 +64,7 @@ export function Navigation() {
       </div>
 
       {!!user ? (
-        <p>Deconnexion</p>
+        <p className={styles.logout}>Deconnexion</p>
       ) : (
         <Link to="/signin">
           <button className={styles.signin}>Mon compte My</button>
