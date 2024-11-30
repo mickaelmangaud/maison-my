@@ -41,7 +41,7 @@ export function Navigation() {
         </li>
       </ul>
       <div className={styles.burger} onClick={toggleMenu}>
-        <FaBars size={32} />
+        <FaBars size={50} className={styles.bars} color="white" />
       </div>
 
       <div className={`${styles.mobileMenu} ${isMenuOpen ? styles.open : ''}`}>
@@ -51,7 +51,9 @@ export function Navigation() {
             <Link to="/">Home</Link>
           </li>
           <li onClick={toggleMenu}>
-            <Link to="/maisonmy">La Maison My</Link>
+            <Link to="/account" className={styles.account}>
+              Compte My
+            </Link>
           </li>
           <li onClick={toggleMenu}>
             <Link to="/carte">La carte</Link>

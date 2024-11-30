@@ -48,10 +48,10 @@
 
       .welcome {
         text-align: center;
-        font-size: 48px;
         max-width: 660px;
-        color: var(--font-color);
+        color: var(--link-color);
         margin-bottom: 42px;
+        text-transform: capitalize;
 
         @include maxWidth(780px) {
           font-size: 36px;
