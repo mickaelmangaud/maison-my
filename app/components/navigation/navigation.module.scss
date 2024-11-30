@@ -58,6 +58,15 @@
     display: flex;
     flex: 1;
     justify-content: end;
+
+    li {
+      .account {
+        background-color: var(--accent-blue);
+        color: var(--bg-color);
+        padding: 9px 16px 0px;
+        border-radius: 50px;
+      }
+    }
   }
 
   @include maxWidth(780px) {

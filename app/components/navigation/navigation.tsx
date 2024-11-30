@@ -17,7 +17,9 @@ export function Navigation() {
       {/* Left Links */}
       <ul className={styles.linksLeft}>
         <li className={styles.link}>
-          <Link to="/maisonmy">La Maison My</Link>
+          <Link to="/account" className={styles.account}>
+            Compte My
+          </Link>
         </li>
         <li className={styles.link}>
           <Link to="/carte">La carte</Link>
