@@ -2,47 +2,56 @@
   background-color: var(--bg-color);
   padding: 36px 24px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 38px;
+  flex-direction: column;
 
-  .address,
-  .navigation,
-  .hours,
-  .access {
-    white-space: nowrap;
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 38px;
 
-    h1 {
+    .address,
+    .navigation,
+    .hours,
+    .access {
       white-space: nowrap;
-    }
-    ul {
-      list-style: none;
-    }
 
-    .network {
-      display: flex;
-      gap: 4px;
-
-      .icon a {
-        height: 24px !important;
-        width: 24px !important;
+      h1 {
+        white-space: nowrap;
+      }
+      ul {
+        list-style: none;
       }
 
-      a {
-        text-decoration: none;
+      .network {
+        display: flex;
+        gap: 4px;
+
+        .icon a {
+          height: 24px !important;
+          width: 24px !important;
+        }
+
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+
+    .access {
+      .transport {
+        display: flex;
+        gap: 8px;
+
+        span {
+          line-height: 36px;
+          font-size: 14px;
+        }
       }
     }
   }
 
-  .access {
-    .transport {
-      display: flex;
-      gap: 8px;
-
-      span {
-        line-height: 36px;
-        font-size: 14px;
-      }
-    }
+  .copyright {
+    font-size: 0.8rem;
   }
 }
