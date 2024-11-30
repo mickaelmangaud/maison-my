@@ -9,17 +9,7 @@
   border-radius: 5px;
   cursor: pointer;
 
-  @include maxWidth(780px) {
-    height: 42px;
-    width: 42px;
-  }
-
   .icon {
     font-size: 54px;
-
-    @include maxWidth(780px) {
-      height: 42px;
-      width: 42px;
-    }
   }
 }

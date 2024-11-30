@@ -11,8 +11,8 @@
   gap: 12px;
 
   @include maxWidth(780px) {
-    gap: 24px;
+    gap: 12px;
     right: 24px;
-    top: 75dvh;
+    top: 80dvh;
   }
 }
