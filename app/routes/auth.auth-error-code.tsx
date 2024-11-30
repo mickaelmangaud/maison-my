@@ -25,7 +25,3 @@ export function ErrorBoundary() {
     return <h1>Unknown Error</h1>;
   }
 }
-
-export default function AuthErrorCode() {
-  return <h1>AuthErrorCode</h1>;
-}
