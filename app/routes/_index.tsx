@@ -15,6 +15,8 @@ export default function Home() {
   const hasSuscribed = fectcher.data?.code === 200;
 
   const scrollDown = () => {
+    console.log('WINDOW', window.innerHeight);
+
     window.scroll({
       top: window.innerHeight,
       left: 0,

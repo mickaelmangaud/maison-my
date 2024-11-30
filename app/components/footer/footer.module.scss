@@ -1,6 +1,6 @@
 .footer {
   background-color: var(--bg-color);
-  padding: 36px;
+  padding: 36px 24px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -30,6 +30,18 @@
 
       a {
         text-decoration: none;
+      }
+    }
+  }
+
+  .access {
+    .transport {
+      display: flex;
+      gap: 8px;
+
+      span {
+        line-height: 36px;
+        font-size: 14px;
       }
     }
   }

@@ -6,6 +6,8 @@
   align-items: center;
   padding: 12px;
   width: 100%;
+  position: relative;
+  z-index: 3;
 
   @include maxWidth(780px) {
     align-items: flex-start;

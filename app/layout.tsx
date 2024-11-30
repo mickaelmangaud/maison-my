@@ -4,7 +4,7 @@ import { Socials } from './components/socials';
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="layout">
+    <div style={{ flex: '1' }}>
       <Navigation />
       {children}
       <Socials />

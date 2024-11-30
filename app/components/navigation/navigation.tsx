@@ -63,13 +63,13 @@ export function Navigation() {
         </ul>
       </div>
 
-      {!!user ? (
+      {/* {!!user ? (
         <p className={styles.logout}>Deconnexion</p>
       ) : (
         <Link to="/signin">
           <button className={styles.signin}>Mon compte My</button>
         </Link>
-      )}
+      )} */}
     </nav>
   );
 }

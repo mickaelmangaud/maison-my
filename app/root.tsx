@@ -79,7 +79,7 @@ export default function App() {
         {/* TODO: improve this */}
         <Outlet context={{ user, supabase }} />
 
-        <ScrollRestoration />
+        {/* <ScrollRestoration /> */}
         <Scripts />
       </body>
     </html>

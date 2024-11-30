@@ -31,6 +31,9 @@ export function Footer() {
         <ul>
           <h1>Navigation</h1>
           <li>
+            <Link to="/">Accueil</Link>
+          </li>
+          <li>
             <Link to="/maisonmy">La Maison My</Link>
           </li>
           <li>
@@ -48,28 +51,43 @@ export function Footer() {
         <ul>
           <h1>Heures d'ouverture</h1>
           <li>
-            Lundi <span>......................................</span> <span>12h - 16h</span>
+            Lundi <span>.....................................</span> 12h - 16h
           </li>
           <li>
-            Mardi <span>.......................................</span> <span>12h - 16h</span>
+            Mardi <span>.....................................</span> 12h - 16h
           </li>
           <li>
-            Mercredi <span>..................................</span> <span>12h - 16h</span>
+            Mercredi <span>................................</span> 12h - 16h
           </li>
           <li>
-            Jeudi <span>........................................</span> <span>12h - 16h</span>
+            Jeudi <span>......................................</span> 12h - 16h
           </li>
           <li>
-            Vendredi <span>..................................</span> <span>12h - 16h</span>
+            Vendredi <span>................................</span> 12h - 16h
           </li>
         </ul>
       </div>
       <div className={styles.access}>
         <ul>
           <h1>Nous trouver</h1>
-          <li>Metro: niah niah niah</li>
-          <li>Bus: niah niah niah</li>
-          <li>Google Maps: le lien</li>
+          <li className={styles.transport}>
+            <img src="/images/transports/bus.svg" alt="bus" height={24} />
+            <img src="/images/transports/bus_69.svg" alt="bus-69" height={24} />
+            <span>Chemin vert - Parmentier</span>
+          </li>
+          <li className={styles.transport}>
+            <img src="/images/transports/subway.svg" alt="subway" height={24} />
+            <img src="/images/transports/subway_9.svg" alt="subway-9" height={24} />
+            <span>Voltaire</span>
+          </li>
+          <li className={styles.transport}>
+            <img src="/images/transports/maps.svg" alt="train" height={24} />
+            <span>
+              <a href="https://maps.app.goo.gl/59vSZxbmmxCQAkiFA" target="_blank">
+                Voir dans Google Maps
+              </a>
+            </span>
+          </li>
         </ul>
       </div>
     </footer>
