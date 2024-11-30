@@ -22,7 +22,9 @@ export default function Account() {
     <Layout>
       <div className={styles.account}>
         <div className={styles.content}>
-          <h1>Bonjour {user.user_metadata.full_name}</h1>
+          <h1>
+            Bonjour <span className={styles.username}>{user.user_metadata.full_name}</span>
+          </h1>
           <p>Bientôt ici, les avantages My</p>
         </div>
       </div>

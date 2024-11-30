@@ -45,6 +45,10 @@
     }
 
     .access {
+      .map {
+        transform: translateY(-14px);
+      }
+
       .transport {
         display: flex;
         gap: 8px;

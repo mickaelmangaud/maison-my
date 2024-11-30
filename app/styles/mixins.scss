@@ -31,6 +31,10 @@
   animation-duration: 0.3s;
   min-height: 50vh;
   padding: 52px 24px;
+
+  @include maxWidth(780px) {
+    padding: 24px;
+  }
 }
 
 @mixin buttonStyles {
