@@ -66,14 +66,6 @@ export function Navigation() {
           </li>
         </ul>
       </div>
-
-      {/* {!!user ? (
-        <p className={styles.logout}>Deconnexion</p>
-      ) : (
-        <Link to="/signin">
-          <button className={styles.signin}>Mon compte My</button>
-        </Link>
-      )} */}
     </nav>
   );
 }

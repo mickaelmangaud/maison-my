@@ -5,26 +5,60 @@
 
   .content {
     @include contentStyles;
-    align-items: start;
     width: 100%;
 
-    .avantages {
+    .title {
       color: var(--accent-blue);
       font-size: 32px;
-      margin-bottom: 24px;
+      margin-bottom: 48px;
     }
 
-    p {
-      font-size: 20px;
+    .user {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      border-bottom: 1px solid #cfcfcf;
+      padding-bottom: 24px;
+    }
 
-      .username {
+    .infos {
+      .welcome {
+        font-size: 1.4rem;
+      }
+
+      .email,
+      .date {
+        font-size: 0.8rem;
+      }
+
+      .coloredText {
         color: var(--accent-blue);
       }
     }
 
-    .logout {
-      cursor: pointer;
-      font-size: 0.8rem;
+    .avatar {
+      border-radius: 50%;
+      border: 3px solid var(--accent-blue);
+
+      @include maxWidth(780px) {
+        width: 50px;
+        height: 50px;
+      }
     }
+  }
+
+  .advantages {
+    margin-top: 32px;
+    width: 100%;
+    flex: 1;
+
+    h1 {
+      color: var(--accent-blue);
+    }
+  }
+
+  .logout {
+    cursor: pointer;
+    font-size: 0.8rem;
   }
 }

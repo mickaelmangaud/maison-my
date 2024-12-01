@@ -7,7 +7,7 @@ import { OutletContextType } from '~/root';
 
 export async function loader({ request }: LoaderFunctionArgs) {
   const { supabaseClient, headers } = createSupabaseServerClient(request);
-  const { data, error } = await supabaseClient.auth.getUser();
+  const { data } = await supabaseClient.auth.getUser();
 
   if (!data.user) {
     return redirect('/signin');
@@ -26,14 +26,29 @@ export default function Account() {
     navigate('/');
   };
 
+  const dateCreated = new Date(user.created_at).toLocaleDateString('fr-FR');
+
   return (
     <Layout>
       <div className={styles.account}>
         <div className={styles.content}>
-          <h1 className={styles.avantages}>Avantages My</h1>
-          <p>
-            Bonjour, <span className={styles.username}>{user.user_metadata.full_name}</span>
-          </p>
+          <h1 className={styles.title}>Mon compte My</h1>
+          <div className={styles.user}>
+            <div className={styles.infos}>
+              <p className={styles.welcome}>
+                Bonjour, <span className={styles.coloredText}>{user.user_metadata.full_name}</span>
+              </p>
+              <p className={styles.email}>
+                Adresse email: <span className={styles.coloredText}>{user.user_metadata.email}</span>
+              </p>
+              <p className={styles.date}>Membre depuis le {dateCreated}</p>
+            </div>
+            <img className={styles.avatar} src={user.user_metadata.avatar_url} alt="user-avatar" />
+          </div>
+          <div className={styles.advantages}>
+            <h1>Mes avantages My</h1>
+            <div style={{ display: 'grid', placeItems: 'center', minHeight: '300px' }}>Ici bien, mes avantages</div>
+          </div>
           <p className={styles.logout} onClick={handleSignOut}>
             Déconnexion
           </p>

@@ -82,11 +82,18 @@
     .bars {
       background-color: var(--accent-blue);
       border-radius: 50%;
-      padding: 8px;
+      padding: 12px;
 
       path {
         color: var(--bg-color);
       }
+    }
+
+    .avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 3px solid var(--accent-blue);
     }
 
     @include minWidth(780px) {
