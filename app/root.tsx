@@ -1,19 +1,7 @@
-import {
-  json,
-  Links,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
-  useLoaderData,
-  useMatches,
-  useRevalidator,
-} from '@remix-run/react';
+import { json, Links, Meta, Outlet, Scripts, useLoaderData, useRevalidator } from '@remix-run/react';
 import { LoaderFunctionArgs } from '@remix-run/node';
 import { useTranslation } from 'react-i18next';
 import { useChangeLanguage } from 'remix-i18next/react';
-import { Footer } from './components/footer';
-import { Socials } from './components/socials';
 import { createBrowserClient } from '@supabase/ssr';
 import { SupabaseClient, User } from '@supabase/supabase-js';
 import i18next from '~/lib/i18next.server';
@@ -34,7 +22,14 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
   const { supabaseClient: supabase } = createSupabaseServerClient(request);
   const {
     data: { user },
+    error,
   } = await supabase.auth.getUser();
+
+  if (error) {
+    console.log('ROOT LOADER ERROR', error);
+  } else {
+    console.log('ROOT LOADER USER', user);
+  }
 
   const supabaseEnv = {
     SUPABASE_URL: process.env.SUPABASE_URL,
@@ -59,7 +54,7 @@ export default function App() {
     supabase.auth.onAuthStateChange(() => {
       revalidator.revalidate();
     });
-  }, [supabase, revalidator]);
+  }, []);
 
   return (
     <html lang={locale} dir={i18n.dir()}>
