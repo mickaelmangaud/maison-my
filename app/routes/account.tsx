@@ -47,7 +47,7 @@ export default function Account() {
           </div>
           <div className={styles.advantages}>
             <h1>Mes avantages My</h1>
-            <div style={{ display: 'grid', placeItems: 'center', minHeight: '300px' }}>Ici bien, mes avantages</div>
+            <div style={{ display: 'grid', placeItems: 'center', minHeight: '300px' }}>Ici bientôt, mes avantages My</div>
           </div>
           <p className={styles.logout} onClick={handleSignOut}>
             Déconnexion
