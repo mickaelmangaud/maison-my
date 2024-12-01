@@ -27,8 +27,6 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 
   if (error) {
     console.log('ROOT LOADER ERROR', error);
-  } else {
-    console.log('ROOT LOADER USER', user);
   }
 
   const supabaseEnv = {
