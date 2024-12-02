@@ -27,7 +27,7 @@ export default function Account() {
   };
 
   const dateCreated = new Date(user.created_at).toLocaleDateString('fr-FR');
-
+  console.log({ user });
   return (
     <Layout>
       <div className={styles.account}>
