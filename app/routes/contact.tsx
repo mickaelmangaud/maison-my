@@ -79,7 +79,9 @@ export default function Contact() {
           {!isEmailSent && !isSendingMessage && (
             <fetcher.Form method="post" className={styles.form}>
               <label htmlFor="email">Email</label>
-              <input type="email" name="email" id="email" placeholder="Votre email" />
+              <input type="email" name="email" id="email" placeholder="Votre email ..." />
+              <label htmlFor="tel">Numéro de téléphone</label>
+              <input type="tel" name="tel" id="tel" placeholder="Votre numùéro de téléphone ..." />
               <label htmlFor="message">Message</label>
               <textarea name="message" id="message" placeholder="Votre message"></textarea>
               <button type="submit">Envoyer</button>
