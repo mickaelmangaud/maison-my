@@ -1,4 +1,4 @@
-import { json, Links, Meta, Outlet, Scripts, useLoaderData, useRevalidator } from '@remix-run/react';
+import { json, Links, Meta, Outlet, Scripts, ScrollRestoration, useLoaderData, useRevalidator } from '@remix-run/react';
 import { LoaderFunctionArgs } from '@remix-run/node';
 import { useTranslation } from 'react-i18next';
 import { useChangeLanguage } from 'remix-i18next/react';
@@ -20,13 +20,16 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
   const locale = await i18next.getLocale(request);
 
   const { supabaseClient: supabase } = createSupabaseServerClient(request);
+
   const {
     data: { user },
     error,
   } = await supabase.auth.getUser();
 
   if (error) {
-    console.log('ROOT LOADER ERROR', error);
+    if (error.name === 'AuthSessionMissingError') {
+      console.log('NO user logged in');
+    }
   }
 
   const supabaseEnv = {
@@ -72,7 +75,7 @@ export default function App() {
         {/* TODO: improve this */}
         <Outlet context={{ user, supabase }} />
 
-        {/* <ScrollRestoration /> */}
+        <ScrollRestoration />
         <Scripts />
       </body>
     </html>

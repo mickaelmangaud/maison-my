@@ -35,7 +35,7 @@ export function Footer() {
               <Link to="/">Accueil</Link>
             </li>
             <li>
-              <Link to="/maisonmy">La Maison My</Link>
+              <Link to="/account">Mon compte My</Link>
             </li>
             <li>
               <Link to="/carte">La carte</Link>

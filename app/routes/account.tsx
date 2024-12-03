@@ -26,8 +26,19 @@ export default function Account() {
     navigate('/');
   };
 
+  // const handleDeleteAccount = async () => {
+  //   supabase.auth.signOut({});
+  //   const { data, error } = await supabase.auth.admin.deleteUser('ed3dd617-5274-4378-9d6b-1020e987ab2d');
+
+  //   if (error) {
+  //     console.log('AUTH ERROR DELETING USER', error.name, error.message);
+  //   }
+
+  //   console.log('USER DELETED', data);
+  // };
+
   const dateCreated = new Date(user.created_at).toLocaleDateString('fr-FR');
-  console.log({ user });
+  // console.log({ user });
   return (
     <Layout>
       <div className={styles.account}>
@@ -52,6 +63,9 @@ export default function Account() {
           <p className={styles.logout} onClick={handleSignOut}>
             Déconnexion
           </p>
+          {/* <p className={styles.logout} onClick={handleDeleteAccount}>
+            Supprimer mon compte
+          </p> */}
         </div>
       </div>
     </Layout>
