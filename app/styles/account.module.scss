@@ -39,6 +39,8 @@
     .avatar {
       border-radius: 50%;
       border: 3px solid var(--accent-blue);
+      height: 75px;
+      width: 75px;
 
       @include maxWidth(780px) {
         width: 50px;
