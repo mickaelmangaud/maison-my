@@ -17,13 +17,14 @@ export async function action({ request }: ActionFunctionArgs): Promise<TypedResp
   const formData = await request.formData();
   const email = formData.get('email') as string;
   const message = formData.get('message') as string;
+  const tel = formData.get('tel') as string;
 
   const { data, error } = await resend.emails.send({
     from: 'onboarding@resend.dev',
     to: 'mickael.mangaud@gmail.com',
     subject: `Nouveau message d'un utilisateur`,
     html: `${message}`,
-    react: <ContactEmail email={email} message={message} />,
+    react: <ContactEmail email={email} message={message} tel={tel} />,
   });
 
   if (error) {

@@ -31,9 +31,11 @@
   animation-duration: 0.3s;
   min-height: 50vh;
   padding: 24px;
+  margin-bottom: 48px;
 
   @include maxWidth(780px) {
     padding: 0 24px;
+    margin-bottom: 32px;
   }
 }
 

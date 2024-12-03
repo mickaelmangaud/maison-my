@@ -1,11 +1,12 @@
 import { useTranslation } from 'react-i18next';
 import { FaAngleDown } from 'react-icons/fa6';
-import { json, useFetcher } from '@remix-run/react';
+import { ErrorResponse, json, useFetcher, useLoaderData } from '@remix-run/react';
 import { Layout } from '~/layout';
-import { ActionFunctionArgs, LoaderFunctionArgs } from '@remix-run/node';
+import { ActionFunctionArgs, LoaderFunctionArgs, TypedResponse } from '@remix-run/node';
 import { createSupabaseServerClient } from '~/lib/supabase.server';
 import { resend } from '~/lib/resend';
 import styles from '../styles/index.module.scss';
+import { User } from '@supabase/supabase-js';
 
 export async function action({ request }: ActionFunctionArgs) {
   const formData = await request.formData();
@@ -24,7 +25,13 @@ export async function action({ request }: ActionFunctionArgs) {
   return json({ data, code: 200 });
 }
 
-export async function loader({ request }: LoaderFunctionArgs) {
+interface LoaderType {
+  data?: any;
+  error?: any;
+  code: number;
+}
+
+export async function loader({ request }: LoaderFunctionArgs): Promise<TypedResponse<LoaderType>> {
   const { supabaseClient: supabase } = createSupabaseServerClient(request);
   const { data, error } = await supabase.auth.getUser();
 
@@ -40,6 +47,9 @@ export default function Home() {
   const fectcher = useFetcher<typeof action>();
   const isSendingMessage = fectcher.state !== 'idle';
   const hasSuscribed = fectcher.data?.code === 200;
+  const {
+    data: { user },
+  } = useLoaderData<typeof loader>();
 
   const scrollDown = () => {
     window.scroll({
@@ -48,7 +58,7 @@ export default function Home() {
       behavior: 'smooth',
     });
   };
-
+  console.log({ indexUser: user });
   return (
     <Layout>
       <div className={styles.index}>

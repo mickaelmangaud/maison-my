@@ -3,11 +3,13 @@ import { Button, Heading, Html, Text, Img, Body, Container, Head, Font } from '@
 interface ContactEmailProps {
   email: string;
   message: string;
+  tel: string;
 }
 
 export default function ContactEmail({
   email = 'mickaelmangaud@gmail.com',
   message = 'Mon message est que tout va bien',
+  tel = '06 06 06 06 06',
 }: ContactEmailProps) {
   return (
     <Html>
@@ -39,6 +41,10 @@ export default function ContactEmail({
           <Text>
             <span style={{ fontWeight: 'bold' }}>Email: </span>
             <span>{email}</span>
+          </Text>
+          <Text>
+            <span style={{ fontWeight: 'bold' }}>Téléphone: </span>
+            <span>{tel}</span>
           </Text>
           <Text>
             <span style={{ fontWeight: 'bold' }}>Message: </span>
