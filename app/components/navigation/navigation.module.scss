@@ -41,7 +41,7 @@
     list-style: none;
     flex: 1;
 
-    .link {
+    li {
       a {
         text-decoration: none;
         color: var(--font-color);
@@ -50,6 +50,19 @@
         font-style: normal;
         font-size: 18px;
         white-space: nowrap;
+
+        &.activeLink {
+          background-color: var(--accent-blue);
+          color: var(--bg-color);
+          padding: 9px 16px 0px;
+          border-radius: 50px;
+        }
+      }
+    }
+
+    .activeLink {
+      a {
+        color: red;
       }
     }
   }
@@ -58,15 +71,6 @@
     display: flex;
     flex: 1;
     justify-content: end;
-
-    li {
-      .account {
-        background-color: var(--accent-blue);
-        color: var(--bg-color);
-        padding: 9px 16px 0px;
-        border-radius: 50px;
-      }
-    }
   }
 
   @include maxWidth(780px) {
@@ -136,13 +140,6 @@
           text-decoration: none;
           color: var(--font-color);
           font-size: 1.2rem;
-        }
-
-        .account {
-          background-color: var(--accent-blue);
-          color: var(--bg-color);
-          padding: 9px 16px 0px;
-          border-radius: 50px;
         }
       }
     }

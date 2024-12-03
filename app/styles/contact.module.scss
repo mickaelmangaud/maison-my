@@ -5,6 +5,9 @@
 
   .content {
     @include contentStyles;
+    h1 {
+      color: var(--accent-blue);
+    }
 
     p {
       margin: 24px 0;
@@ -17,6 +20,7 @@
       justify-content: center;
       gap: 8px;
       width: 100%;
+      margin: 24px 0;
 
       input,
       textarea {

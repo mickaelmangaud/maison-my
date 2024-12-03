@@ -5,5 +5,9 @@
 
   .content {
     @include contentStyles;
+
+    h1 {
+      color: var(--accent-blue);
+    }
   }
 }
