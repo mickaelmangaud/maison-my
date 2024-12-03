@@ -58,7 +58,7 @@ export default function Home() {
       behavior: 'smooth',
     });
   };
-  console.log({ indexUser: user });
+
   return (
     <Layout>
       <div className={styles.index}>
