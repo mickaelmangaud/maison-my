@@ -7393,7 +7393,7 @@ __metadata:
     remix-i18next: "npm:^6.4.1"
     resend: "npm:^4.0.1"
     sass-embedded: "npm:^1.81.0"
-    supabase: "npm:1.226.3"
+    supabase: "npm:^2.0.0"
     typescript: "npm:^5.6.2"
     typescript-eslint: "npm:^8.6.0"
     vite: "npm:^5.4.6"
@@ -10614,9 +10614,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"supabase@npm:1.226.3":
-  version: 1.226.3
-  resolution: "supabase@npm:1.226.3"
+"supabase@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "supabase@npm:2.0.0"
   dependencies:
     bin-links: "npm:^5.0.0"
     https-proxy-agent: "npm:^7.0.2"
@@ -10624,7 +10624,7 @@ __metadata:
     tar: "npm:7.4.3"
   bin:
     supabase: bin/supabase
-  checksum: 10c0/094a6627160235eef6776252f74acd92d649ca000b65d5178a9816a5e791c5b3515c1b2a919c31def9fca6ca9c5180a9b70b55e4cf042b7aefa4ff53d3dcd8e7
+  checksum: 10c0/4739db6a75531c2706efaccad49caa022c5e6f239bb7440c388a0d4ed07f26adc0185d0ff0e2346e42c0aca736c4e8473628134bbb59e9721a46946aaf19715d
   languageName: node
   linkType: hard
 
