@@ -13,7 +13,12 @@ export default function SignIn() {
   const { callbackURL } = useLoaderData<typeof loader>();
 
   const handleGoogleSignin = () => {
-    supabase.auth.signInWithOAuth({ provider: 'google' });
+    supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: {
+        redirectTo: callbackURL,
+      },
+    });
   };
 
   return (
