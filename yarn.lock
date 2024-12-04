@@ -7393,7 +7393,7 @@ __metadata:
     remix-i18next: "npm:^6.4.1"
     resend: "npm:^4.0.1"
     sass-embedded: "npm:^1.81.0"
-    supabase: "npm:^1.226.3"
+    supabase: "npm:1.226.3"
     typescript: "npm:^5.6.2"
     typescript-eslint: "npm:^8.6.0"
     vite: "npm:^5.4.6"
@@ -10614,7 +10614,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"supabase@npm:^1.226.3":
+"supabase@npm:1.226.3":
   version: 1.226.3
   resolution: "supabase@npm:1.226.3"
   dependencies:

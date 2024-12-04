@@ -36,6 +36,7 @@ export async function loader({ request }: LoaderFunctionArgs): Promise<TypedResp
   const { data, error } = await supabase.auth.getUser();
 
   if (error) {
+    console.log('ERROR', error.name);
     return json({ error, code: 500 });
   }
 
@@ -47,9 +48,9 @@ export default function Home() {
   const fectcher = useFetcher<typeof action>();
   const isSendingMessage = fectcher.state !== 'idle';
   const hasSuscribed = fectcher.data?.code === 200;
-  const {
-    data: { user },
-  } = useLoaderData<typeof loader>();
+  // const {
+  //   data: { user },
+  // } = useLoaderData<typeof loader>();
 
   const scrollDown = () => {
     window.scroll({

@@ -26,16 +26,17 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
     error,
   } = await supabase.auth.getUser();
 
-  // if (error) {
-  //   if (error.name === 'AuthSessionMissingError') {
-  //     console.log('NO user logged in');
-  //   }
-  // }
-
   const supabaseEnv = {
     SUPABASE_URL: process.env.SUPABASE_URL,
     SUPABASE_ANON_KEY: process.env.SUPABASE_ANON_KEY,
   };
+
+  if (error) {
+    if (error.name === 'AuthSessionMissingError') {
+      console.log('NO user logged in');
+      return json({ locale, supabaseEnv, user: null });
+    }
+  }
 
   return json({ locale, supabaseEnv, user });
 };
