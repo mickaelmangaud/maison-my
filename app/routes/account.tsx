@@ -12,7 +12,6 @@ export async function loader({ request }: LoaderFunctionArgs) {
   if (!data.user) {
     return redirect('/signin');
   }
-  console.log(headers);
 
   return json(data.user, { headers });
 }
@@ -28,7 +27,7 @@ export default function Account() {
   };
 
   const dateCreated = new Date(user.created_at).toLocaleDateString('fr-FR');
-  console.log({ user });
+
   return (
     <Layout>
       <div className={styles.account}>

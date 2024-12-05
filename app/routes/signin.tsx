@@ -22,18 +22,12 @@ export default function SignIn() {
   };
 
   const handleFacebookSignin = async () => {
-    const { data, error } = await supabase.auth.signInWithOAuth({
+    supabase.auth.signInWithOAuth({
       provider: 'facebook',
       options: {
         redirectTo: callbackURL,
       },
     });
-
-    if (error) {
-      console.log('FACEBOOK ERROR', error);
-    }
-
-    console.log('FACEBOOK DATA', data);
   };
 
   return (

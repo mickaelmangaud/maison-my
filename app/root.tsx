@@ -33,7 +33,6 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 
   if (error) {
     if (error.name === 'AuthSessionMissingError') {
-      console.log('NO user logged in');
       return json({ locale, supabaseEnv, user: null });
     }
   }
@@ -54,7 +53,6 @@ export default function App() {
 
   useEffect(() => {
     supabase.auth.onAuthStateChange((event) => {
-      console.log('Event', event);
       revalidator.revalidate();
     });
   }, []);

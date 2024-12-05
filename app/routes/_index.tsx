@@ -36,7 +36,6 @@ export async function loader({ request }: LoaderFunctionArgs): Promise<TypedResp
   const { data, error } = await supabase.auth.getUser();
 
   if (error) {
-    console.log('ERROR', error.name);
     return json({ error, code: 500 });
   }
 
