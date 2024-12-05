@@ -12,6 +12,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
   if (!data.user) {
     return redirect('/signin');
   }
+  console.log(headers);
 
   return json(data.user, { headers });
 }
