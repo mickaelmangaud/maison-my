@@ -21,11 +21,24 @@ export default function SignIn() {
     });
   };
 
+  const handleFacebookSignin = async () => {
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: 'facebook',
+    });
+
+    if (error) {
+      console.log('FACEBOOK ERROR', error);
+    }
+
+    console.log('FACEBOOK DATA', data);
+  };
+
   return (
     <Layout>
       <div className={styles.signin}>
         <div className={styles.content}>
           <GoogleButton onCLick={handleGoogleSignin} />
+          <button onClick={handleFacebookSignin}>Facebook</button>
         </div>
       </div>
     </Layout>
