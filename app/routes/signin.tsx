@@ -24,6 +24,9 @@ export default function SignIn() {
   const handleFacebookSignin = async () => {
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: 'facebook',
+      options: {
+        redirectTo: callbackURL,
+      },
     });
 
     if (error) {
