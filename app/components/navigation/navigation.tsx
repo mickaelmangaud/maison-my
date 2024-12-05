@@ -37,7 +37,7 @@ export function Navigation() {
       <ul className={styles.links}>
         <li className={styles.link}>
           <NavLink className={getLinkClassName} to="/histoire">
-            L&apo;histoire
+            L&apos;histoire
           </NavLink>
         </li>
         <li className={styles.link}>
