@@ -1,9 +1,10 @@
-import { json, Link, useFetcher } from '@remix-run/react';
-import { ActionFunctionArgs, TypedResponse } from '@remix-run/node';
+import { ActionFunctionArgs, json, TypedResponse } from '@remix-run/node';
 import { CreateEmailResponseSuccess, ErrorResponse, Resend } from 'resend';
-import ContactEmail from '~/emails/contact-email';
-import styles from '../styles/contact.module.scss';
 import { Layout } from '~/layout';
+import { OutletContextType } from '~/root';
+import { Link, useFetcher, useOutletContext } from '@remix-run/react';
+import styles from '../styles/contact.module.scss';
+import ContactEmail from '~/emails/contact-email';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -38,6 +39,7 @@ export default function Contact() {
   const fetcher = useFetcher<typeof action>();
   const isSendingMessage = fetcher.state !== 'idle';
   const isEmailSent = fetcher.data?.code === 200;
+  const { user } = useOutletContext<OutletContextType>();
 
   if (isSendingMessage) {
     return (
@@ -80,7 +82,13 @@ export default function Contact() {
           {!isEmailSent && !isSendingMessage && (
             <fetcher.Form method="post" className={styles.form}>
               <label htmlFor="email">Email</label>
-              <input type="email" name="email" id="email" placeholder="Votre email ..." />
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Votre email ..."
+                defaultValue={user?.user_metadata.email || ''}
+              />
               <label htmlFor="tel">Numéro de téléphone</label>
               <input type="tel" name="tel" id="tel" placeholder="Votre numùéro de téléphone ..." />
               <label htmlFor="message">Message</label>
