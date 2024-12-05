@@ -1,0 +1,33 @@
+@use '../../styles/mixins.scss' as *;
+
+#menuItem {
+  a {
+    text-decoration: none;
+    color: var(--font-color);
+    font-size: 18px;
+    white-space: nowrap;
+    padding: 9px 16px 0px;
+    border-radius: 50px;
+
+    &.activeLink {
+      background-color: var(--accent-blue);
+      color: var(--bg-color);
+    }
+  }
+
+  @include minWidth(780px) {
+    a {
+      font-size: 1.2rem;
+      color: var(--font-color);
+      font-size: 18px;
+      white-space: nowrap;
+      padding: 9px 16px 0px;
+      border-radius: 50px;
+
+      &.activeLink {
+        background-color: var(--accent-blue);
+        color: var(--bg-color);
+      }
+    }
+  }
+}
