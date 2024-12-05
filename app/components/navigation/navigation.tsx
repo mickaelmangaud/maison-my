@@ -1,12 +1,10 @@
-import { NavLink, useOutletContext } from '@remix-run/react';
+import { NavLink } from '@remix-run/react';
 import styles from './navigation.module.scss';
 import { FaBars, FaX } from 'react-icons/fa6';
 import { useState } from 'react';
-import { OutletContextType } from '~/root';
 
 export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { user } = useOutletContext<OutletContextType>();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -39,7 +37,7 @@ export function Navigation() {
       <ul className={styles.links}>
         <li className={styles.link}>
           <NavLink className={getLinkClassName} to="/histoire">
-            L'histoire
+            L&apo;histoire
           </NavLink>
         </li>
         <li className={styles.link}>
@@ -72,7 +70,7 @@ export function Navigation() {
           </li>
           <li onClick={toggleMenu}>
             <NavLink className={getLinkClassName} to="/histoire">
-              L'histoire
+              L&apos;histoire
             </NavLink>
           </li>
           <li onClick={toggleMenu}>

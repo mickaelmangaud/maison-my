@@ -1,4 +1,4 @@
-import { Button, Heading, Html, Text, Img, Body, Container, Head, Font } from '@react-email/components';
+import { Heading, Html, Text, Img, Body, Container, Head, Font } from '@react-email/components';
 
 interface ContactEmailProps {
   email: string;
@@ -34,7 +34,7 @@ export default function ContactEmail({
             style={logo}
           />
           <Heading as="h3" style={{ textAlign: 'center' }}>
-            Nouveau message d'un utilisateur
+            Nouveau message d&apos;un utilisateur
           </Heading>
         </Container>
         <Container>

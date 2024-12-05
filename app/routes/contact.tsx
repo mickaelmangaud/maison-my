@@ -59,7 +59,7 @@ export default function Contact() {
             <p>Message envoyé !</p>
             <p>Nous reviendrons vers vous rapidement !</p>
             <Link to="/">
-              <button className={styles.back}>Retour à l'accueil</button>
+              <button className={styles.back}>Retour à l&apos;accueil</button>
             </Link>
           </div>
         </div>

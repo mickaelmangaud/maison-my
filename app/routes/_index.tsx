@@ -1,12 +1,12 @@
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
 import { FaAngleDown } from 'react-icons/fa6';
-import { ErrorResponse, json, useFetcher, useLoaderData } from '@remix-run/react';
+import { json, useFetcher } from '@remix-run/react';
 import { Layout } from '~/layout';
 import { ActionFunctionArgs, LoaderFunctionArgs, TypedResponse } from '@remix-run/node';
 import { createSupabaseServerClient } from '~/lib/supabase.server';
 import { resend } from '~/lib/resend';
 import styles from '../styles/index.module.scss';
-import { User } from '@supabase/supabase-js';
+import { AuthError, User } from '@supabase/supabase-js';
 
 export async function action({ request }: ActionFunctionArgs) {
   const formData = await request.formData();
@@ -26,8 +26,8 @@ export async function action({ request }: ActionFunctionArgs) {
 }
 
 interface LoaderType {
-  data?: any;
-  error?: any;
+  data?: { user: User } | { user: null };
+  error?: AuthError;
   code: number;
 }
 
@@ -44,7 +44,7 @@ export async function loader({ request }: LoaderFunctionArgs): Promise<TypedResp
 }
 
 export default function Home() {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
   const fectcher = useFetcher<typeof action>();
   const isSendingMessage = fectcher.state !== 'idle';
   const hasSuscribed = fectcher.data?.code === 200;

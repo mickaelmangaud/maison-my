@@ -5,7 +5,7 @@ import { useChangeLanguage } from 'remix-i18next/react';
 import { createBrowserClient } from '@supabase/ssr';
 import { SupabaseClient, User } from '@supabase/supabase-js';
 import i18next from '~/lib/i18next.server';
-import styles from './styles/globals.module.scss';
+import styles from '~/styles/globals.module.scss';
 import { createSupabaseServerClient } from './lib/supabase.server';
 import { useEffect } from 'react';
 
@@ -44,13 +44,13 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 export default function App() {
   const { locale, supabaseEnv, user } = useLoaderData<typeof loader>();
   const { i18n } = useTranslation();
+  const revalidator = useRevalidator();
 
   const supabase = createBrowserClient(supabaseEnv.SUPABASE_URL!, supabaseEnv.SUPABASE_ANON_KEY!, {
     isSingleton: true,
   });
 
   useChangeLanguage(locale);
-  const revalidator = useRevalidator();
 
   useEffect(() => {
     supabase.auth.onAuthStateChange(() => {

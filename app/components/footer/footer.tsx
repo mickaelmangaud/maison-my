@@ -15,7 +15,7 @@ export function Footer() {
             <div className={styles.icon}>
               <SocialIcon network="instagram" />
             </div>
-            <a href="https://www.instagram.com/maisonmy_banhmi/" target="_blank">
+            <a href="https://www.instagram.com/maisonmy_banhmi/" target="_blank" rel="noreferrer">
               Instagram
             </a>
           </div>
@@ -23,7 +23,7 @@ export function Footer() {
             <div className={styles.icon}>
               <SocialIcon network="facebook" />
             </div>
-            <a href="https://www.facebook.com/maisonmybanhmi/" target="_blank">
+            <a href="https://www.facebook.com/maisonmybanhmi/" target="_blank" rel="noreferrer">
               Facebook
             </a>
           </div>
@@ -41,7 +41,7 @@ export function Footer() {
               <Link to="/carte">La carte</Link>
             </li>
             <li>
-              <Link to="/histoire">Un peu d'histoire</Link>
+              <Link to="/histoire">Un peu d&apos;histoire</Link>
             </li>
             <li>
               <Link to="/contact">Nous contacter</Link>
@@ -50,7 +50,7 @@ export function Footer() {
         </div>
         <div className={styles.hours}>
           <ul>
-            <h1>Heures d'ouverture</h1>
+            <h1>Heures d&apos;ouverture</h1>
             <li>
               Lundi <span>.....................................</span> 12h - 16h
             </li>
