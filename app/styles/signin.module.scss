@@ -5,5 +5,7 @@
 
   .content {
     @include contentStyles;
+    gap: 12px;
+    justify-content: center;
   }
 }

@@ -1,5 +1,5 @@
 import { useLoaderData, useOutletContext } from '@remix-run/react';
-import { GoogleButton } from '~/components/google-button/';
+import { LoginButton } from '~/components/login-button';
 import { Layout } from '~/layout';
 import { OutletContextType } from '~/root';
 import styles from '~/styles/signin.module.scss';
@@ -34,8 +34,10 @@ export default function SignIn() {
     <Layout>
       <div className={styles.signin}>
         <div className={styles.content}>
-          <GoogleButton onCLick={handleGoogleSignin} />
-          <button onClick={handleFacebookSignin}>Facebook</button>
+          {/* <GoogleButton onCLick={handleGoogleSignin} /> */}
+          {/* <button onClick={handleFacebookSignin}>Facebook</button> */}
+          <LoginButton provider="Google" onClick={handleGoogleSignin} />
+          <LoginButton provider="Facebook" onClick={handleFacebookSignin} />
         </div>
       </div>
     </Layout>

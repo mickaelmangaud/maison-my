@@ -7,4 +7,4 @@ to import scss files in other scss file:
 ```
 
 **TODO :** 
-- gérer le authstatechange etc
+- Socials : Instagram, Tiktok

@@ -1,0 +1,28 @@
+.loginButton {
+  padding: 16px 24px;
+  width: 240px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 50px;
+  border: 2px solid var(--bg-color);
+
+  &.google {
+    background-color: #db4437;
+  }
+
+  &.facebook {
+    background-color: #1877f2;
+  }
+
+  svg {
+    path {
+      color: #f9fafa;
+    }
+  }
+
+  .providerName {
+    font-family: Helvetica, sans-serif;
+    color: var(--bg-color);
+  }
+}
