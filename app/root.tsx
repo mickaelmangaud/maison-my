@@ -53,7 +53,8 @@ export default function App() {
   useChangeLanguage(locale);
 
   useEffect(() => {
-    supabase.auth.onAuthStateChange(() => {
+    supabase.auth.onAuthStateChange((event) => {
+      console.log('Event', event);
       revalidator.revalidate();
     });
   }, []);
