@@ -26,7 +26,7 @@ export function Navigation() {
       {/* Logo */}
       <NavLink prefetch="viewport" to="/">
         <div className={styles.logo}>
-          <img className={styles.img} src="/images/my_logo.png" />
+          <img className={styles.img} src="/images/logo-my.png" />
         </div>
       </NavLink>
 
