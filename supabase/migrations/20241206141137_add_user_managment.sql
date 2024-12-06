@@ -29,6 +29,8 @@ as $$
 begin
   insert into public.profiles (id, email, full_name, avatar_url)
   values (new.id, new.raw_user_meta_data->>'email', new.raw_user_meta_data->>'full_name', new.raw_user_meta_data->>'avatar_url');
+  insert into public.user_roles (id, user_id, role)
+  values (default, new.id, 'user');
   return new;
 end;
 $$ language plpgsql security definer;
