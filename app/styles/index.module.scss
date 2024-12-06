@@ -8,6 +8,11 @@
   width: 100%;
   margin-top: -116px;
 
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 0.8s;
+
   @include maxWidth(780px) {
     margin-top: -122px;
 
