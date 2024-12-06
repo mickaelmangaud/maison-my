@@ -7,4 +7,4 @@ to import scss files in other scss file:
 ```
 
 **TODO :** 
-- Socials : Instagram, Tiktok
+- Socials : Spotify, Twitter, Linkdin, Phone, Magic Link

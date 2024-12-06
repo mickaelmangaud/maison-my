@@ -11,7 +11,7 @@
   animation-name: fadeInOpacity;
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
-  animation-duration: 0.8s;
+  animation-duration: 1s;
 
   @include maxWidth(780px) {
     margin-top: -122px;

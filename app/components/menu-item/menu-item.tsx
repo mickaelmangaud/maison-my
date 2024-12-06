@@ -7,7 +7,7 @@ export const MenuItem = ({ to, label }: { to: string; label: string }) => {
 
   return (
     <div id={styles.menuItem}>
-      <NavLink prefetch="viewport" to={to} className={getLinkClassName}>
+      <NavLink prefetch="intent" to={to} className={getLinkClassName}>
         {label}
       </NavLink>
     </div>
