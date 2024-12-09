@@ -45,6 +45,8 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
   if (!sessionError && !userError) {
     jwt = jwtDecode(session?.access_token || '');
     return json({ locale, supabaseEnv, user, role: jwt.user_role });
+  } else {
+    console.log('no session', sessionError, userError);
   }
 
   return json({ locale, supabaseEnv, user, role: null });
