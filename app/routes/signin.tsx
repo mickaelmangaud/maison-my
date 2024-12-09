@@ -34,10 +34,10 @@ export default function SignIn() {
     <Layout>
       <div className={styles.signin}>
         <div className={styles.content}>
-          {/* <GoogleButton onCLick={handleGoogleSignin} /> */}
-          {/* <button onClick={handleFacebookSignin}>Facebook</button> */}
           <LoginButton provider="Google" onClick={handleGoogleSignin} />
           <LoginButton provider="Facebook" onClick={handleFacebookSignin} />
+          <LoginButton provider="LinkedIn" onClick={handleFacebookSignin} />
+          <LoginButton provider="Mail" onClick={handleFacebookSignin} />
         </div>
       </div>
     </Layout>

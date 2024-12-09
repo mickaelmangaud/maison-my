@@ -25,13 +25,19 @@ export default function ContactEmail({
           fontStyle="normal"
         />
       </Head>
-      <Body style={body}>
+      <Body
+        style={{
+          padding: '24px',
+        }}
+      >
         <Container>
           <Img
             src="https://imaffulnjqeszkwuznvr.supabase.co/storage/v1/object/public/public_assets/images/my_logo.png"
             width="120"
             alt="my-logo"
-            style={logo}
+            style={{
+              margin: '0 auto',
+            }}
           />
           <Heading as="h3" style={{ textAlign: 'center' }}>
             Nouveau message d&apos;un utilisateur
@@ -55,12 +61,3 @@ export default function ContactEmail({
     </Html>
   );
 }
-
-const body = {
-  // backgroundColor: 'red',
-  padding: '24px',
-};
-
-const logo = {
-  margin: '0 auto',
-};
