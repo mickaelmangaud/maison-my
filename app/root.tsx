@@ -56,7 +56,7 @@ export default function App() {
   const { locale, supabaseEnv, user, role } = useLoaderData<typeof loader>();
   const { i18n } = useTranslation();
   const revalidator = useRevalidator();
-
+  console.log('APP FRONT', user, role);
   const supabase = createBrowserClient(supabaseEnv.SUPABASE_URL!, supabaseEnv.SUPABASE_ANON_KEY!, {
     isSingleton: true,
   });
