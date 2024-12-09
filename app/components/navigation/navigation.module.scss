@@ -159,4 +159,15 @@
       left: 0;
     }
   }
+
+  .admin {
+    position: absolute;
+    right: 24px;
+    top: 36px;
+    cursor: pointer;
+
+    @include maxWidth(780px) {
+      right: 96px;
+    }
+  }
 }

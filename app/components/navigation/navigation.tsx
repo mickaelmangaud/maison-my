@@ -1,11 +1,13 @@
-import { NavLink } from '@remix-run/react';
+import { Link, NavLink, useOutletContext } from '@remix-run/react';
 import styles from './navigation.module.scss';
 import { FaBars, FaX } from 'react-icons/fa6';
 import { useState } from 'react';
 import { MenuItem } from '../menu-item';
+import { OutletContextType } from '~/root';
 
 export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { role } = useOutletContext<OutletContextType>();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -66,6 +68,13 @@ export function Navigation() {
         </ul>
       </div>
       {/* Mobile Menu - End */}
+      {role === 'admin' && (
+        <Link to="/admin" className={styles.adminLink}>
+          <div className={styles.admin}>
+            <img src="/images/batman.png" width={50} alt="admin-logo" />
+          </div>
+        </Link>
+      )}
     </nav>
   );
 }

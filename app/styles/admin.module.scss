@@ -1,0 +1,9 @@
+@use './mixins.scss' as *;
+
+.admin {
+  @include pageStyles;
+
+  .content {
+    @include contentStyles;
+  }
+}

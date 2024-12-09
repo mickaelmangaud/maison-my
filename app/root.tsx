@@ -1,23 +1,13 @@
-import {
-  isRouteErrorResponse,
-  json,
-  Links,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
-  useLoaderData,
-  useRevalidator,
-  useRouteError,
-} from '@remix-run/react';
+import { isRouteErrorResponse, json, Links, Meta, Outlet, Scripts, ScrollRestoration, useLoaderData, useRevalidator, useRouteError } from '@remix-run/react';
 import { LoaderFunctionArgs } from '@remix-run/node';
 import { useTranslation } from 'react-i18next';
 import { useChangeLanguage } from 'remix-i18next/react';
 import { createBrowserClient } from '@supabase/ssr';
 import { SupabaseClient, User } from '@supabase/supabase-js';
-import i18next from '~/lib/i18next.server';
-import styles from '~/styles/globals.module.scss';
 import { createSupabaseServerClient } from './lib/supabase.server';
+import { jwtDecode, JwtPayload } from 'jwt-decode';
+import styles from '~/styles/globals.module.scss';
+import i18next from '~/lib/i18next.server';
 import { useEffect } from 'react';
 
 export const handle = { i18n: 'common' };
@@ -25,34 +15,43 @@ export const handle = { i18n: 'common' };
 export interface OutletContextType {
   supabase: SupabaseClient;
   user: User | null;
+  role: string | null;
+}
+
+interface JwtType extends JwtPayload {
+  user_role: string;
 }
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
-  const locale = await i18next.getLocale(request);
-
-  const { supabaseClient: supabase } = createSupabaseServerClient(request);
-
-  const {
-    data: { user },
-    error,
-  } = await supabase.auth.getUser();
-
   const supabaseEnv = {
     SUPABASE_URL: process.env.SUPABASE_URL,
     SUPABASE_ANON_KEY: process.env.SUPABASE_ANON_KEY,
   };
 
-  if (error) {
-    if (error.name === 'AuthSessionMissingError') {
-      return json({ locale, supabaseEnv, user: null });
-    }
+  const locale = await i18next.getLocale(request);
+  const { supabaseClient: supabase } = createSupabaseServerClient(request);
+
+  const {
+    data: { session },
+    error: sessionError,
+  } = await supabase.auth.getSession();
+  const {
+    data: { user },
+    error: userError,
+  } = await supabase.auth.getUser();
+
+  let jwt: JwtType;
+
+  if (!sessionError && !userError) {
+    jwt = jwtDecode(session?.access_token || '');
+    return json({ locale, supabaseEnv, user, role: jwt.user_role });
   }
 
-  return json({ locale, supabaseEnv, user });
+  return json({ locale, supabaseEnv, user, role: null });
 };
 
 export default function App() {
-  const { locale, supabaseEnv, user } = useLoaderData<typeof loader>();
+  const { locale, supabaseEnv, user, role } = useLoaderData<typeof loader>();
   const { i18n } = useTranslation();
   const revalidator = useRevalidator();
 
@@ -83,7 +82,7 @@ export default function App() {
         <Links />
       </head>
       <body className={styles.body}>
-        <Outlet context={{ user, supabase }} />
+        <Outlet context={{ user, role, supabase }} />
         <ScrollRestoration />
         <Scripts />
       </body>
