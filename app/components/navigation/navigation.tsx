@@ -13,6 +13,8 @@ export function Navigation() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  console.log('ROLE', role);
+
   return (
     <nav className={styles.nav}>
       {/* Left Links */}
