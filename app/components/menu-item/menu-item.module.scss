@@ -2,9 +2,9 @@
 
 #menuItem {
   a {
+    font-size: 1rem;
     text-decoration: none;
     color: var(--font-color);
-    font-size: 18px;
     white-space: nowrap;
     padding: 9px 16px 0px;
     border-radius: 50px;
@@ -17,9 +17,7 @@
 
   @include minWidth(780px) {
     a {
-      font-size: 1.2rem;
       color: var(--font-color);
-      font-size: 18px;
       white-space: nowrap;
       padding: 9px 16px 0px;
       border-radius: 50px;

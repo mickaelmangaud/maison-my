@@ -65,15 +65,22 @@ export function Navigation() {
           <li onClick={toggleMenu}>
             <MenuItem to="/contact" label="Nous contacter" />
           </li>
+          {role === 'admin' && (
+            <li className={styles.admin}>
+              <Link to="/admin">
+                <img src="/images/batman.png" width={50} alt="admin-logo" />
+              </Link>
+            </li>
+          )}
         </ul>
       </div>
       {/* Mobile Menu - End */}
       {role === 'admin' && (
-        <Link to="/admin" className={styles.adminLink}>
-          <div className={styles.admin}>
+        <div className={styles.admin}>
+          <Link to="/admin">
             <img src="/images/batman.png" width={50} alt="admin-logo" />
-          </div>
-        </Link>
+          </Link>
+        </div>
       )}
     </nav>
   );
