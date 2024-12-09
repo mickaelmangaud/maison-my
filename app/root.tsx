@@ -45,8 +45,6 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
   if (!sessionError && !userError) {
     jwt = jwtDecode(session?.access_token || '');
     return json({ locale, supabaseEnv, user, role: jwt.user_role });
-  } else {
-    console.log('no session', sessionError, userError);
   }
 
   return json({ locale, supabaseEnv, user, role: null });
@@ -56,7 +54,7 @@ export default function App() {
   const { locale, supabaseEnv, user, role } = useLoaderData<typeof loader>();
   const { i18n } = useTranslation();
   const revalidator = useRevalidator();
-  console.log('APP FRONT', user, role);
+
   const supabase = createBrowserClient(supabaseEnv.SUPABASE_URL!, supabaseEnv.SUPABASE_ANON_KEY!, {
     isSingleton: true,
   });
