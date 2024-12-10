@@ -1,7 +1,6 @@
 {
   "extends": ["stylelint-config-standard", "stylelint-config-standard-scss", "stylelint-config-recess-order"],
   "rules": {
-    "selector-id-pattern": null,
     "selector-max-id": 1,
     "selector-class-pattern": null
   }

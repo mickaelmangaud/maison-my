@@ -6,7 +6,7 @@ export const MenuItem = ({ to, label }: { to: string; label: string }) => {
     isActive ? 'menuItem ' + styles.activeLink : 'menuItem ' + styles.link;
 
   return (
-    <div id={styles.menuItem}>
+    <div className={styles.menuItem}>
       <NavLink prefetch="intent" to={to} className={getLinkClassName}>
         {label}
       </NavLink>
