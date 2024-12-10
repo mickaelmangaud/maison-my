@@ -3,6 +3,7 @@ import { defineConfig } from 'vite';
 // import { remixDevTools } from 'remix-development-tools';
 import tsConfigPaths from 'vite-tsconfig-paths';
 import { vercelPreset } from '@vercel/remix/vite';
+import eslint from '@nabla/vite-plugin-eslint';
 
 export default defineConfig({
   plugins: [
@@ -20,6 +21,7 @@ export default defineConfig({
       buildDirectory: 'build',
     }),
     tsConfigPaths(),
+    eslint(),
   ],
   css: {
     preprocessorOptions: {
