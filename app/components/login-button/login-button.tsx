@@ -1,5 +1,5 @@
-import styles from './login-button.module.scss';
 import { FaEnvelope, FaFacebookF, FaGoogle, FaLinkedin } from 'react-icons/fa6';
+import styles from './login-button.module.scss';
 
 interface LoginButtonProps {
   provider: 'Facebook' | 'Google' | 'Mail' | 'LinkedIn';
@@ -7,7 +7,6 @@ interface LoginButtonProps {
 }
 
 export function LoginButton({ provider, onClick }: LoginButtonProps) {
-  
   const getProviderIcon = (provider: LoginButtonProps['provider']) => {
     switch (provider) {
       case 'Google':
@@ -16,7 +15,7 @@ export function LoginButton({ provider, onClick }: LoginButtonProps) {
         return <FaFacebookF size={24} />;
       case 'Mail':
         return <FaEnvelope size={24} />;
-      case 'LinkedIn':  
+      case 'LinkedIn':
         return <FaLinkedin size={24} />;
     }
   };

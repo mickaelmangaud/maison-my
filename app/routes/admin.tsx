@@ -1,7 +1,7 @@
 import { useOutletContext } from '@remix-run/react';
 import { OutletContextType } from '~/root';
-import styles from '../styles/admin.module.scss';
 import { Layout } from '~/layout';
+import styles from '../styles/admin.module.scss';
 
 export default function Admin() {
   const { role } = useOutletContext<OutletContextType>();

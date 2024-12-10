@@ -1,12 +1,12 @@
-import { PassThrough } from 'stream';
 import { createReadableStreamFromReadable, type EntryContext } from '@remix-run/node';
 import { RemixServer } from '@remix-run/react';
 import { isbot } from 'isbot';
 import { renderToPipeableStream } from 'react-dom/server';
 import { createInstance } from 'i18next';
 import { I18nextProvider, initReactI18next } from 'react-i18next';
-import { resolve } from 'node:path';
 import Backend from 'i18next-fs-backend';
+import { PassThrough } from 'stream';
+import { resolve } from 'node:path';
 import i18next from '~/lib/i18next.server';
 import i18n from '~/lib/i18n-config';
 
@@ -61,7 +61,7 @@ export default async function handleRequest(
         },
         onError(error: unknown) {
           didError = true;
-
+          /* eslint-disable-next-line no-console */
           console.error(error);
         },
       },

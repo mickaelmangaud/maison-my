@@ -1,12 +1,12 @@
 // import { useTranslation } from 'react-i18next';
 import { FaAngleDown } from 'react-icons/fa6';
 import { json, useFetcher } from '@remix-run/react';
-import { Layout } from '~/layout';
 import { ActionFunctionArgs, LoaderFunctionArgs, TypedResponse } from '@remix-run/node';
+import { AuthError, User } from '@supabase/supabase-js';
+import { Layout } from '~/layout';
 import { createSupabaseServerClient } from '~/lib/supabase.server';
 import { resend } from '~/lib/resend';
 import styles from '~/styles/index.module.scss';
-import { AuthError, User } from '@supabase/supabase-js';
 
 export async function action({ request }: ActionFunctionArgs) {
   const formData = await request.formData();
@@ -88,8 +88,8 @@ export default function Home() {
         <div className={styles.message}>
           <h1>Banh mi, Bobuns, Riz, nouilles... Venez déguster nos petits plats savoureux !</h1>
           <p>
-            Chaque bouchée de notre Banh mi, avec son pain croustillant, son porc mariné, ses légumes croquants, et sa touche de coriandre, vous transporte
-            instantanément....
+            Chaque bouchée de notre Banh mi, avec son pain croustillant, son porc mariné, ses légumes croquants, et sa touche de
+            coriandre, vous transporte instantanément....
           </p>
         </div>
 
@@ -104,8 +104,8 @@ export default function Home() {
         <div className={styles.message}>
           <h1>Banh mi, Bobuns, Riz, nouilles... Venez déguster nos petits plats savoureux !</h1>
           <p>
-            Chaque bouchée de notre Banh mi, avec son pain croustillant, son porc mariné, ses légumes croquants, et sa touche de coriandre, vous transporte
-            instantanément....
+            Chaque bouchée de notre Banh mi, avec son pain croustillant, son porc mariné, ses légumes croquants, et sa touche de
+            coriandre, vous transporte instantanément....
           </p>
         </div>
       </div>

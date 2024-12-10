@@ -1,7 +1,11 @@
 {
   "extends": ["stylelint-config-standard", "stylelint-config-standard-scss", "stylelint-config-recess-order"],
   "rules": {
-    "selector-max-id": 1,
-    "selector-class-pattern": null
+    "selector-max-id": 0,
+    "selector-class-pattern": null,
+    "color-named": "never",
+    "declaration-property-unit-allowed-list": {
+      "/^font-size/": ["rem"]
+    }
   }
 }

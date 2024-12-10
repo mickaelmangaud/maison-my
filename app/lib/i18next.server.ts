@@ -1,6 +1,6 @@
 import Backend from 'i18next-fs-backend';
-import { resolve } from 'node:path';
 import { RemixI18Next } from 'remix-i18next/server';
+import { resolve } from 'node:path';
 import i18nConfig from '~/lib/i18n-config';
 
 const i18next = new RemixI18Next({

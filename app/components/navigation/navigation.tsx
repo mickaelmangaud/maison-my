@@ -1,9 +1,9 @@
 import { Link, NavLink, useOutletContext } from '@remix-run/react';
-import styles from './navigation.module.scss';
 import { FaBars, FaX } from 'react-icons/fa6';
 import { useState } from 'react';
-import { MenuItem } from '../menu-item';
 import { OutletContextType } from '~/root';
+import styles from './navigation.module.scss';
+import { MenuItem } from '../menu-item';
 
 export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

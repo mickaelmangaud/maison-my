@@ -1,14 +1,25 @@
-import { isRouteErrorResponse, json, Links, Meta, Outlet, Scripts, ScrollRestoration, useLoaderData, useRevalidator, useRouteError } from '@remix-run/react';
+import {
+  isRouteErrorResponse,
+  json,
+  Links,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+  useLoaderData,
+  useRevalidator,
+  useRouteError,
+} from '@remix-run/react';
 import { LoaderFunctionArgs } from '@remix-run/node';
 import { useTranslation } from 'react-i18next';
 import { useChangeLanguage } from 'remix-i18next/react';
 import { createBrowserClient } from '@supabase/ssr';
 import { SupabaseClient, User } from '@supabase/supabase-js';
-import { createSupabaseServerClient } from './lib/supabase.server';
 import { jwtDecode } from 'jwt-decode';
+import { useEffect } from 'react';
 import styles from '~/styles/globals.module.scss';
 import i18next from '~/lib/i18next.server';
-import { useEffect } from 'react';
+import { createSupabaseServerClient } from './lib/supabase.server';
 
 export const handle = { i18n: 'common' };
 
