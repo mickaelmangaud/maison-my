@@ -43,7 +43,7 @@
 @mixin button-styles {
   padding: 8px 18px;
   font-family: 'Noto Sans', sans-serif;
-  font-size: 20px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 400;
   font-optical-sizing: auto;
@@ -67,7 +67,7 @@
   margin-top: 48px;
 
   @include max-width(780px) {
-    margin-top: 24px;
+    margin-top: 0;
   }
 }
 

@@ -47,7 +47,11 @@
       align-items: center;
       width: 100%;
       height: calc(100dvh - var(--nav-height));
-      margin-top: 20vh;
+      margin-top: 30vh;
+
+      @include max-width(780px) {
+        margin-top: 20vh;
+      }
 
       .welcome {
         max-width: 660px;
