@@ -13,7 +13,7 @@
   animation-iteration-count: 1;
 
   @include max-width(780px) {
-    margin-top: -134px;
+    margin-top: -122px;
 
     nav {
       width: 100%;
@@ -56,13 +56,14 @@
       .welcome {
         max-width: 660px;
         margin-bottom: 42px;
+        font-size: 2.5rem;
         color: var(--link-color);
         text-align: center;
         text-transform: capitalize;
 
         @include max-width(780px) {
           margin: 42px 24px;
-          font-size: 36px;
+          font-size: 2rem;
         }
       }
 
@@ -97,7 +98,7 @@
       .angleDown {
         position: absolute;
         bottom: 24px;
-        font-size: 48px;
+        font-size: 2.5rem;
         color: var(--link-color);
         cursor: pointer;
       }
@@ -116,15 +117,15 @@
 
     h1 {
       margin-bottom: 48px;
-      font-size: 48px;
+      font-size: 3rem;
 
       @include max-width(780px) {
-        font-size: 36px;
+        font-size: 2rem;
       }
     }
 
     p {
-      font-size: 18px;
+      font-size: 1rem;
     }
   }
 
