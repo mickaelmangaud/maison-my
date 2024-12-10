@@ -1,10 +1,11 @@
 @use './mixins.scss' as *;
 
 .contact {
-  @include pageStyles;
+  @include page-styles;
 
   .content {
-    @include contentStyles;
+    @include content-styles;
+
     h1 {
       color: var(--accent-blue);
     }
@@ -16,37 +17,37 @@
     .form {
       display: flex;
       flex-direction: column;
-      // align-items: center;
-      justify-content: center;
       gap: 8px;
+      justify-content: center;
       width: 100%;
       margin: 24px 0;
 
       input,
       textarea {
-        @include inputStyles;
+        @include input-styles;
       }
 
       input {
-        padding: 24px 24px 12px 24px;
+        padding: 24px 24px 12px;
         margin-bottom: 24px;
       }
 
       textarea {
         height: 200px;
-        margin-bottom: 24px;
         padding: 24px;
+        margin-bottom: 24px;
       }
 
       button {
-        @include buttonStyles;
-        width: fit-content;
+        @include button-styles;
+
         align-self: center;
+        width: fit-content;
       }
     }
 
     .back {
-      @include buttonStyles;
+      @include button-styles;
     }
   }
 }

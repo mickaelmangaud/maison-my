@@ -7,7 +7,8 @@
     "build": "remix vite:build",
     "start": "npx remix-serve build/server/index.js",
     "lint": "eslint",
-    "lint:scss": "stylelint '**/*.scss'",
+    "stylelint": "stylelint '**/*.scss'",
+    "stylelint:fix": "stylelint '**/*.{css, scss} --fix'",
     "lint:fix": "eslint --fix",
     "format": "prettier --write .",
     "typecheck": "tsc",
@@ -53,10 +54,12 @@
     "remix-development-tools": "^4.6.0",
     "sass-embedded": "^1.81.0",
     "stylelint": "^16.11.0",
+    "stylelint-config-recess-order": "^5.1.1",
+    "stylelint-config-standard": "^36.0.1",
     "stylelint-config-standard-scss": "^14.0.0",
     "supabase": "^2.0.0",
     "typescript": "^5.6.2",
-    "typescript-eslint": "^8.6.0",
+    "typescript-eslint": "^8.18.0",
     "vite": "^5.4.6",
     "vite-tsconfig-paths": "^5.0.1"
   }

@@ -1,12 +1,12 @@
 @use './mixins.scss' as *;
 
 .signin {
-  @include pageStyles;
+  @include page-styles;
 
   .content {
     gap: 4px;
     justify-content: center;
 
-    @include contentStyles;
+    @include content-styles;
   }
 }

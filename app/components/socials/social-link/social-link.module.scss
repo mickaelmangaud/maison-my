@@ -2,12 +2,12 @@
 
 .socialLink {
   right: 12px;
-  height: 54px;
-  width: 54px;
   display: grid;
   place-items: center;
-  border-radius: 5px;
+  width: 54px;
+  height: 54px;
   cursor: pointer;
+  border-radius: 5px;
 
   .icon {
     font-size: 54px;

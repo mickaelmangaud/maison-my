@@ -1,83 +1,83 @@
-@mixin minWidth($width) {
+@mixin min-width($width) {
   @media screen and (min-width: $width) {
     @content;
   }
 }
 
-@mixin maxWidth($width) {
+@mixin max-width($width) {
   @media screen and (max-width: $width) {
     @content;
   }
 }
 
-@keyframes fadeInOpacity {
+@keyframes fade-in-opacity {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
 }
 
-@mixin pageStyles {
+@mixin page-styles {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  opacity: 1;
-  animation-name: fadeInOpacity;
-  animation-iteration-count: 1;
-  animation-timing-function: ease-in;
-  animation-duration: 0.3s;
   min-height: 50vh;
   padding: 24px;
   margin-bottom: 48px;
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
 
-  @include maxWidth(780px) {
+  @include max-width(780px) {
     padding: 0 24px;
     margin-bottom: 32px;
   }
 }
 
-@mixin buttonStyles {
-  background-color: var(--fg-color);
-  color: var(--bg-color);
+@mixin button-styles {
   padding: 8px 18px;
-  border-radius: 4px;
-  font-size: 20px;
   font-family: 'Noto Sans', sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
+  font-size: 20px;
   font-style: normal;
-  font-variation-settings: 'wdth' 100;
+  font-weight: 400;
+  font-optical-sizing: auto;
+  color: var(--bg-color);
   text-transform: uppercase;
-  transform: rotate(-3deg);
   cursor: pointer;
-  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.14);
+  background-color: var(--fg-color);
   border: none;
+  border-radius: 4px;
   outline: none;
+  box-shadow: 5px 5px 15px 5px rgb(0 0 0 / 14%);
+  transform: rotate(-3deg);
 }
 
-@mixin contentStyles {
-  max-width: 780px;
+@mixin content-styles {
   display: flex;
+  flex: 1;
   flex-direction: column;
   align-items: center;
-  flex: 1;
+  max-width: 780px;
   margin-top: 48px;
 
-  @include maxWidth(780px) {
+  @include max-width(780px) {
     margin-top: 24px;
   }
 }
 
-@mixin inputStyles {
+@mixin input-styles {
   width: 100%;
-  border: 2px solid var(--fg-color);
-  font-size: 1rem;
   height: 54px;
-  line-height: 54px;
   padding: 0 24px;
-  outline: none;
+  font-size: 1rem;
+  line-height: 54px;
+  border: 2px solid var(--fg-color);
   border-radius: 6px;
+  outline: none;
 }

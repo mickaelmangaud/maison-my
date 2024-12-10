@@ -1,18 +1,18 @@
 @use '../../styles/mixins.scss' as *;
 
 .footer {
-  background-color: var(--bg-color);
-  padding: 36px 24px;
   display: flex;
   flex-direction: column;
+  padding: 36px 24px;
+  background-color: var(--bg-color);
 
   .content {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
     gap: 38px;
+    justify-content: space-evenly;
 
-    @include maxWidth(795px) {
+    @include max-width(795px) {
       justify-content: space-between;
     }
 
@@ -25,6 +25,7 @@
       h1 {
         white-space: nowrap;
       }
+
       ul {
         list-style: none;
       }
@@ -34,8 +35,8 @@
         gap: 4px;
 
         .icon a {
-          height: 24px !important;
           width: 24px !important;
+          height: 24px !important;
         }
       }
     }
@@ -50,16 +51,16 @@
         gap: 8px;
 
         span {
-          line-height: 36px;
           font-size: 14px;
+          line-height: 36px;
         }
       }
     }
   }
 
   .copyright {
+    margin-top: 48px;
     font-size: 0.8rem;
     text-align: center;
-    margin-top: 48px;
   }
 }

@@ -23,5 +23,7 @@ export default [
       'no-console': 'warn',
     },
   },
-  { settings: { react: { version: 'detect' } } },
+  {
+    settings: { react: { version: 'detect' } },
+  },
 ];

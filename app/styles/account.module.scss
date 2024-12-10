@@ -1,25 +1,25 @@
 @use './mixins.scss' as *;
 
 .account {
-  @include pageStyles;
+  @include page-styles;
 
   .content {
     width: 100%;
 
-    @include contentStyles;
+    @include content-styles;
 
     .title {
-      color: var(--accent-blue);
-      font-size: 32px;
       margin-bottom: 48px;
+      font-size: 32px;
+      color: var(--accent-blue);
     }
 
     .user {
       display: flex;
       justify-content: space-between;
       width: 100%;
-      border-bottom: 1px solid #cfcfcf;
       padding-bottom: 24px;
+      border-bottom: 1px solid #cfcfcf;
     }
 
     .infos {
@@ -38,12 +38,12 @@
     }
 
     .avatar {
-      border-radius: 50%;
-      border: 3px solid var(--accent-blue);
-      height: 75px;
       width: 75px;
+      height: 75px;
+      border: 3px solid var(--accent-blue);
+      border-radius: 50%;
 
-      @include maxWidth(780px) {
+      @include max-width(780px) {
         width: 50px;
         height: 50px;
       }
@@ -51,9 +51,9 @@
   }
 
   .advantages {
-    margin-top: 32px;
-    width: 100%;
     flex: 1;
+    width: 100%;
+    margin-top: 32px;
 
     h1 {
       color: var(--accent-blue);
@@ -62,7 +62,7 @@
   }
 
   .logout {
-    cursor: pointer;
     font-size: 0.8rem;
+    cursor: pointer;
   }
 }

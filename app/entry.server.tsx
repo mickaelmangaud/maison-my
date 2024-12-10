@@ -5,8 +5,8 @@ import { isbot } from 'isbot';
 import { renderToPipeableStream } from 'react-dom/server';
 import { createInstance } from 'i18next';
 import { I18nextProvider, initReactI18next } from 'react-i18next';
-import Backend from 'i18next-fs-backend';
 import { resolve } from 'node:path';
+import Backend from 'i18next-fs-backend';
 import i18next from '~/lib/i18next.server';
 import i18n from '~/lib/i18n-config';
 
