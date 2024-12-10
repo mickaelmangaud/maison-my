@@ -5,7 +5,7 @@ import { Layout } from '~/layout';
 import { ActionFunctionArgs, LoaderFunctionArgs, TypedResponse } from '@remix-run/node';
 import { createSupabaseServerClient } from '~/lib/supabase.server';
 import { resend } from '~/lib/resend';
-import styles from '../styles/index.module.scss';
+import styles from '~/styles/index.module.scss';
 import { AuthError, User } from '@supabase/supabase-js';
 
 export async function action({ request }: ActionFunctionArgs) {
@@ -47,9 +47,6 @@ export default function Home() {
   const fectcher = useFetcher<typeof action>();
   const isSendingMessage = fectcher.state !== 'idle';
   const hasSuscribed = fectcher.data?.code === 200;
-  // const {
-  //   data: { user },
-  // } = useLoaderData<typeof loader>();
 
   const scrollDown = () => {
     window.scroll({
@@ -62,36 +59,54 @@ export default function Home() {
   return (
     <Layout>
       <div className={styles.index}>
+        {/* HERO - Start */}
         <div className={styles.hero}>
+          {/* VIDEO */}
           <video loop muted autoPlay playsInline className={styles.video}>
             <source src="video.mp4" type="video/mp4" />
           </video>
+
           <div className={styles.header}>
             <h1 className={styles.welcome}>Maison My, la référence du Banh mi à Paris</h1>
+
             {isSendingMessage && <p>Souscription en cours</p>}
+
             {hasSuscribed && <p>Souscription effectuée !</p>}
+
             {!isSendingMessage && !hasSuscribed && (
               <fectcher.Form method="post" className={styles.subscribe}>
                 <input type="text" name="email" className={styles.input} placeholder="addresse email..." />
                 <button className={styles.btn}>PAR ICI LES REDUCS !</button>
               </fectcher.Form>
             )}
+
             <FaAngleDown className={styles.angleDown} onClick={scrollDown} />
           </div>
         </div>
+        {/* HERO - End */}
+
         <div className={styles.message}>
           <h1>Banh mi, Bobuns, Riz, nouilles... Venez déguster nos petits plats savoureux !</h1>
           <p>
-            Chaque bouchée de notre Banh mi, avec son pain croustillant, son porc mariné, ses légumes croquants, et sa touche de
-            coriandre, vous transporte instantanément....
+            Chaque bouchée de notre Banh mi, avec son pain croustillant, son porc mariné, ses légumes croquants, et sa touche de coriandre, vous transporte
+            instantanément....
           </p>
         </div>
+
         <div className={styles.mansonry}>
           {[...Array(7)].map((_, i) => (
             <div className={styles.item} key={i}>
               <img src={`/images/food/${i + 1}.webp`} />
             </div>
           ))}
+        </div>
+
+        <div className={styles.message}>
+          <h1>Banh mi, Bobuns, Riz, nouilles... Venez déguster nos petits plats savoureux !</h1>
+          <p>
+            Chaque bouchée de notre Banh mi, avec son pain croustillant, son porc mariné, ses légumes croquants, et sa touche de coriandre, vous transporte
+            instantanément....
+          </p>
         </div>
       </div>
     </Layout>

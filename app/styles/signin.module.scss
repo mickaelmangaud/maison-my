@@ -4,8 +4,9 @@
   @include pageStyles;
 
   .content {
-    @include contentStyles;
     gap: 4px;
     justify-content: center;
+
+    @include contentStyles;
   }
 }

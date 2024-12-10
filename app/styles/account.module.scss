@@ -4,8 +4,9 @@
   @include pageStyles;
 
   .content {
-    @include contentStyles;
     width: 100%;
+
+    @include contentStyles;
 
     .title {
       color: var(--accent-blue);

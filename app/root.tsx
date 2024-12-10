@@ -5,7 +5,7 @@ import { useChangeLanguage } from 'remix-i18next/react';
 import { createBrowserClient } from '@supabase/ssr';
 import { SupabaseClient, User } from '@supabase/supabase-js';
 import { createSupabaseServerClient } from './lib/supabase.server';
-import { jwtDecode, JwtPayload } from 'jwt-decode';
+import { jwtDecode } from 'jwt-decode';
 import styles from '~/styles/globals.module.scss';
 import i18next from '~/lib/i18next.server';
 import { useEffect } from 'react';
@@ -18,7 +18,7 @@ export interface OutletContextType {
   role: string | null;
 }
 
-interface JwtType extends JwtPayload {
+interface JwtType {
   user_role: string;
 }
 
@@ -40,10 +40,8 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
     error: userError,
   } = await supabase.auth.getUser();
 
-  let jwt: JwtType;
-
   if (!sessionError && !userError) {
-    jwt = jwtDecode(session?.access_token || '');
+    const jwt = jwtDecode<JwtType>(session?.access_token || '');
     return json({ locale, supabaseEnv, user, role: jwt.user_role });
   }
 
