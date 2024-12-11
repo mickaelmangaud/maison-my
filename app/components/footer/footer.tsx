@@ -6,6 +6,7 @@ export function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.content}>
+        {/* Address */}
         <div className={styles.address}>
           <h1>Maison My</h1>
           <p>68 Rue du Chemin Vert,</p>
@@ -28,6 +29,8 @@ export function Footer() {
             </a>
           </div>
         </div>
+
+        {/* Navigation */}
         <div className={styles.navigation}>
           <ul>
             <h1>Navigation</h1>
@@ -48,6 +51,8 @@ export function Footer() {
             </li>
           </ul>
         </div>
+
+        {/* Opening hours */}
         <div className={styles.hours}>
           <ul>
             <h1>Heures d&apos;ouverture</h1>
@@ -68,10 +73,11 @@ export function Footer() {
             </li>
           </ul>
         </div>
+
+        {/* Google map */}
         <div className={styles.access}>
           <ul>
             <h1>Nous trouver</h1>
-
             <li className={styles.map}>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9115088184567!2d2.375068076596885!3d48.85989780060023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66d0e73574f43%3A0x60e935830f5176a3!2sMaison%20My%20-%20Banh%20mi!5e0!3m2!1sfr!2sfr!4v1732988033154!5m2!1sfr!2sfr"
@@ -96,6 +102,8 @@ export function Footer() {
           </ul>
         </div>
       </div>
+
+      {/* Copyright */}
       <p className={styles.copyright}>&#169; 2024 - Tous droits réservés Maison My</p>
     </footer>
   );

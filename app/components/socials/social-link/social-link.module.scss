@@ -4,10 +4,18 @@
   right: 12px;
   display: grid;
   place-items: center;
-  width: 54px;
-  height: 54px;
   cursor: pointer;
   border-radius: 5px;
+
+  a {
+    width: 50px;
+    height: 50px;
+
+    @include max-width(780px) {
+      width: 42px !important;
+      height: 42px !important;
+    }
+  }
 
   .icon {
     font-size: 3rem;
