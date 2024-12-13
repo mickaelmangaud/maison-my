@@ -19,12 +19,13 @@ import { jwtDecode } from 'jwt-decode';
 import { useEffect } from 'react';
 import styles from '~/styles/globals.module.scss';
 import i18next from '~/lib/i18next.server';
+import { Database } from 'supabase/database.types';
 import { createSupabaseServerClient } from './lib/supabase.server';
 
 export const handle = { i18n: 'common' };
 
 export interface OutletContextType {
-  supabase: SupabaseClient;
+  supabase: SupabaseClient<Database>;
   user: User | null;
   role: string | null;
 }
@@ -64,7 +65,7 @@ export default function App() {
   const { i18n } = useTranslation();
   const revalidator = useRevalidator();
 
-  const supabase = createBrowserClient(supabaseEnv.SUPABASE_URL!, supabaseEnv.SUPABASE_ANON_KEY!, {
+  const supabase = createBrowserClient<Database>(supabaseEnv.SUPABASE_URL!, supabaseEnv.SUPABASE_ANON_KEY!, {
     isSingleton: true,
   });
 
