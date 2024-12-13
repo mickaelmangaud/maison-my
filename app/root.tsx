@@ -27,7 +27,7 @@ export const handle = { i18n: 'common' };
 export interface OutletContextType {
   supabase: SupabaseClient<Database>;
   user: User | null;
-  role: string | null;
+  role: 'user' | 'admin';
 }
 
 interface JwtType {
@@ -57,7 +57,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
     return json({ locale, supabaseEnv, user, role: jwt.user_role });
   }
 
-  return json({ locale, supabaseEnv, user, role: null });
+  return json({ locale, supabaseEnv, user, role: 'user' });
 };
 
 export default function App() {
