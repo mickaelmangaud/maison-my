@@ -53,7 +53,7 @@ export default function Account() {
 
           <div className={styles.advantages}>
             <h1>{t('account.myMyAdvantages')}</h1>
-            <div style={{ display: 'grid', placeItems: 'center', minHeight: '300px' }}>Ici bientôt, mes avantages My</div>
+            <div style={{ display: 'grid', placeItems: 'center', minHeight: '300px' }}>{t('account.soon')}</div>
           </div>
 
           <p className={styles.logout} onClick={handleSignOut}>
