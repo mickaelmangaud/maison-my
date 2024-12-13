@@ -1,4 +1,3 @@
-// import { useTranslation } from 'react-i18next';
 import { FaAngleDown } from 'react-icons/fa6';
 import { json, useFetcher } from '@remix-run/react';
 import { ActionFunctionArgs, LoaderFunctionArgs, TypedResponse } from '@remix-run/node';
