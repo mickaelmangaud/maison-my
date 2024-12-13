@@ -1,8 +1,11 @@
 import { Link } from '@remix-run/react';
 import { SocialIcon } from 'react-social-icons';
 import styles from './footer.module.scss';
+import { useTranslation } from 'react-i18next';
 
 export function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer className={styles.footer}>
       <div className={styles.content}>
@@ -33,21 +36,21 @@ export function Footer() {
         {/* Navigation */}
         <div className={styles.navigation}>
           <ul>
-            <h1>Navigation</h1>
+            <h1>{t('footer.navigation.title')}</h1>
             <li>
-              <Link to="/">Accueil</Link>
+              <Link to="/">{t('footer.navigation.home')}</Link>
             </li>
             <li>
-              <Link to="/account">Mon compte My</Link>
+              <Link to="/account">{t('footer.navigation.myAccount')}</Link>
             </li>
             <li>
-              <Link to="/carte">La carte</Link>
+              <Link to="/menu">{t('footer.navigation.menu')}</Link>
             </li>
             <li>
-              <Link to="/histoire">Un peu d&apos;histoire</Link>
+              <Link to="/histoire">{t('footer.navigation.story')}</Link>
             </li>
             <li>
-              <Link to="/contact">Nous contacter</Link>
+              <Link to="/contact">{t('footer.navigation.contactUs')}</Link>
             </li>
           </ul>
         </div>
@@ -55,21 +58,21 @@ export function Footer() {
         {/* Opening hours */}
         <div className={styles.hours}>
           <ul>
-            <h1>Heures d&apos;ouverture</h1>
+            <h1>{t('footer.openingHours.title')}</h1>
             <li>
-              Lundi <span>.....................................</span> 12h - 16h
+              {t('footer.openingHours.monday')} <span>.....................................</span> 12h - 16h
             </li>
             <li>
-              Mardi <span>.....................................</span> 12h - 16h
+              {t('footer.openingHours.thuesday')} <span>.....................................</span> 12h - 16h
             </li>
             <li>
-              Mercredi <span>................................</span> 12h - 16h
+              {t('footer.openingHours.wednesday')} <span>................................</span> 12h - 16h
             </li>
             <li>
-              Jeudi <span>......................................</span> 12h - 16h
+              {t('footer.openingHours.thursday')} <span>......................................</span> 12h - 16h
             </li>
             <li>
-              Vendredi <span>................................</span> 12h - 16h
+              {t('footer.openingHours.friday')} <span>................................</span> 12h - 16h
             </li>
           </ul>
         </div>
@@ -77,7 +80,7 @@ export function Footer() {
         {/* Google map */}
         <div className={styles.access}>
           <ul>
-            <h1>Nous trouver</h1>
+            <h1>{t('footer.access.findUs')}</h1>
             <li className={styles.map}>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9115088184567!2d2.375068076596885!3d48.85989780060023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66d0e73574f43%3A0x60e935830f5176a3!2sMaison%20My%20-%20Banh%20mi!5e0!3m2!1sfr!2sfr!4v1732988033154!5m2!1sfr!2sfr"
@@ -101,10 +104,11 @@ export function Footer() {
             </li>
           </ul>
         </div>
+        {/* Google map - end */}
       </div>
 
       {/* Copyright */}
-      <p className={styles.copyright}>&#169; 2024 - Tous droits réservés Maison My</p>
+      <p className={styles.copyright}>{t('footer.copyright')}</p>
     </footer>
   );
 }

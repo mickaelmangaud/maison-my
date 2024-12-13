@@ -3,6 +3,7 @@ import { FaAngleDown } from 'react-icons/fa6';
 import { json, useFetcher } from '@remix-run/react';
 import { ActionFunctionArgs, LoaderFunctionArgs, TypedResponse } from '@remix-run/node';
 import { AuthError, User } from '@supabase/supabase-js';
+import { useTranslation } from 'react-i18next';
 import { Layout } from '~/layout';
 import { createSupabaseServerClient } from '~/lib/supabase.server';
 import { resend } from '~/lib/resend';
@@ -43,7 +44,7 @@ export async function loader({ request }: LoaderFunctionArgs): Promise<TypedResp
 }
 
 export default function Home() {
-  // const { t } = useTranslation();
+  const { t } = useTranslation();
   const fectcher = useFetcher<typeof action>();
   const isSendingMessage = fectcher.state !== 'idle';
   const hasSuscribed = fectcher.data?.code === 200;
@@ -62,13 +63,14 @@ export default function Home() {
         {/* HERO - Start */}
         <div className={styles.hero}>
           {/* VIDEO */}
-          <video loop muted autoPlay playsInline className={styles.video}>
+          <video loop muted autoPlay playsInline className={styles.video} preload="preload">
             <source src="video.mp4" type="video/mp4" />
           </video>
 
+          {/* HEADER */}
           <div className={styles.header}>
-            <h1 className={styles.welcome}>Maison My, la référence du Banh mi à Paris</h1>
-
+            <h1 className={styles.welcome}>{t('home.welcome')}</h1>
+            {/* TODO;: use translations */}
             {isSendingMessage && <p>Souscription en cours</p>}
 
             {hasSuscribed && <p>Souscription effectuée !</p>}
@@ -85,14 +87,14 @@ export default function Home() {
         </div>
         {/* HERO - End */}
 
+        {/* MESSAGE - Start */}
         <div className={styles.message}>
-          <h1>Banh mi, Bobuns, Riz, nouilles... Venez déguster nos petits plats savoureux !</h1>
-          <p>
-            Chaque bouchée de notre Banh mi, avec son pain croustillant, son porc mariné, ses légumes croquants, et sa touche de
-            coriandre, vous transporte instantanément....
-          </p>
+          <h1>{t('home.message.h1')}</h1>
+          <p>{t('home.message.p')}</p>
         </div>
+        {/* MESSAGE - End */}
 
+        {/* GALLERY - Start */}
         <div className={styles.mansonry}>
           {[...Array(7)].map((_, i) => (
             <div className={styles.item} key={i}>
@@ -100,14 +102,14 @@ export default function Home() {
             </div>
           ))}
         </div>
+        {/* GALLERY - End */}
 
+        {/* MESSAGE - Start */}
         <div className={styles.message}>
-          <h1>Banh mi, Bobuns, Riz, nouilles... Venez déguster nos petits plats savoureux !</h1>
-          <p>
-            Chaque bouchée de notre Banh mi, avec son pain croustillant, son porc mariné, ses légumes croquants, et sa touche de
-            coriandre, vous transporte instantanément....
-          </p>
+          <h1>{t('home.message.h1')}</h1>
+          <p>{t('home.message.p')}</p>
         </div>
+        {/* MESSAGE - End */}
       </div>
     </Layout>
   );
