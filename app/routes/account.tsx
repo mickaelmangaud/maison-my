@@ -7,14 +7,14 @@ import { OutletContextType } from '~/root';
 import { Layout } from '~/layout';
 
 export async function loader({ request }: LoaderFunctionArgs) {
-  const { supabaseClient, headers } = createSupabaseServerClient(request);
-  const { data } = await supabaseClient.auth.getUser();
+  const { user, headers } = await createSupabaseServerClient(request);
+  console.log({ user });
 
-  if (!data.user) {
+  if (!user) {
     return redirect('/signin');
   }
 
-  return json(data.user, { headers });
+  return json(user, { headers });
 }
 
 export default function Account() {
@@ -28,7 +28,7 @@ export default function Account() {
     navigate('/');
   };
 
-  const dateCreated = new Date(user.created_at).toLocaleDateString('fr-FR');
+  // const dateCreated = new Date(user.created_at).toLocaleDateString('fr-FR');
 
   return (
     <Layout>
@@ -45,7 +45,7 @@ export default function Account() {
                 {t('account.emailAddress')}: <span className={styles.coloredText}>{user.user_metadata.email}</span>
               </p>
               <p className={styles.date}>
-                {t('account.memberSince')} {dateCreated}
+                {t('account.memberSince')} {'blop'}
               </p>
             </div>
             <img className={styles.avatar} src={user.user_metadata.avatar_url} alt="user-avatar" />

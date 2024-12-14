@@ -15,7 +15,6 @@ import { useTranslation } from 'react-i18next';
 import { useChangeLanguage } from 'remix-i18next/react';
 import { createBrowserClient } from '@supabase/ssr';
 import { SupabaseClient, User } from '@supabase/supabase-js';
-import { jwtDecode } from 'jwt-decode';
 import { useEffect } from 'react';
 import styles from '~/styles/globals.module.scss';
 import i18next from '~/lib/i18next.server';
@@ -30,10 +29,6 @@ export interface OutletContextType {
   role: 'user' | 'admin';
 }
 
-interface JwtType {
-  user_role: string;
-}
-
 export const loader = async ({ request }: LoaderFunctionArgs) => {
   const supabaseEnv = {
     SUPABASE_URL: process.env.SUPABASE_URL,
@@ -41,23 +36,10 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
   };
 
   const locale = await i18next.getLocale(request);
-  const { supabaseClient: supabase } = createSupabaseServerClient(request);
 
-  const {
-    data: { session },
-    error: sessionError,
-  } = await supabase.auth.getSession();
-  const {
-    data: { user },
-    error: userError,
-  } = await supabase.auth.getUser();
+  const { headers, user, role } = await createSupabaseServerClient(request);
 
-  if (!sessionError && !userError) {
-    const jwt = jwtDecode<JwtType>(session?.access_token || '');
-    return json({ locale, supabaseEnv, user, role: jwt.user_role });
-  }
-
-  return json({ locale, supabaseEnv, user, role: 'user' });
+  return json({ locale, supabaseEnv, user, role }, { headers });
 };
 
 export default function App() {
@@ -65,16 +47,19 @@ export default function App() {
   const { i18n } = useTranslation();
   const revalidator = useRevalidator();
 
+  useChangeLanguage(locale);
+
   const supabase = createBrowserClient<Database>(supabaseEnv.SUPABASE_URL!, supabaseEnv.SUPABASE_ANON_KEY!, {
     isSingleton: true,
   });
 
-  useChangeLanguage(locale);
-
   useEffect(() => {
-    supabase.auth.onAuthStateChange(() => {
+    const { data: authListener } = supabase.auth.onAuthStateChange((event) => {
+      console.log('AUTH STATE CHANGED', event);
       revalidator.revalidate();
     });
+
+    return () => authListener.subscription.unsubscribe();
   }, []);
 
   return (

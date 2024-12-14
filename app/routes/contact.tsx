@@ -1,11 +1,11 @@
 import { ActionFunctionArgs, json, TypedResponse } from '@remix-run/node';
 import { CreateEmailResponseSuccess, ErrorResponse, Resend } from 'resend';
 import { Link, useFetcher, useOutletContext } from '@remix-run/react';
+import { Trans, useTranslation } from 'react-i18next';
 import { Layout } from '~/layout';
 import { OutletContextType } from '~/root';
 import ContactEmail from '~/emails/contact-email';
 import styles from '../styles/contact.module.scss';
-import { Trans, useTranslation } from 'react-i18next';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
