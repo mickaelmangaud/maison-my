@@ -45,7 +45,7 @@ export default function Home() {
         {/* HERO - Start */}
         <div className={styles.hero}>
           {/* VIDEO */}
-          <video loop autoPlay playsInline className={styles.video} preload="preload">
+          <video loop muted autoPlay playsInline className={styles.video} preload="preload">
             <source src="video.mp4" type="video/mp4" />
           </video>
 
