@@ -3,10 +3,10 @@
     "welcome": "Maison My, Banh mi sandwiches, nouilles, riz, Bobun & Co..",
     "message": {
       "h1": "Banh mi, Bobuns, Riz, nouilles... Venez déguster nos petits plats savoureux !",
-      "p": "Chaque bouchée de notre Banh mi, avec son pain croustillant, son porc mariné, ses légumes croquants, et sa touche de coriandre, vous transporte instantanément....",
-      "emailPlaceholder": "Addresse email ...",
-      "giveMeMore": "Par ici les reducs !"
-    }
+      "p": "Chaque bouchée de notre Banh mi, avec son pain croustillant, son porc mariné, ses légumes croquants, et sa touche de coriandre, vous transporte instantanément...."
+    },
+    "emailPlaceholder": "Addresse email ...",
+    "giveMeMore": "Par ici les reducs !"
   },
   "account": {
     "myAccount": "Mon compte My",
