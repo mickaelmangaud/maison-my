@@ -1,10 +1,8 @@
 import { FaAngleDown } from 'react-icons/fa6';
 import { json, useFetcher } from '@remix-run/react';
 import { ActionFunctionArgs } from '@remix-run/node';
-// import { AuthError, User } from '@supabase/supabase-js';
 import { useTranslation } from 'react-i18next';
 import { Layout } from '~/layout';
-// import { createSupabaseServerClient } from '~/lib/supabase.server';
 import { resend } from '~/lib/resend';
 import styles from '~/styles/index.module.scss';
 

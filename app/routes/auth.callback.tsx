@@ -9,11 +9,8 @@ export async function loader({ request }: LoaderFunctionArgs) {
 
   if (code) {
     const { supabaseClient, headers } = await createSupabaseServerClient(request);
-
     const { error } = await supabaseClient.auth.exchangeCodeForSession(code);
-
     if (!error) {
-      console.log('AUTH CALLBACK EROOR', error, code);
       return redirect(next, { headers });
     }
   }
