@@ -1,0 +1,77 @@
+{
+  "home": {
+    "welcome": "Maison My, Sándwiches Bánh mì, fideos, arroz, Bò bún & Co..",
+    "message": {
+      "h1": "Bánh mì, Bò bún, Arroz, fideos... ¡Ven y disfruta de nuestros deliciosos platos pequeños!",
+      "p": "Cada bocado de nuestro Bánh mì, con su pan crujiente, cerdo marinado, verduras crujientes y un toque de cilantro, te transporta instantáneamente..."
+    },
+    "emailPlaceholder": "Dirección de correo electrónico ...",
+    "giveMeMore": "¡Aquí vienen los descuentos!"
+  },
+  "account": {
+    "myAccount": "Mi cuenta en My",
+    "hello": "Hola",
+    "emailAddress": "Dirección de correo electrónico",
+    "memberSince": "Miembro desde",
+    "myMyAdvantages": "Mis ventajas en My",
+    "logout": "Cerrar sesión",
+    "soon": "Pronto aquí, mis ventajas en My"
+  },
+  "admin": {},
+  "conditions": {},
+  "contact": {
+    "sendingMessage": "Enviando mensaje ...",
+    "messageSent": "¡Mensaje enviado!",
+    "beBack": "¡Nos pondremos en contacto contigo pronto!",
+    "back": "Volver al inicio",
+    "contactUs": "Contáctanos",
+    "desc": "<p>Ya seas profesional o particular, Maison My está aquí para hacer esto o lo otro poniendo tu mensaje en la caja haciendo clic.</p><p>Niah niah niah un poco de texto para que parezca así ....</p>",
+    "email": "Dirección de correo electrónico",
+    "emailPlaceholder": "Dirección de correo electrónico ...",
+    "phoneNumber": "Número de teléfono",
+    "numberPlaceholder": "Número de teléfono ...",
+    "message": "Tu mensaje",
+    "messagePlaceholder": "Tu mensaje ...",
+    "submit": "Enviar"
+  },
+  "story": {
+    "banhmiTitle": "El Bánh mì",
+    "banhmiDesc": "<p> La historia del Bánh Mì comienza a principios del siglo XX, durante la colonización francesa de Vietnam. Los franceses introdujeron el pan, Bánh Mì en vietnamita, en un país donde el arroz era rey. </p><p>Después de la independencia de Vietnam en la década de 1950, el pan se convirtió en un ingrediente clave para un nuevo tipo de sándwich. Los refugiados del Norte, asentándose en el Sur tras la división de Vietnam en 1954, comenzaron a llenar este pan con ingredientes locales, creando así el Bánh mì. Mezclaban el paté francés con sabores vietnamitas como cerdo a la parrilla, verduras encurtidas, cilantro y salsa de soja o nuoc mam.</p><p> Este sándwich único se convirtió en un símbolo de la adaptación y la fusión culinaria. Con la diáspora vietnamita después de 1975, el Bánh mì viajó por el mundo, ganando popularidad y adaptándose a los paladares globales mientras mantenía su esencia.</p><p> Hoy en día, el Bánh mì es celebrado por su textura crujiente y su mezcla sabrosa, convirtiéndose en un fenómeno culinario internacional.</p>",
+    "bobunTitle": "El Bò bún",
+    "bobunDesc": "<p>El Bò bún o Bún bò, aunque a menudo asociado con Vietnam, tiene orígenes más complejos. Su historia comienza en la región de Champa, en el centro de Vietnam, donde los Cham, un pueblo austronesio, cultivaban arroz y usaban fideos en su cocina.</p><p>Con la expansión del reino vietnamita y los intercambios culturales, estas prácticas culinarias se extendieron. El Bò bún como lo conocemos hoy, compuesto por fideos de arroz, carne (a menudo de res), verduras frescas, hierbas aromáticas, cacahuetes y salsa nuoc mam, ha evolucionado a lo largo de los siglos.</p><p> La influencia camboyana y laosiana es notable, donde existen versiones similares con ingredientes ligeramente diferentes. Fue después de la guerra de Vietnam y el éxodo de los boat people que el Bò bún realmente tomó una dimensión internacional, llevado por los vietnamitas por todo el mundo.</p><p>En Francia, el país de acogida de muchos refugiados vietnamitas, el Bò bún encontró un nuevo hogar, mezclándose con la cultura culinaria local mientras mantenía su identidad y se convirtió en un plato emblemático de la cocina de fusión vietnamita.</p>"
+  },
+  "menu": {
+    "title": "El Menú"
+  },
+  "pricavy": {},
+  "signin": {},
+  "navigation": {
+    "home": "Inicio",
+    "account": "Mi Cuenta",
+    "menu": "El Menú",
+    "story": "La Historia",
+    "contactUs": "Contáctanos"
+  },
+  "footer": {
+    "navigation": {
+      "title": "Navegación",
+      "home": "Inicio",
+      "myAccount": "Mi Cuenta",
+      "menu": "El Menú",
+      "story": "Un poco de historia",
+      "contactUs": "Contáctanos"
+    },
+    "openingHours": {
+      "title": "Horario de apertura",
+      "monday": "Lunes",
+      "thuesday": "Martes",
+      "wednesday": "Miércoles",
+      "thursday": "Jueves",
+      "friday": "Viernes"
+    },
+    "access": {
+      "findUs": "Encuéntranos"
+    },
+    "copyright": "© 2023 Maison My. Todos los derechos reservados."
+  }
+}

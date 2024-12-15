@@ -1,5 +1,5 @@
 export default {
-  supportedLngs: ['fr', 'en'],
+  supportedLngs: ['fr', 'en', 'vi', 'de', 'es', 'it'],
   fallbackLng: 'fr',
   defaultNS: 'common',
   react: {
