@@ -54,8 +54,7 @@ export default function App() {
   });
 
   useEffect(() => {
-    const { data: authListener } = supabase.auth.onAuthStateChange((event) => {
-      console.log('AUTH STATE CHANGED', event);
+    const { data: authListener } = supabase.auth.onAuthStateChange(() => {
       revalidator.revalidate();
     });
 

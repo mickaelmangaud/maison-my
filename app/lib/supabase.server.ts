@@ -42,8 +42,6 @@ export const createSupabaseServerClient = async (request: Request): Promise<Supa
     error: userError,
   } = await supabaseClient.auth.getUser();
 
-  console.log('user here', user, userError);
-
   if (!sessionError && !userError) {
     const jwt = jwtDecode<JwtType>(session?.access_token || '');
     role = jwt.user_role;

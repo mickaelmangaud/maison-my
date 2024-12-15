@@ -1,7 +1,7 @@
 import { Link } from '@remix-run/react';
 import { SocialIcon } from 'react-social-icons';
-import styles from './footer.module.scss';
 import { useTranslation } from 'react-i18next';
+import styles from './footer.module.scss';
 
 export function Footer() {
   const { t } = useTranslation();
