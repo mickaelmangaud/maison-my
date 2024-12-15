@@ -46,6 +46,7 @@
   "pricavy": {},
   "signin": {},
   "navigation": {
+    "home": "Accueil",
     "account": "Compte My",
     "menu": "La carte",
     "story": "L'histoire",

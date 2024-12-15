@@ -8,4 +8,5 @@ export default {
     transKeepBasicHtmlNodesFor: ['p'],
     useSupens: false,
   },
+  debug: true,
 };

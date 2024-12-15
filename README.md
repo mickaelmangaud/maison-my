@@ -10,3 +10,4 @@ to import scss files in other scss file:
 - Socials : Spotify, Twitter, Linkdin, Phone, Magic Link
 - Resize logo images to the correct size
 - Optimize translations by splitting into multple files with multiple namespaces
+- add a poster image to the hero video

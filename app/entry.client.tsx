@@ -27,18 +27,20 @@ async function hydrate() {
         // on the browser, so we disable it
         caches: [],
       },
+    })
+    .then(() => {
+      // When i18next has been initialized, start the app
+      startTransition(() => {
+        hydrateRoot(
+          document,
+          <I18nextProvider i18n={i18next}>
+            <StrictMode>
+              <RemixBrowser />
+            </StrictMode>
+          </I18nextProvider>,
+        );
+      });
     });
-
-  startTransition(() => {
-    hydrateRoot(
-      document,
-      <I18nextProvider i18n={i18next}>
-        <StrictMode>
-          <RemixBrowser />
-        </StrictMode>
-      </I18nextProvider>,
-    );
-  });
 }
 
 if (window.requestIdleCallback) {
