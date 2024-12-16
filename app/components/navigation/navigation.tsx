@@ -1,5 +1,5 @@
 import { Link, NavLink, useOutletContext } from '@remix-run/react';
-import { FaBars, FaX } from 'react-icons/fa6';
+import { FaBars } from 'react-icons/fa';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { OutletContextType } from '~/root';
@@ -30,7 +30,7 @@ export function Navigation() {
       {/* Logo */}
       <NavLink prefetch="viewport" to="/">
         <div className={styles.logo}>
-          <img className={styles.img} src="/images/logo-my.png" />
+          <img className={styles.img} src="/images/logo-my.png" alt="my-logo" />
         </div>
       </NavLink>
 
@@ -50,7 +50,9 @@ export function Navigation() {
 
       {/* Mobile Menu - Start */}
       <div className={`${styles.mobileMenu} ${isMenuOpen ? styles.open : ''}`}>
-        <FaX size={32} onClick={toggleMenu} className={styles.close} />
+        <p onClick={toggleMenu} className={styles.close}>
+          X
+        </p>
         <ul>
           <li onClick={toggleMenu}>
             <MenuItem to="/" label={t('navigation.home')} />

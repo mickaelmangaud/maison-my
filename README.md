@@ -12,3 +12,6 @@ to import scss files in other scss file:
 - Optimize translations by splitting into multple files with multiple namespaces
 - add a poster image to the hero video
 - check for english translations (if they are ok)
+- add a title element for each page
+- Les éléments <frame> ou <iframe> n'ont pas de titre
+- https://github.com/vercel/next.js/discussions/43921

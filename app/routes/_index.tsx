@@ -78,7 +78,7 @@ export default function Home() {
         <div className={styles.mansonry}>
           {[...Array(7)].map((_, i) => (
             <div className={styles.item} key={i}>
-              <img src={`/images/food/${i + 1}.webp`} />
+              <img src={`/images/food/${i + 1}.webp`} alt={'food ' + (i + 1)} />
             </div>
           ))}
         </div>
