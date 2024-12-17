@@ -4,6 +4,8 @@ import { Layout } from '~/layout';
 import { OutletContextType } from '~/root';
 import styles from '~/styles/signin.module.scss';
 
+export const handle = { i18n: 'signin' };
+
 export function loader() {
   return { callbackURL: process.env.CALLBACK_URL };
 }

@@ -1,0 +1,15 @@
+{
+  "sendingMessage": "Invio del messaggio in corso ...",
+  "messageSent": "Messaggio inviato!",
+  "beBack": "Ti risponderemo presto!",
+  "back": "Ritorna alla home",
+  "contactUs": "Contattaci",
+  "desc": "<p>Che tu sia un professionista o un privato, Maison My è qui per fare questo o quello mettendo il tuo messaggio nella casella cliccando.</p><p>Niah niah niah un po' di testo per fare finta che ....</p>",
+  "email": "Indirizzo email",
+  "emailPlaceholder": "Indirizzo email ...",
+  "phoneNumber": "Numero di telefono",
+  "numberPlaceholder": "Numero di telefono ...",
+  "message": "Il tuo messaggio",
+  "messagePlaceholder": "Il tuo messaggio ...",
+  "submit": "Invia"
+}

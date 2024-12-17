@@ -6,6 +6,8 @@ import { Layout } from '~/layout';
 import { resend } from '~/lib/resend';
 import styles from '~/styles/index.module.scss';
 
+export const handle = { i18n: 'home' };
+
 export async function action({ request }: ActionFunctionArgs) {
   const formData = await request.formData();
   const email = formData.get('email') as string;
@@ -24,7 +26,7 @@ export async function action({ request }: ActionFunctionArgs) {
 }
 
 export default function Home() {
-  const { t } = useTranslation();
+  const { t } = useTranslation('home');
   const fectcher = useFetcher<typeof action>();
   const isSendingMessage = fectcher.state !== 'idle';
   const hasSuscribed = fectcher.data?.code === 200;
@@ -49,7 +51,7 @@ export default function Home() {
 
           {/* HEADER */}
           <div className={styles.header}>
-            <h1 className={styles.welcome}>{t('home.welcome')}</h1>
+            <h1 className={styles.welcome}>{t('welcome')}</h1>
             {/* TODO;: use translations */}
             {isSendingMessage && <p>Souscription en cours</p>}
 
@@ -57,8 +59,8 @@ export default function Home() {
 
             {!isSendingMessage && !hasSuscribed && (
               <fectcher.Form method="post" className={styles.subscribe}>
-                <input type="text" name="email" className={styles.input} placeholder={t('home.emailPlaceholder')} />
-                <button className={styles.btn}>{t('home.giveMeMore')}</button>
+                <input type="text" name="email" className={styles.input} placeholder={t('emailPlaceholder')} />
+                <button className={styles.btn}>{t('giveMeMore')}</button>
               </fectcher.Form>
             )}
 
@@ -69,8 +71,8 @@ export default function Home() {
 
         {/* MESSAGE - Start */}
         <div className={styles.message}>
-          <h1>{t('home.message.h1')}</h1>
-          <p>{t('home.message.p')}</p>
+          <h1>{t('message.h1')}</h1>
+          <p>{t('message.p')}</p>
         </div>
         {/* MESSAGE - End */}
 
@@ -86,8 +88,8 @@ export default function Home() {
 
         {/* MESSAGE - Start */}
         <div className={styles.message}>
-          <h1>{t('home.message.h1')}</h1>
-          <p>{t('home.message.p')}</p>
+          <h1>{t('message.h1')}</h1>
+          <p>{t('message.p')}</p>
         </div>
         {/* MESSAGE - End */}
       </div>

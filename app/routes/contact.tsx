@@ -7,6 +7,8 @@ import { OutletContextType } from '~/root';
 import ContactEmail from '~/emails/contact-email';
 import styles from '../styles/contact.module.scss';
 
+export const handle = { i18n: 'contact' };
+
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 interface ContactActionData {
@@ -41,14 +43,14 @@ export default function Contact() {
   const isSendingMessage = fetcher.state !== 'idle';
   const isEmailSent = fetcher.data?.code === 200;
   const { user } = useOutletContext<OutletContextType>();
-  const { t } = useTranslation();
+  const { t } = useTranslation('contact');
 
   if (isSendingMessage) {
     return (
       <Layout>
         <div className={styles.contact}>
           <div className={styles.content}>
-            <p>{t('contact.sendingMessage')}</p>
+            <p>{t('sendingMessage')}</p>
           </div>
         </div>
       </Layout>
@@ -60,10 +62,10 @@ export default function Contact() {
       <Layout>
         <div className={styles.contact}>
           <div className={styles.content}>
-            <p>{t('contact.messageSent')}</p>
-            <p>{t('contact.beBack')}</p>
+            <p>{t('messageSent')}</p>
+            <p>{t('beBack')}</p>
             <Link to="/">
-              <button className={styles.back}>{t('contact.back')}</button>
+              <button className={styles.back}>{t('back')}</button>
             </Link>
           </div>
         </div>
@@ -75,23 +77,23 @@ export default function Contact() {
     <Layout>
       <div className={styles.contact}>
         <div className={styles.content}>
-          <h1>{t('contact.contactUs')}</h1>
-          <Trans i18nKey="contact.desc" components={{ p: <p /> }} />
+          <h1>{t('contactUs')}</h1>
+          <Trans t={t} i18nKey="desc" components={{ p: <p /> }} />
           {!isEmailSent && !isSendingMessage && (
             <fetcher.Form method="post" className={styles.form}>
-              <label htmlFor="email">{t('contact.email')}</label>
+              <label htmlFor="email">{t('email')}</label>
               <input
                 type="email"
                 name="email"
                 id="email"
-                placeholder={t('contact.emailPlaceholder')}
+                placeholder={t('emailPlaceholder')}
                 defaultValue={user?.user_metadata.email || ''}
               />
-              <label htmlFor="tel">{t('contact.phoneNumber')}</label>
-              <input type="tel" name="tel" id="tel" placeholder={t('contact.numberPlaceholder')} />
-              <label htmlFor="message">{t('contact.message')}</label>
-              <textarea name="message" id="message" placeholder={t('contact.messagePlaceholder')}></textarea>
-              <button type="submit">{t('contact.submit')}</button>
+              <label htmlFor="tel">{t('phoneNumber')}</label>
+              <input type="tel" name="tel" id="tel" placeholder={t('numberPlaceholder')} />
+              <label htmlFor="message">{t('message')}</label>
+              <textarea name="message" id="message" placeholder={t('messagePlaceholder')}></textarea>
+              <button type="submit">{t('submit')}</button>
             </fetcher.Form>
           )}
         </div>

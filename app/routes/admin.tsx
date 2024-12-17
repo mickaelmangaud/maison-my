@@ -3,6 +3,8 @@ import { OutletContextType } from '~/root';
 import { Layout } from '~/layout';
 import styles from '../styles/admin.module.scss';
 
+export const handle = { i18n: 'admin' };
+
 export default function Admin() {
   const { role } = useOutletContext<OutletContextType>();
 

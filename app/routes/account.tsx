@@ -6,6 +6,8 @@ import styles from '~/styles/account.module.scss';
 import { OutletContextType } from '~/root';
 import { Layout } from '~/layout';
 
+export const handle = { i18n: 'account' };
+
 export async function loader({ request }: LoaderFunctionArgs) {
   const { user, headers } = await createSupabaseServerClient(request);
   if (!user) {
@@ -17,8 +19,8 @@ export async function loader({ request }: LoaderFunctionArgs) {
 export default function Account() {
   const user = useLoaderData<typeof loader>();
   const { supabase } = useOutletContext<OutletContextType>();
+  const { t } = useTranslation('account');
   const navigate = useNavigate();
-  const { t } = useTranslation();
 
   const handleSignOut = () => {
     supabase.auth.signOut({});
@@ -31,30 +33,30 @@ export default function Account() {
     <Layout>
       <div className={styles.account}>
         <div className={styles.content}>
-          <h1 className={styles.title}>{t('account.myAccount')}</h1>
+          <h1 className={styles.title}>{t('myAccount')}</h1>
 
           <div className={styles.user}>
             <div className={styles.infos}>
               <p className={styles.welcome}>
-                {t('account.hello')}, <span className={styles.coloredText}>{user.user_metadata.full_name}</span>
+                {t('hello')}, <span className={styles.coloredText}>{user.user_metadata.full_name}</span>
               </p>
               <p className={styles.email}>
-                {t('account.emailAddress')}: <span className={styles.coloredText}>{user.user_metadata.email}</span>
+                {t('emailAddress')}: <span className={styles.coloredText}>{user.user_metadata.email}</span>
               </p>
               <p className={styles.date}>
-                {t('account.memberSince')} {dateCreated}
+                {t('memberSince')} {dateCreated}
               </p>
             </div>
             <img className={styles.avatar} src={user.user_metadata.avatar_url} alt="user-avatar" />
           </div>
 
           <div className={styles.advantages}>
-            <h1>{t('account.myMyAdvantages')}</h1>
-            <div style={{ display: 'grid', placeItems: 'center', minHeight: '300px' }}>{t('account.soon')}</div>
+            <h1>{t('myMyAdvantages')}</h1>
+            <div style={{ display: 'grid', placeItems: 'center', minHeight: '300px' }}>{t('soon')}</div>
           </div>
 
           <p className={styles.logout} onClick={handleSignOut}>
-            {t('account.logout')}
+            {t('logout')}
           </p>
         </div>
       </div>

@@ -65,7 +65,8 @@
 
         @include max-width(780px) {
           margin: 42px 24px;
-          font-size: 2rem;
+          font-size: 1.7rem;
+          line-height: 48px;
         }
       }
 

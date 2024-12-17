@@ -1,0 +1,15 @@
+{
+  "sendingMessage": "Đang gửi tin nhắn ...",
+  "messageSent": "Tin nhắn đã gửi!",
+  "beBack": "Chúng tôi sẽ liên hệ lại với bạn sớm!",
+  "back": "Trở về trang chủ",
+  "contactUs": "Liên hệ với chúng tôi",
+  "desc": "<p>Dù bạn là chuyên gia hay cá nhân, Maison My ở đây để làm việc này hoặc việc kia bằng cách đặt tin nhắn của bạn vào hộp bằng cách nhấp.</p><p>Niah niah niah một chút văn bản để làm như thể vậy ....</p>",
+  "email": "Địa chỉ email",
+  "emailPlaceholder": "Địa chỉ email ...",
+  "phoneNumber": "Số điện thoại",
+  "numberPlaceholder": "Số điện thoại ...",
+  "message": "Tin nhắn của bạn",
+  "messagePlaceholder": "Tin nhắn của bạn ...",
+  "submit": "Gửi"
+}

@@ -1,0 +1,15 @@
+{
+  "sendingMessage": "Envoi du message en cours ...",
+  "messageSent": "Message envoyé !",
+  "beBack": "Nous reviendrons vers vous rapidement !",
+  "back": "Retour à l'accueil",
+  "contactUs": "Nous contacter",
+  "desc": "<p>Que vous soyez, professionnel, particulier, la Maison My pour faire ceci ou celà en mettant votre message dans la boite en cliquant.</p><p>Niah niah niah un peu de texte pour faire genre etc ....</p>",
+  "email": "Adresse email",
+  "emailPlaceholder": "Addresse email ...",
+  "phoneNumber": "Numéro de téléphone",
+  "numberPlaceholder": "Numéro de téléphone ...",
+  "message": "Votre message",
+  "messagePlaceholder": "Votre message ...",
+  "submit": "Envoyer"
+}

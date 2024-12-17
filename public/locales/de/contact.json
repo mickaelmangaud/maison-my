@@ -1,0 +1,15 @@
+{
+  "sendingMessage": "Nachricht wird gesendet ...",
+  "messageSent": "Nachricht gesendet!",
+  "beBack": "Wir werden bald bei Ihnen zurückkommen!",
+  "back": "Zurück zur Startseite",
+  "contactUs": "Kontaktieren Sie uns",
+  "desc": "<p>Ob Sie Fachkraft oder Privatperson sind, Maison My ist hier, um dies oder das zu tun, indem Sie Ihre Nachricht in das Feld einfügen und klicken.</p><p>Niah niah niah ein bisschen Text, um es so aussehen zu lassen ....</p>",
+  "email": "E-Mail-Adresse",
+  "emailPlaceholder": "E-Mail-Adresse ...",
+  "phoneNumber": "Telefonnummer",
+  "numberPlaceholder": "Telefonnummer ...",
+  "message": "Ihre Nachricht",
+  "messagePlaceholder": "Ihre Nachricht ...",
+  "submit": "Senden"
+}
