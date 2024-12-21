@@ -8,7 +8,7 @@ import Backend from 'i18next-fs-backend';
 import { PassThrough } from 'stream';
 import { resolve } from 'node:path';
 import i18next from '~/lib/i18next.server';
-import i18n from '~/lib/i18n-config';
+import i18nConfig from '~/lib/i18n-config';
 
 const ABORT_DELAY = 5000;
 
@@ -28,10 +28,10 @@ export default async function handleRequest(
     .use(initReactI18next) // Tell our instance to use react-i18next
     .use(Backend) // Setup our backend
     .init({
-      ...i18n, // spread the configuration
+      ...i18nConfig, // spread the configuration
       lng, // The locale we detected above
       ns, // The namespaces the routes about to render wants to use
-      backend: { loadPath: '/locales/{{lng}}/{{ns}}.json' },
+      backend: { loadPath: resolve('./public/locales/{{lng}}/{{ns}}.json') },
     });
 
   return new Promise((resolve, reject) => {
