@@ -6,7 +6,7 @@ import { Layout } from '~/layout';
 import { OutletContextType } from '~/root';
 import ContactEmail from '~/emails/contact-email';
 import { CONSTANTS } from '~/utils/constants';
-import { getPageTitle } from '~/utils/loaders';
+import { getPageTitle } from '~/utils/loaders.server';
 import styles from '../styles/contact.module.scss';
 
 export const handle = { i18n: 'contact' };

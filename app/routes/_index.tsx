@@ -6,7 +6,7 @@ import { Layout } from '~/layout';
 import { resend } from '~/lib/resend';
 import styles from '~/styles/index.module.scss';
 import { CONSTANTS } from '~/utils/constants';
-import { getPageTitle } from '~/utils/loaders';
+import { getPageTitle } from '~/utils/loaders.server';
 
 export const handle = { i18n: 'home' };
 

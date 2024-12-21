@@ -1,7 +1,7 @@
 import { LoaderFunctionArgs } from '@remix-run/node';
 import { MetaFunction } from '@remix-run/react';
 import { CONSTANTS } from '~/utils/constants';
-import { getPageTitle } from '~/utils/loaders';
+import { getPageTitle } from '~/utils/loaders.server';
 
 export const handle = { i18n: 'conditions' };
 

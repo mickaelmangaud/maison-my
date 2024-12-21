@@ -3,7 +3,7 @@ import { LoaderFunctionArgs } from '@remix-run/node';
 import { MetaFunction } from '@remix-run/react';
 import { Layout } from '~/layout';
 import { CONSTANTS } from '~/utils/constants';
-import { getPageTitle } from '~/utils/loaders';
+import { getPageTitle } from '~/utils/loaders.server';
 import styles from '../styles/histoire.module.scss';
 
 export const handle = { i18n: 'story' };

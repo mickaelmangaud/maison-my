@@ -3,7 +3,7 @@ import { LoaderFunctionArgs, MetaFunction } from '@remix-run/node';
 import { OutletContextType } from '~/root';
 import { Layout } from '~/layout';
 import { CONSTANTS } from '~/utils/constants';
-import { getPageTitle } from '~/utils/loaders';
+import { getPageTitle } from '~/utils/loaders.server';
 import styles from '../styles/admin.module.scss';
 
 export const handle = { i18n: 'admin' };

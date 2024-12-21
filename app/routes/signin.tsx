@@ -5,7 +5,7 @@ import { Layout } from '~/layout';
 import { OutletContextType } from '~/root';
 import styles from '~/styles/signin.module.scss';
 import { CONSTANTS } from '~/utils/constants';
-import { getPageTitle } from '~/utils/loaders';
+import { getPageTitle } from '~/utils/loaders.server';
 
 export const handle = { i18n: 'signin' };
 
