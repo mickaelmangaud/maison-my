@@ -1,5 +1,5 @@
 import { useLoaderData, useNavigate, useOutletContext } from '@remix-run/react';
-import { json, LoaderFunctionArgs, MetaFunction, redirect } from '@remix-run/node';
+import { LoaderFunctionArgs, MetaFunction, redirect } from '@remix-run/node';
 import { useTranslation } from 'react-i18next';
 import { createSupabaseServerClient } from '~/lib/supabase.server';
 import styles from '~/styles/account.module.scss';
@@ -11,13 +11,13 @@ import { getPageTitle } from '~/utils/loaders';
 export const handle = { i18n: 'account' };
 
 export async function loader({ request }: LoaderFunctionArgs) {
-  const pageTitle = getPageTitle({ request, page: 'account' });
+  const pageTitle = await getPageTitle({ request, page: 'account' });
 
   const { user, headers } = await createSupabaseServerClient(request);
   if (!user) {
     return redirect('/signin');
   }
-  return json({ user, pageTitle }, { headers });
+  return { user, pageTitle, headers };
 }
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
@@ -60,7 +60,7 @@ export default function Account() {
 
           <div className={styles.advantages}>
             <h1>{t('myMyAdvantages')}</h1>
-            <div style={{ display: 'grid', placeItems: 'center', minHeight: '300px' }}>{t('soon')}</div>
+            <div className={styles.soon}>{t('soon')}</div>
           </div>
 
           <p className={styles.logout} onClick={handleSignOut}>

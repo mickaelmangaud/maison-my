@@ -1,4 +1,4 @@
-import { json, useOutletContext } from '@remix-run/react';
+import { useOutletContext } from '@remix-run/react';
 import { LoaderFunctionArgs, MetaFunction } from '@remix-run/node';
 import { OutletContextType } from '~/root';
 import { Layout } from '~/layout';
@@ -9,9 +9,9 @@ import styles from '../styles/admin.module.scss';
 export const handle = { i18n: 'admin' };
 
 export async function loader({ request }: LoaderFunctionArgs) {
-  const pageTitle = getPageTitle({ request, page: 'admin' });
+  const pageTitle = await getPageTitle({ request, page: 'admin' });
 
-  return json({ pageTitle });
+  return { pageTitle };
 }
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {

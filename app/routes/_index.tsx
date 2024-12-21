@@ -1,5 +1,5 @@
 import { FaAngleDown } from 'react-icons/fa6';
-import { json, useFetcher } from '@remix-run/react';
+import { useFetcher } from '@remix-run/react';
 import { ActionFunctionArgs, LoaderFunctionArgs, MetaFunction } from '@remix-run/node';
 import { useTranslation } from 'react-i18next';
 import { Layout } from '~/layout';
@@ -21,16 +21,16 @@ export async function action({ request }: ActionFunctionArgs) {
   });
 
   if (error) {
-    return json({ error, code: 500 });
+    return { error, code: 500 };
   }
 
-  return json({ data, code: 200 });
+  return { data, code: 200 };
 }
 
 export async function loader({ request }: LoaderFunctionArgs) {
-  const pageTitle = getPageTitle({ request, page: 'home' });
+  const pageTitle = await getPageTitle({ request, page: 'home' });
 
-  return json({ pageTitle });
+  return { pageTitle };
 }
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {

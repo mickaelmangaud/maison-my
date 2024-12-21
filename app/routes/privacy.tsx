@@ -1,4 +1,4 @@
-import { json, LoaderFunctionArgs } from '@remix-run/node';
+import { LoaderFunctionArgs } from '@remix-run/node';
 import { MetaFunction } from '@remix-run/react';
 import { CONSTANTS } from '~/utils/constants';
 import { getPageTitle } from '~/utils/loaders';
@@ -6,9 +6,9 @@ import { getPageTitle } from '~/utils/loaders';
 export const handle = { i18n: 'privacy' };
 
 export async function loader({ request }: LoaderFunctionArgs) {
-  const pageTitle = getPageTitle({ request, page: 'privacy' });
+  const pageTitle = await getPageTitle({ request, page: 'privacy' });
 
-  return json({ pageTitle });
+  return { pageTitle };
 }
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {

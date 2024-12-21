@@ -10,7 +10,7 @@ import { getPageTitle } from '~/utils/loaders';
 export const handle = { i18n: 'signin' };
 
 export async function loader({ request }: LoaderFunctionArgs) {
-  const pageTitle = getPageTitle({ request, page: 'signin' });
+  const pageTitle = await getPageTitle({ request, page: 'signin' });
 
   return { callbackURL: process.env.CALLBACK_URL, pageTitle };
 }

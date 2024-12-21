@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { json, LoaderFunctionArgs } from '@remix-run/node';
+import { LoaderFunctionArgs } from '@remix-run/node';
 import { MetaFunction } from '@remix-run/react';
 import { Layout } from '~/layout';
 import { CONSTANTS } from '~/utils/constants';
@@ -9,9 +9,9 @@ import styles from '../styles/menu.module.scss';
 export const handle = { i18n: 'menu' };
 
 export async function loader({ request }: LoaderFunctionArgs) {
-  const pageTitle = getPageTitle({ request, page: 'menu' });
+  const pageTitle = await getPageTitle({ request, page: 'menu' });
 
-  return json({ pageTitle });
+  return { pageTitle };
 }
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {

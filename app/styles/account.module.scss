@@ -64,6 +64,12 @@
       color: var(--accent-blue);
       text-align: center;
     }
+
+    .soon {
+      display: grid;
+      place-items: center;
+      min-height: 300px;
+    }
   }
 
   .logout {

@@ -20,9 +20,9 @@ interface ContactActionData {
 }
 
 export async function loader({ request }: LoaderFunctionArgs) {
-  const pageTitle = getPageTitle({ request, page: 'contact' });
+  const pageTitle = await getPageTitle({ request, page: 'contact' });
 
-  return json({ pageTitle });
+  return { pageTitle };
 }
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
