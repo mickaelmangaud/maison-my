@@ -1,10 +1,12 @@
-import { ActionFunctionArgs, json, TypedResponse } from '@remix-run/node';
+import { ActionFunctionArgs, json, LoaderFunctionArgs, MetaFunction, TypedResponse } from '@remix-run/node';
 import { CreateEmailResponseSuccess, ErrorResponse, Resend } from 'resend';
 import { Link, useFetcher, useOutletContext } from '@remix-run/react';
 import { Trans, useTranslation } from 'react-i18next';
 import { Layout } from '~/layout';
 import { OutletContextType } from '~/root';
 import ContactEmail from '~/emails/contact-email';
+import i18next from '~/lib/i18next.server';
+import { CONSTANTS } from '~/utils/constants';
 import styles from '../styles/contact.module.scss';
 
 export const handle = { i18n: 'contact' };
@@ -16,6 +18,17 @@ interface ContactActionData {
   data?: CreateEmailResponseSuccess | null;
   code: number;
 }
+
+export async function loader({ request }: LoaderFunctionArgs) {
+  const t = await i18next.getFixedT(request, 'contact');
+  const pageTitle = t(['pageTitle']);
+
+  return json({ pageTitle });
+}
+
+export const meta: MetaFunction<typeof loader> = ({ data }) => {
+  return [{ title: `${CONSTANTS.SITE_NAME} | ${data?.pageTitle}` }];
+};
 
 export async function action({ request }: ActionFunctionArgs): Promise<TypedResponse<ContactActionData>> {
   const formData = await request.formData();

@@ -13,4 +13,4 @@ to import scss files in other scss file:
 - add a title element for each page
 - Les éléments <frame> ou <iframe> n'ont pas de titre
 - https://github.com/vercel/next.js/discussions/43921
-- add typescript safety for i18next https://www.i18next.com/overview/typescript
+- add each pageTitle in translations files

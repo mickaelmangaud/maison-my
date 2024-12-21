@@ -1,14 +1,24 @@
+import { LoaderFunctionArgs, MetaFunction } from '@remix-run/node';
 import { useLoaderData, useOutletContext } from '@remix-run/react';
 import { LoginButton } from '~/components/login-button';
 import { Layout } from '~/layout';
+import i18next from '~/lib/i18next.server';
 import { OutletContextType } from '~/root';
 import styles from '~/styles/signin.module.scss';
+import { CONSTANTS } from '~/utils/constants';
 
 export const handle = { i18n: 'signin' };
 
-export function loader() {
-  return { callbackURL: process.env.CALLBACK_URL };
+export async function loader({ request }: LoaderFunctionArgs) {
+  const t = await i18next.getFixedT(request, 'signin');
+  const pageTitle = t(['pageTitle']);
+
+  return { callbackURL: process.env.CALLBACK_URL, pageTitle };
 }
+
+export const meta: MetaFunction<typeof loader> = ({ data }) => {
+  return [{ title: `${CONSTANTS.SITE_NAME} | ${data?.pageTitle}` }];
+};
 
 export default function SignIn() {
   const { supabase } = useOutletContext<OutletContextType>();

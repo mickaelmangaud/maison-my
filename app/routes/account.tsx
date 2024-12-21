@@ -1,23 +1,32 @@
 import { useLoaderData, useNavigate, useOutletContext } from '@remix-run/react';
-import { json, LoaderFunctionArgs, redirect } from '@remix-run/node';
+import { json, LoaderFunctionArgs, MetaFunction, redirect } from '@remix-run/node';
 import { useTranslation } from 'react-i18next';
 import { createSupabaseServerClient } from '~/lib/supabase.server';
 import styles from '~/styles/account.module.scss';
 import { OutletContextType } from '~/root';
 import { Layout } from '~/layout';
+import i18next from '~/lib/i18next.server';
+import { CONSTANTS } from '~/utils/constants';
 
 export const handle = { i18n: 'account' };
 
 export async function loader({ request }: LoaderFunctionArgs) {
+  const t = await i18next.getFixedT(request, 'account');
+  const pageTitle = t(['pageTitle']);
+
   const { user, headers } = await createSupabaseServerClient(request);
   if (!user) {
     return redirect('/signin');
   }
-  return json(user, { headers });
+  return json({ user, pageTitle }, { headers });
 }
 
+export const meta: MetaFunction<typeof loader> = ({ data }) => {
+  return [{ title: `${CONSTANTS.SITE_NAME} | ${data?.pageTitle}` }];
+};
+
 export default function Account() {
-  const user = useLoaderData<typeof loader>();
+  const { user } = useLoaderData<typeof loader>();
   const { supabase } = useOutletContext<OutletContextType>();
   const { t } = useTranslation('account');
   const navigate = useNavigate();

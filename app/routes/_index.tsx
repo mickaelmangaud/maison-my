@@ -1,10 +1,12 @@
 import { FaAngleDown } from 'react-icons/fa6';
 import { json, useFetcher } from '@remix-run/react';
-import { ActionFunctionArgs } from '@remix-run/node';
+import { ActionFunctionArgs, LoaderFunctionArgs, MetaFunction } from '@remix-run/node';
 import { useTranslation } from 'react-i18next';
 import { Layout } from '~/layout';
 import { resend } from '~/lib/resend';
 import styles from '~/styles/index.module.scss';
+import { CONSTANTS } from '~/utils/constants';
+import i18next from '~/lib/i18next.server';
 
 export const handle = { i18n: 'home' };
 
@@ -24,6 +26,17 @@ export async function action({ request }: ActionFunctionArgs) {
 
   return json({ data, code: 200 });
 }
+
+export async function loader({ request }: LoaderFunctionArgs) {
+  const t = await i18next.getFixedT(request, 'home');
+  const pageTitle = t(['pageTitle']);
+
+  return json({ pageTitle });
+}
+
+export const meta: MetaFunction<typeof loader> = ({ data }) => {
+  return [{ title: `${CONSTANTS.SITE_NAME} | ${data?.pageTitle}` }];
+};
 
 export default function Home() {
   const { t } = useTranslation('home');
