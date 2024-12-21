@@ -2,15 +2,14 @@ import { Trans, useTranslation } from 'react-i18next';
 import { json, LoaderFunctionArgs } from '@remix-run/node';
 import { MetaFunction } from '@remix-run/react';
 import { Layout } from '~/layout';
-import i18next from '~/lib/i18next.server';
 import { CONSTANTS } from '~/utils/constants';
+import { getPageTitle } from '~/utils/loaders';
 import styles from '../styles/histoire.module.scss';
 
 export const handle = { i18n: 'story' };
 
 export async function loader({ request }: LoaderFunctionArgs) {
-  const t = await i18next.getFixedT(request, 'story');
-  const pageTitle = t(['pageTitle']);
+  const pageTitle = getPageTitle({ request, page: 'story' });
 
   return json({ pageTitle });
 }

@@ -6,7 +6,7 @@ import { Layout } from '~/layout';
 import { resend } from '~/lib/resend';
 import styles from '~/styles/index.module.scss';
 import { CONSTANTS } from '~/utils/constants';
-import i18next from '~/lib/i18next.server';
+import { getPageTitle } from '~/utils/loaders';
 
 export const handle = { i18n: 'home' };
 
@@ -28,8 +28,7 @@ export async function action({ request }: ActionFunctionArgs) {
 }
 
 export async function loader({ request }: LoaderFunctionArgs) {
-  const t = await i18next.getFixedT(request, 'home');
-  const pageTitle = t(['pageTitle']);
+  const pageTitle = getPageTitle({ request, page: 'home' });
 
   return json({ pageTitle });
 }

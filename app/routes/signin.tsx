@@ -2,16 +2,15 @@ import { LoaderFunctionArgs, MetaFunction } from '@remix-run/node';
 import { useLoaderData, useOutletContext } from '@remix-run/react';
 import { LoginButton } from '~/components/login-button';
 import { Layout } from '~/layout';
-import i18next from '~/lib/i18next.server';
 import { OutletContextType } from '~/root';
 import styles from '~/styles/signin.module.scss';
 import { CONSTANTS } from '~/utils/constants';
+import { getPageTitle } from '~/utils/loaders';
 
 export const handle = { i18n: 'signin' };
 
 export async function loader({ request }: LoaderFunctionArgs) {
-  const t = await i18next.getFixedT(request, 'signin');
-  const pageTitle = t(['pageTitle']);
+  const pageTitle = getPageTitle({ request, page: 'signin' });
 
   return { callbackURL: process.env.CALLBACK_URL, pageTitle };
 }

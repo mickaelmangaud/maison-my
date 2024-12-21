@@ -5,8 +5,8 @@ import { Trans, useTranslation } from 'react-i18next';
 import { Layout } from '~/layout';
 import { OutletContextType } from '~/root';
 import ContactEmail from '~/emails/contact-email';
-import i18next from '~/lib/i18next.server';
 import { CONSTANTS } from '~/utils/constants';
+import { getPageTitle } from '~/utils/loaders';
 import styles from '../styles/contact.module.scss';
 
 export const handle = { i18n: 'contact' };
@@ -20,8 +20,7 @@ interface ContactActionData {
 }
 
 export async function loader({ request }: LoaderFunctionArgs) {
-  const t = await i18next.getFixedT(request, 'contact');
-  const pageTitle = t(['pageTitle']);
+  const pageTitle = getPageTitle({ request, page: 'contact' });
 
   return json({ pageTitle });
 }

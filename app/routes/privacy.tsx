@@ -1,13 +1,12 @@
 import { json, LoaderFunctionArgs } from '@remix-run/node';
 import { MetaFunction } from '@remix-run/react';
-import i18next from '~/lib/i18next.server';
 import { CONSTANTS } from '~/utils/constants';
+import { getPageTitle } from '~/utils/loaders';
 
 export const handle = { i18n: 'privacy' };
 
 export async function loader({ request }: LoaderFunctionArgs) {
-  const t = await i18next.getFixedT(request, 'privacy');
-  const pageTitle = t(['pageTitle']);
+  const pageTitle = getPageTitle({ request, page: 'privacy' });
 
   return json({ pageTitle });
 }

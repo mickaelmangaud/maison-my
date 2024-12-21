@@ -5,14 +5,13 @@ import { createSupabaseServerClient } from '~/lib/supabase.server';
 import styles from '~/styles/account.module.scss';
 import { OutletContextType } from '~/root';
 import { Layout } from '~/layout';
-import i18next from '~/lib/i18next.server';
 import { CONSTANTS } from '~/utils/constants';
+import { getPageTitle } from '~/utils/loaders';
 
 export const handle = { i18n: 'account' };
 
 export async function loader({ request }: LoaderFunctionArgs) {
-  const t = await i18next.getFixedT(request, 'account');
-  const pageTitle = t(['pageTitle']);
+  const pageTitle = getPageTitle({ request, page: 'account' });
 
   const { user, headers } = await createSupabaseServerClient(request);
   if (!user) {
