@@ -1,6 +1,6 @@
 import Backend from 'i18next-fs-backend';
 import { RemixI18Next } from 'remix-i18next/server';
-import { resolve } from 'node:path';
+// import { resolve } from 'node:path';
 import i18nConfig from '~/lib/i18n-config';
 
 const i18next = new RemixI18Next({
@@ -12,7 +12,7 @@ const i18next = new RemixI18Next({
   i18next: {
     ...i18nConfig,
     backend: {
-      loadPath: resolve('locales/{{lng}}/{{ns}}.json'),
+      loadPath: '/locales/{{lng}}/{{ns}}.json',
     },
   },
   plugins: [Backend],
