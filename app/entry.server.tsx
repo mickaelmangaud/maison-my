@@ -31,7 +31,7 @@ export default async function handleRequest(
       ...i18n, // spread the configuration
       lng, // The locale we detected above
       ns, // The namespaces the routes about to render wants to use
-      backend: { loadPath: resolve('./locales/{{lng}}/{{ns}}.json') },
+      backend: { loadPath: resolve('/var/task/locales/{{lng}}/{{ns}}.json') },
     });
 
   return new Promise((resolve, reject) => {
